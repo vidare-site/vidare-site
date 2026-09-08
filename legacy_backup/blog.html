@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Vidare Psicologia Integral</title>
+  <meta name="description" content="Artigos sobre psicoterapia online, saúde mental e vida emocional com base na prática clínica da Vidare Psicologia Integral.">
+  <link rel="canonical" href="https://www.vidare.eu/blog" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Meta Tags para Redes Sociais -->
+  <meta property="og:url" content="https://www.vidare.eu/blog">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog | Vidare Psicologia Integral">
+  <meta property="og:description" content="Artigos sobre psicoterapia online, saúde mental e vida emocional com base na prática clínica da Vidare Psicologia Integral.">
+  <meta property="og:image" content="https://www.vidare.eu/assets/preview.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="www.vidare.eu">
+  <meta property="twitter:url" content="https://www.vidare.eu/blog">
+  <meta name="twitter:title" content="Blog | Vidare Psicologia Integral">
+  <meta name="twitter:description" content="Artigos sobre psicoterapia online, saúde mental e vida emocional com base na prática clínica da Vidare Psicologia Integral.">
+  <meta name="twitter:image" content="https://www.vidare.eu/assets/preview.webp">
+
+  <link rel="stylesheet" href="styles.css?v=13">
+
+  <!-- GSAP ScrollSmoother -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+
+  <!-- Glass Effect CSS com fallbacks -->
+  <style>
+    /* Glassmorphism com fallbacks */
+    .glass {
+      background: var(--c-surface, #FAF9F6);
+      background: rgba(249, 248, 244, 0.85);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Fallback para browsers sem backdrop-filter */
+    @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+      .glass {
+        background: rgba(249, 248, 244, 0.98);
+      }
+    }
+    
+    /* Mobile: blur reduzido para performance */
+    @media (max-width: 768px) {
+      .glass {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background: rgba(249, 248, 244, 0.95);
+      }
+    }
+    
+    /* Glass para cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    @supports not ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))) {
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--c-border, rgba(44, 44, 44, 0.08));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .glass-card {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+      }
+    }
+    
+    /* Container do smooth scroll */
+    #smooth-content {
+      will-change: transform;
+    }
+    
+    /* Fallback se GSAP falhar */
+    .no-smooth-scroll #smooth-content {
+      will-change: auto;
+    }
+    
+    /* Reduzir motion para preferências de usuário */
+    @media (prefers-reduced-motion: reduce) {
+      #smooth-content {
+        will-change: auto !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      
+  <a href="#conteudo" class="skip-link btn btn-primary">
+    <strong>Pular para conteúdo</strong>
+  </a>
+
+  <header class="site-header glass">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#inicio">
+        <img src="assets/logo-dark1.webp" alt="Logotipo Vidare Psicologia Integral" class="logo light-mode" width="140" height="auto" loading="lazy">
+        <img src="assets/logo-light.webp" alt="Logotipo Vidare Psicologia Integral" class="logo dark-mode" width="140" height="auto" loading="lazy">
+      </a>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul id="menu">
+          <li class="nav-item-home"><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#expertise">Expertise</a></li>
+          <li><a href="index.html#como-funciona">O Processo</a></li>
+          <li><a href="index.html#sobre">Filosofia</a></li>
+          <li><a href="index.html#recursos">Conteúdos</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" 
+         href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20quero%20saber%20como%20come%C3%A7ar%20a%20minha%20jornada%20com%20a%20Vidare.&utm_source=site&utm_medium=whatsapp&utm_campaign=atendimento_organico" 
+         target="_blank" 
+         rel="noopener noreferrer">
+         Saber mais
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero section hero-background">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="subtitle hero-meta">Blog Vidare</p>
+          <h1 class="hero-intro">Reflexões sobre psicoterapia online, traumas e relações</h1>
+          <p class="subtitle hero-subtitle">
+            Textos baseados na prática clínica com EMDR, Terapia do Esquema e TCC para ajudar você a compreender padrões emocionais
+            e a criar rotas de cuidado mais leves.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container blog-grid">
+        <article class="blog-card approach-card">
+          <p class="subtitle hero-meta">Publicado em 20 jan 2024</p>
+          <h2>Como a terapia online pode ser profunda (mesmo à distância)</h2>
+          <p>
+            O setting virtual permite que você fale a partir do seu próprio contexto e, com boas práticas, mantém a mesma profundidade de um consultório presencial.
+            Reunimos orientações para preparar o espaço, preservar privacidade e lidar com distrações digitais.
+          </p>
+          <span class="btn btn-ghost" style="opacity: 0.5; cursor: not-allowed;">Ler em breve</span>
+        </article>
+
+        <article class="blog-card approach-card">
+          <p class="subtitle hero-meta">Publicado em 05 dez 2023</p>
+          <h2>Quando o corpo lembra antes da mente: entendendo traumas complexos</h2>
+          <p>
+            Sensações corporais intensas, reatividade emocional e dificuldade de confiar podem ser pistas de memórias traumáticas fragmentadas.
+            Neste texto apresento como EMDR ajuda a integrar experiências e restaurar senso de segurança interna.
+          </p>
+          <span class="btn btn-ghost" style="opacity: 0.5; cursor: not-allowed;">Ler em breve</span>
+        </article>
+
+        <article class="blog-card approach-card">
+          <p class="subtitle hero-meta">Publicado em 18 out 2023</p>
+          <h2>Relações que drenam energia: identificando padrões de esquema</h2>
+          <p>
+            Ciclos de autossacrifício, isolamento ou busca constante por aprovação costumam ter raízes em esquemas que se formaram na infância.
+            Compartilho perguntas-guia para reconhecer esses roteiros e como iniciamos intervenções na terapia.
+          </p>
+          <span class="btn btn-ghost" style="opacity: 0.5; cursor: not-allowed;">Ler em breve</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-simple" role="contentinfo">
+    <div class="container">
+      <span class="footer-simple__brand">Vidare</span>
+      <span class="footer-simple__tagline">Psicologia Integral</span>
+      
+      <div class="footer-simple__links">
+        <a href="index.html">Site principal</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="https://wa.me/5522988583868" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      
+      <div class="footer-simple__crisis">
+        <strong>Aviso:</strong> Este site não oferece atendimento de urgência. Em situações de crise, 
+        entre em contato com o serviço de emergência da sua região (190 no Brasil, 112 na UE, 911 nos EUA) 
+        ou ligue para o <strong>188</strong> (CVV), disponível 24h.
+      </div>
+      
+      <p class="footer-simple__legal">
+        © 2025 Vidare Psicologia Integral · Ricardo Correa | CRP 05/40839 · Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- GSAP ScrollSmoother - Shared Initialization -->
+  <script src="js/init-gsap.js"></script>
+
+    </div>
+  </div>
+
+  <!-- Active nav link handled by script.js -->
+</body>
+</html>

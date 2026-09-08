@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://www.vidare.eu/psicoterapia-online" />
+  <script>
+    const GA_MEASUREMENT_ID = 'G-KJG5E7XTWJ';
+    const ADS_CONVERSION_ID = 'AW-XXXXXXXXX';
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    function applyConsentDefaults() {
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+    function injectGtagScript(id) {
+      if (!id || id.includes('XXXX')) {
+        return;
+      }
+      if (document.querySelector(`script[data-gtag-id="${id}"]`)) {
+        return;
+      }
+      const tagScript = document.createElement('script');
+      tagScript.async = true;
+      tagScript.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+      tagScript.dataset.gtagId = id;
+      document.head.appendChild(tagScript);
+    }
+    function enableMeasurement() {
+      if (GA_MEASUREMENT_ID && !GA_MEASUREMENT_ID.includes('XXXX')) {
+        injectGtagScript(GA_MEASUREMENT_ID);
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID);
+      }
+      if (ADS_CONVERSION_ID && !ADS_CONVERSION_ID.includes('XXXX')) {
+        injectGtagScript(ADS_CONVERSION_ID);
+        gtag('config', ADS_CONVERSION_ID);
+      }
+    }
+    applyConsentDefaults();
+    window.__vidareConsent = {
+      update(status) {
+        const granted = status === 'granted';
+        gtag('consent', 'update', {
+          ad_storage: granted ? 'granted' : 'denied',
+          analytics_storage: granted ? 'granted' : 'denied',
+          ad_user_data: granted ? 'granted' : 'denied',
+          ad_personalization: granted ? 'granted' : 'denied'
+        });
+        if (granted) {
+          enableMeasurement();
+        }
+      }
+    };
+  </script>
+  <title>Psicoterapia Online | Vidare Psicologia Integral</title>
+  <meta name="description"
+    content="Psicólogo com 17 anos de experiência. Atendimento online em português, inglês, espanhol e sueco para brasileiros no exterior." />
+  <meta name="keywords"
+    content="psicoterapia online, EMDR, terapia do esquema, psicólogo brasileiros exterior, saude mental expatriados" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.vidare.eu/psicoterapia-online">
+  <meta property="og:title" content="Psicoterapia Online | Vidare Psicologia Integral">
+  <meta property="og:description"
+    content="Psicólogo com 17 anos de experiência. Atendimento online para brasileiros no exterior.">
+  <meta property="og:image" content="https://www.vidare.eu/assets/preview.webp">
+  <meta property="og:image:alt" content="Logotipo Vidare Psicologia Integral">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Psicoterapia Online | Vidare Psicologia Integral">
+  <meta name="twitter:description"
+    content="Psicólogo com 17 anos de experiência. Atendimento online em português, inglês, espanhol e sueco.">
+  <meta name="twitter:image" content="https://www.vidare.eu/assets/preview.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- GSAP ScrollSmoother -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+
+  <!-- Glass Effect CSS com fallbacks -->
+  <style>
+    /* Glassmorphism com fallbacks */
+    .glass {
+      background: var(--c-surface, #FAF9F6);
+      background: rgba(249, 248, 244, 0.85);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Fallback para browsers sem backdrop-filter */
+    @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+      .glass {
+        background: rgba(249, 248, 244, 0.98);
+      }
+    }
+
+    /* Mobile: blur reduzido para performance */
+    @media (max-width: 768px) {
+      .glass {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background: rgba(249, 248, 244, 0.95);
+      }
+    }
+
+    /* Glass para cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    @supports not ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))) {
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--c-border, rgba(44, 44, 44, 0.08));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .glass-card {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+      }
+    }
+
+    /* Container do smooth scroll */
+    #smooth-content {
+      will-change: transform;
+    }
+
+    /* Fallback se GSAP falhar */
+    .no-smooth-scroll #smooth-content {
+      will-change: auto;
+    }
+
+    /* Reduzir motion para preferências de usuário */
+    @media (prefers-reduced-motion: reduce) {
+      #smooth-content {
+        will-change: auto !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PsychologicService",
+    "name": "Vidare Psicologia | Terapia para Alta Performance e Expatriados",
+    "image": "https://www.vidare.eu/assets/logo-vidare.png",
+    "description": "Psicoterapia online especializada em Trauma, Esquema e EMDR para brasileiros no exterior e executivos. Atendimento em Português, Inglês, Espanhol e Sueco.",
+    "url": "https://www.vidare.eu/",
+    "telephone": "+5522988583868",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR",
+      "addressRegion": "Internacional (Online)"
+    },
+    "geo": {
+      "@type": "GeoShape",
+      "box": "-90,-180 90,180"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    ],
+    "medicalSpecialty": [
+      "Psychiatric",
+      "PublicHealth"
+    ],
+    "availableService": [
+      {
+        "@type": "MedicalTherapy",
+        "name": "Terapia do Esquema (Schema Therapy)",
+        "audience": "Adultos, Expatriados, Alta Performance"
+      },
+      {
+        "@type": "MedicalTherapy",
+        "name": "EMDR Online",
+        "audience": "Tratamento de Trauma"
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Ricardo Correa",
+      "jobTitle": "Psicólogo Clínico Sênior",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "ISST - International Society of Schema Therapy"
+      }
+    }
+  }
+  </script>
+  <style>
+    /* Quiet luxury overrides */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border);
+      padding: var(--space-md) var(--space-lg);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .sticky-cta .btn {
+      margin: 0;
+    }
+
+    body {
+      padding-bottom: 80px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .stat-number {
+      font-family: var(--f-title);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--c-title);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--c-muted);
+    }
+
+    .problem-cards {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .problem-card {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      transition: var(--transition);
+    }
+
+    .problem-card:hover {
+      border-color: var(--c-title);
+    }
+
+    .problem-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--c-title);
+      color: var(--c-title);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+      font-family: var(--f-title);
+    }
+
+    .invitation-box {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      padding: var(--space-2xl);
+      text-align: center;
+      margin: var(--space-2xl) 0;
+    }
+
+    .invitation-box h3 {
+      margin-bottom: var(--space-md);
+    }
+
+    .final-cta-section {
+      background: var(--c-title);
+      color: var(--c-light);
+      padding: var(--space-3xl) 0;
+      text-align: center;
+    }
+
+    .final-cta-section h2 {
+      color: var(--c-light);
+      margin-bottom: var(--space-md);
+    }
+
+    .final-cta-section .subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: var(--space-xl);
+    }
+
+    .final-cta-section .btn-primary {
+      background: var(--c-light);
+      color: var(--c-title);
+      border-color: var(--c-light);
+      font-size: 0.75rem;
+      padding: var(--space-md) var(--space-2xl);
+    }
+
+    .final-cta-section .btn-primary:hover {
+      background: transparent;
+      color: var(--c-light);
+    }
+
+    .hero-benefits {
+      margin: var(--space-lg) 0;
+    }
+
+    .kicker-bar {
+      background: var(--c-surface);
+      border-bottom: 1px solid var(--c-border);
+      text-align: center;
+      padding: var(--space-sm) var(--space-md);
+      padding-top: calc(var(--space-sm) * 1.5);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--c-muted);
+    }
+
+    @media (max-width: 768px) {
+      .kicker-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .problem-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+  <!-- Card animations handled by script.js -->
+</head>
+
+<body class="landing">
+  <!-- Subtle Kicker Bar -->
+  <div class="kicker-bar">
+    PSICOTERAPIA ONLINE · UM REFÚGIO DE ESCUTA E SIGILO
+  </div>
+
+  <a href="#contato" class="skip-link btn btn-primary"><strong>Pular para contato</strong></a>
+
+  <!-- Smooth Scroll Wrapper -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <header class="site-header glass">
+        <div class="container header-inner">
+          <a class="brand" href="index.html">
+            <img src="assets/logo-dark1.webp" alt="Logotipo Vidare Psicologia Integral" class="logo light-mode"
+              width="140" height="auto" loading="lazy">
+            <img src="assets/logo-light.webp" alt="Logotipo Vidare Psicologia Integral" class="logo dark-mode"
+              width="140" height="auto" loading="lazy">
+          </a>
+          <a class="site-link" href="#inicio">Site principal</a>
+        </div>
+      </header>
+
+      <main>
+        <!-- HERO -->
+        <section class="landing-hero" id="inicio">
+          <div class="container landing-hero-grid">
+            <div>
+              <p class="landing-kicker">PSICOTERAPIA CLÍNICA · ADULTOS</p>
+              <h1>Um refúgio para reelaborar o que, em silêncio, dita o ritmo da vida.</h1>
+              <p class="subtitle" style="font-size: 1.25rem; margin-bottom: var(--space-lg);">
+                Para soltar o peso de experiências passadas e padrões antigos, devolvendo à vida e às relações a fluidez
+                que elas merecem ter.
+              </p>
+
+              <div class="problem-cards hero-benefits"
+                style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                <div class="problem-card approach-card"
+                  style="width: 100%; display: flex; align-items: flex-start; padding: var(--space-md);">
+                  <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                    <h4
+                      style="font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                      O Primeiro Passo</h4>
+                    <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">Uma sessão dedicada a alinhamento
+                      e escuta qualificada para compreender o que precisa de cuidado.</p>
+                  </div>
+                </div>
+
+                <div class="problem-card approach-card"
+                  style="width: 100%; display: flex; align-items: flex-start; padding: var(--space-md);">
+                  <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                    <h4
+                      style="font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                      Abordagem Integrativa</h4>
+                    <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">Integração entre EMDR, Terapia do
+                      Esquema e TCC para responder à complexidade de cada história.</p>
+                  </div>
+                </div>
+
+                <div class="problem-card approach-card"
+                  style="width: 100%; display: flex; align-items: flex-start; padding: var(--space-md);">
+                  <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                    <h4
+                      style="font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                      Experiência</h4>
+                    <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">18 anos de trajetória clínica
+                      fundamentada em evidências e comprometida com resultados sólidos.</p>
+                  </div>
+                </div>
+
+                <div class="problem-card approach-card"
+                  style="width: 100%; display: flex; align-items: flex-start; padding: var(--space-md);">
+                  <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                    <h4
+                      style="font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                      Ambiente Seguro</h4>
+                    <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">Atendimento em plataforma
+                      criptografada de sigilo absoluto, com protocolos rígidos de confidencialidade.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="landing-panel hero-panel panel-dark">
+              <p class="caption">O PRIMEIRO MOVIMENTO</p>
+              <h3>
+                Escuta, Diagnóstico e Direção.
+              </h3>
+              <p>
+                Não é apenas um agendamento. É o momento de mapear a história pessoal, identificar as urgências e
+                desenhar um percurso terapêutico que respeite o seu tempo e a sua singularidade.
+              </p>
+              <div class="landing-panel-metrics">
+                <div>
+                  <strong>50 min</strong>
+                  <span>de imersão</span>
+                </div>
+                <div>
+                  <strong>Acesso remoto</strong>
+                  <span>seguro</span>
+                </div>
+              </div>
+              <div style="text-align: center; margin-top: var(--space-lg);">
+                <a class="btn btn-primary btn-invert"
+                  href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20vi%20o%20site%20da%20Vidare%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&utm_source=landing&utm_medium=whatsapp&utm_campaign=hero_cta"
+                  target="_blank" rel="noopener noreferrer"
+                  style="font-size: 0.75rem; padding: var(--space-md) var(--space-2xl);">
+                  <strong>Saber mais</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SOCIAL PROOF -->
+        <section class="section section-light" style="padding: var(--space-2xl) 0;">
+          <div class="container">
+            <div class="stats-grid" style="max-width: 720px;">
+              <p class="stat-label"
+                style="font-size: 0.875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-muted); grid-column: 1 / -1;">
+                18 anos de trajetória clínica • Expertise baseadas em evidências • Sigilo e privacidade garantidos
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROBLEMS -->
+        <section class="section landing-section" id="por-que-vidare">
+          <div class="container">
+            <div class="section-header">
+              <h2>Questões que pedem um novo olhar.</h2>
+              <p class="section-subtitle">
+                Acolhimento para as narrativas e sentimentos que, muitas vezes, tornam-se pesados demais para serem
+                carregados em silêncio.
+              </p>
+            </div>
+
+            <div class="problem-cards">
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Ecos do Passado</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">Experiências antigas que insistem em
+                    ditar as reações do presente, ocupando um espaço emocional que deveria estar livre.</p>
+                </div>
+              </div>
+
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Vínculos e Padrões</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">A repetição de ciclos e conflitos
+                    nos relacionamentos. O desejo de conexão que esbarra em defesas antigas.</p>
+                </div>
+              </div>
+
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    A Solidão Invisível</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">Quando a presença física dos outros
+                    não é suficiente para preencher o vazio interno ou a sensação de não pertencimento.</p>
+                </div>
+              </div>
+
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    O Peso da Autocrítica</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">A exaustão gerada por uma voz
+                    interna rígida, que não permite pausas e transforma erros em culpa constante.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="invitation-box">
+              <h3
+                style="font-family: var(--f-title); text-transform: none; letter-spacing: 0; font-size: 1.5rem; font-weight: 400;">
+                Outras formas de viver são possíveis.
+              </h3>
+              <p style="color: var(--c-body); max-width: 50ch; margin: 0 auto var(--space-lg); line-height: 1.7;">
+                O objetivo não é apagar a sua história, mas compreendê-la. É desenvolver ferramentas internas para se
+                relacionar consigo mesmo com mais realismo e menos punição.
+              </p>
+              <a class="btn btn-primary"
+                href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20vi%20o%20site%20da%20Vidare%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&utm_source=landing&utm_medium=whatsapp&utm_campaign=problem_section"
+                target="_blank" rel="noopener noreferrer">
+                Mais informações
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="section landing-section" id="processo">
+          <div class="container">
+            <div class="section-header">
+              <h2>A Dinâmica do Processo</h2>
+              <p class="section-subtitle">
+                Uma estrutura desenhada para garantir fluidez, consistência e profundidade.
+              </p>
+            </div>
+
+            <div class="steps-grid">
+              <article class="step-card approach-card step-card-alt">
+                <div class="step-number step-number-alt">1</div>
+                <h3 class="step-title-alt">1. A Escuta (Consulta Inicial)</h3>
+                <p>Um espaço para pausar e compreender a história em profundidade, alinhando expectativas e avaliando o
+                  caminho a seguir.</p>
+              </article>
+
+              <article class="step-card approach-card step-card-alt">
+                <div class="step-number step-number-alt">2</div>
+                <h3 class="step-title-alt">2. O Desenho (Estratégia)</h3>
+                <p>A definição de um plano terapêutico único, integrando EMDR, Terapia do Esquema ou TCC à sua
+                  complexidade pessoal.</p>
+              </article>
+
+              <article class="step-card approach-card step-card-alt">
+                <div class="step-number step-number-alt">3</div>
+                <h3 class="step-title-alt">3. O Ritmo (Continuidade)</h3>
+                <p>Sessões com cadência definida e estável, fundamentais para a neuroplasticidade e para a construção de
+                  resultados duradouros.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- CREDIBILITY -->
+        <section class="section landing-section" id="especialidades">
+          <div class="container">
+            <div class="section-header">
+              <h2>Fundamentos Científicos</h2>
+              <p class="section-subtitle">
+                Caminhos comprovados para dar novo sentido à história pessoal.
+              </p>
+            </div>
+
+            <div class="cards-grid">
+              <article class="focus-card approach-card">
+                <h3>EMDR</h3>
+                <p>Reconhecido pela OMS. Facilita a digestão emocional de traumas e memórias que bloqueiam o potencial
+                  de vida no presente.</p>
+              </article>
+
+              <article class="focus-card approach-card">
+                <h3>Terapia do Esquema</h3>
+                <p>Vai à raiz das emoções para identificar e transformar padrões disfuncionais que se repetem ao longo
+                  da vida.</p>
+              </article>
+
+              <article class="focus-card approach-card">
+                <h3>TCC</h3>
+                <p>Ferramentas práticas para organizar o ruído mental, entendendo como a interpretação dos fatos
+                  influencia o sentir e o agir.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section landing-section section-light" id="faq">
+          <div class="container">
+            <div class="section-header">
+              <h2>Estrutura e Clareza</h2>
+              <p class="section-subtitle">
+                Para que a decisão de iniciar o cuidado seja tomada com a segurança de quem conhece o terreno onde pisa.
+              </p>
+            </div>
+
+            <div class="problem-cards">
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    O Primeiro Movimento</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">Mais do que uma apresentação, a
+                    primeira sessão é um momento de cartografia. Um espaço dedicado a organizar a narrativa interna e
+                    traçar as linhas do horizonte terapêutico.</p>
+                </div>
+              </div>
+
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    A Decisão de Continuar</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">O vínculo é a base do trabalho. O
+                    processo só avança se houver conforto e sentido para ambos. A autonomia do paciente é respeitada em
+                    cada etapa.</p>
+                </div>
+              </div>
+
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    A Eficácia do Online</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">A cura reside na conexão humana, não
+                    na sala física. O ambiente virtual, sustentado por rigor ético, permite a mesma profundidade de
+                    mergulho que o presencial.</p>
+                </div>
+              </div>
+
+              <div class="problem-card approach-card">
+                <div>
+                  <h4
+                    style="margin-bottom: var(--space-xs); font-weight: 500; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Privacidade e Sigilo</h4>
+                  <p style="color: var(--c-body); font-size: 0.9375rem; margin: 0;">O atendimento segue rigorosos
+                    protocolos de segurança digital e ética profissional, assegurando que o seu espaço de fala seja
+                    inviolável.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="final-cta-dark" id="contato">
+          <div class="container">
+            <p class="caption">
+              ATENDIMENTO EXCLUSIVAMENTE ONLINE
+            </p>
+            <h2>No seu tempo.</h2>
+            <p class="subtitle">
+              O espaço está aberto para sua história.
+            </p>
+            <a class="btn btn-primary"
+              href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20vi%20o%20site%20da%20Vidare%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&utm_source=landing&utm_medium=whatsapp&utm_campaign=final_cta"
+              target="_blank" rel="noopener noreferrer"
+              style="font-size: 0.75rem; padding: var(--space-md) var(--space-2xl);">
+              <strong>Faça sua pergunta</strong>
+            </a>
+            <p class="caption caption-muted">
+              Ricardo Correa · Psicólogo Clínico · CRP 05/40839 · Desde 2008
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sticky CTA -->
+      <div class="sticky-cta">
+        <a class="btn btn-primary"
+          href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20vi%20o%20site%20da%20Vidare%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.&utm_source=landing&utm_medium=whatsapp&utm_campaign=sticky_cta"
+          target="_blank" rel="noopener noreferrer">
+          <strong>Saber mais</strong>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer-simple" role="contentinfo">
+        <div class="container">
+          <span class="footer-simple__brand">Vidare</span>
+          <span class="footer-simple__tagline">Psicologia Integral</span>
+
+          <div class="footer-simple__links">
+            <a href="index.html">Site principal</a>
+            <a href="https://wa.me/5522988583868" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:ricardo@vidare.eu">Email</a>
+          </div>
+
+          <div class="footer-simple__crisis">
+            <strong>Aviso:</strong> Este site não oferece atendimento de urgência. Em situações de crise,
+            entre em contato com o serviço de emergência da sua região (190 no Brasil, 112 na UE, 911 nos EUA)
+            ou ligue para o <strong>188</strong> (CVV), disponível 24h.
+          </div>
+
+          <p class="footer-simple__legal">
+            © 2025 Vidare Psicologia Integral · Ricardo Correa | CRP 05/40839 · Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+
+    </div><!-- /smooth-content -->
+  </div><!-- /smooth-wrapper -->
+
+  <!-- GSAP ScrollSmoother - Inline Initialization -->
+  <script>
+    (function () {
+      if (typeof gsap === 'undefined' || typeof ScrollSmoother === 'undefined') {
+        console.warn('GSAP or ScrollSmoother not loaded');
+        document.body.classList.add('no-smooth-scroll');
+        return;
+      }
+
+      gsap.registerPlugin(ScrollSmoother);
+
+      ScrollSmoother.create({
+        wrapper: '#smooth-wrapper',
+        content: '#smooth-content',
+        smooth: 1,
+        speed: 1.2,
+        effects: true,
+        normalizeScroll: true
+      });
+    })();
+  </script>
+</body>
+
+</html>

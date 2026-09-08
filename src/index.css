@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F9F8F4;
+  --color-surface: #FAF9F6;
+  --color-surface-hover: #F5F5F3;
+  --color-section-sage: #7A8B7A;
+  --color-section-sage-light: #9BA89B;
+  --color-section-cream: #F5F1E8;
+  --color-section-warm: #F0EBE0;
+  --color-section-light: #FAF9F6;
+  --color-title: #2C2C2C;
+  --color-body: #4A4A48;
+  --color-muted: #8A8A88;
+  --color-light: #FAF9F6;
+  --color-accent-dark: #2C2C2C;
+  --color-primary: #2C2C2C;
+  --color-primary-hover: #0F2222;
+  --color-secondary: #CFB096;
+  --color-accent: #CFB096;
+  --color-detail: #CFB096;
+  --color-text-on-dark: rgba(255, 255, 255, 0.9);
+  --color-border: rgba(44, 44, 44, 0.08);
+  --color-border-hover: rgba(44, 44, 44, 0.15);
+  --color-border-subtle: rgba(44, 44, 44, 0.04);
+
+  --font-title: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.75rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  --radius-radius: 4px;
+  --radius-sm: 2px;
+  --radius-lg: 8px;
+
+  --shadow-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.06);
+  --container-maxw: 1140px;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+
+    to {
+      height: 0;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 48 29% 97%;
+    /* #F9F8F4 equivalent in HSL */
+    --foreground: 0 0% 17%;
+    --card: 48 29% 97%;
+    --card-foreground: 0 0% 17%;
+    --popover: 48 29% 97%;
+    --popover-foreground: 0 0% 17%;
+    --primary: 0 0% 17%;
+    --primary-foreground: 48 29% 97%;
+    --secondary: 28 35% 70%;
+    --secondary-foreground: 0 0% 17%;
+    --muted: 60 1% 54%;
+    --muted-foreground: 0 0% 17%;
+    --accent: 28 35% 70%;
+    --accent-foreground: 0 0% 17%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 48 29% 97%;
+    --border: 0 0% 17%;
+    --input: 0 0% 17%;
+    --ring: 0 0% 17%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 17%;
+    --foreground: 48 29% 97%;
+    --card: 0 0% 17%;
+    --card-foreground: 48 29% 97%;
+    --popover: 0 0% 17%;
+    --popover-foreground: 48 29% 97%;
+    --primary: 48 29% 97%;
+    --primary-foreground: 0 0% 17%;
+    --secondary: 0 0% 17%;
+    --secondary-foreground: 48 29% 97%;
+    --muted: 0 0% 17%;
+    --muted-foreground: 60 1% 54%;
+    --accent: 0 0% 17%;
+    --accent-foreground: 48 29% 97%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 48 29% 97%;
+    --border: 48 29% 97%;
+    --input: 48 29% 97%;
+    --ring: 48 29% 97%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-padding-top: 100px;
+    overflow-x: visible;
+  }
+
+  body {
+    @apply bg-bg text-body font-body font-normal tracking-[-0.01em] leading-relaxed;
+    margin: 0;
+    overflow-x: visible;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title font-normal text-title leading-[1.2] tracking-[-0.02em] mb-md;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(249, 248, 244, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+}

@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://www.vidare.eu/" />
+
+  <!--
+    GOOGLE ANALYTICS 4 (GA4)
+    ======================================
+    Quando eu tiver o Measurement ID do GA4, devo:
+    1) Substituir G-XXXXXXXXXX pelo ID real.
+    2) Remover, se desejar, este comentário explicativo.
+    Por enquanto, este script fica como placeholder e não envia dados reais
+    enquanto o ID não for configurado corretamente.
+  -->
+  <!-- Consent Mode v2 ready: substitua os IDs pelas credenciais reais antes de publicar -->
+  <script>
+    const GA_MEASUREMENT_ID = 'G-KJG5E7XTWJ'; // Substitua pelo Measurement ID real
+    const ADS_CONVERSION_ID = 'AW-XXXXXXXXX'; // Substitua pelo ID real do Google Ads
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    function applyConsentDefaults() {
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+
+    function injectGtagScript(id) {
+      if (!id || id.includes('XXXX')) {
+        return;
+      }
+      if (document.querySelector(`script[data-gtag-id=\"${id}\"]`)) {
+        return;
+      }
+      const tagScript = document.createElement('script');
+      tagScript.async = true;
+      tagScript.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+      tagScript.dataset.gtagId = id;
+      document.head.appendChild(tagScript);
+    }
+
+    function enableMeasurement() {
+      if (GA_MEASUREMENT_ID && !GA_MEASUREMENT_ID.includes('XXXX')) {
+        injectGtagScript(GA_MEASUREMENT_ID);
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID);
+      }
+      if (ADS_CONVERSION_ID && !ADS_CONVERSION_ID.includes('XXXX')) {
+        injectGtagScript(ADS_CONVERSION_ID);
+        gtag('config', ADS_CONVERSION_ID);
+      }
+    }
+
+    applyConsentDefaults();
+
+    window.__vidareConsent = {
+      update(status) {
+        const granted = status === 'granted';
+        gtag('consent', 'update', {
+          ad_storage: granted ? 'granted' : 'denied',
+          analytics_storage: granted ? 'granted' : 'denied',
+          ad_user_data: granted ? 'granted' : 'denied',
+          ad_personalization: granted ? 'granted' : 'denied'
+        });
+        if (granted) {
+          enableMeasurement();
+        }
+      }
+    };
+  </script>
+  <title>Vidare | Psicólogo Online para Expatriados e Alta Performance (EMDR & Esquema)</title>
+  <meta name="description" content="Atendimento psicológico especializado para brasileiros no exterior e executivos. Tratamento de trauma, ansiedade e padrões de relacionamento com Ricardo Correa (Certificado ISST). Sigilo absoluto.">
+  <meta name="keywords" content="psicólogo online, terapia do esquema, EMDR online, psicólogo particular, terapia para expatriados, ansiedade alta performance, Ricardo Correa">
+  
+  <!-- Favicon padrão -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+
+  <!-- Apple iOS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Android/Progressive Web App -->
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- Fallback -->
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Meta Tags para Redes Sociais -->
+  <meta property="og:url" content="https://www.vidare.eu/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Psicoterapia online com Ricardo Correa | Vidare Psicologia Integral">
+  <meta property="og:description" content="Psicoterapia online baseada em evidências (EMDR, Terapia do Esquema e TCC) para traumas, padrões emocionais e relacionamentos. Atendimento em português, inglês, espanhol e sueco, com sigilo e acolhimento.">
+  <meta property="og:image" content="https://www.vidare.eu/assets/preview.webp">
+  <meta property="og:image:secure_url" content="https://www.vidare.eu/assets/preview.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logotipo Vidare Psicologia Integral">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="www.vidare.eu">
+  <meta property="twitter:url" content="https://www.vidare.eu/">
+  <meta name="twitter:title" content="Psicoterapia online com Ricardo Correa | Vidare Psicologia Integral">
+  <meta name="twitter:description" content="Psicoterapia online baseada em evidências (EMDR, Terapia do Esquema e TCC) para traumas, padrões emocionais e relacionamentos. Atendimento em múltiplos idiomas, com sigilo e cuidado ético.">
+  <meta name="twitter:image" content="https://www.vidare.eu/assets/preview.webp">
+  <meta name="twitter:image:alt" content="Logotipo Vidare Psicologia Integral">
+  
+  <!-- CSS -->
+  
+  <!-- Schema.org - Consolidated Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "PsychologicService",
+        "@id": "https://www.vidare.eu/#service",
+        "name": "Vidare Psicologia Integral",
+        "alternateName": "Vidare | Psicoterapia Online para Expatriados",
+        "image": "https://www.vidare.eu/assets/preview.webp",
+        "logo": "https://www.vidare.eu/assets/logo-dark1.webp",
+        "description": "Psicoterapia online especializada em Trauma, Esquema e EMDR para brasileiros no exterior e executivos. Atendimento em Português, Inglês, Espanhol e Sueco.",
+        "url": "https://www.vidare.eu/",
+        "telephone": "+5522998583868",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BR",
+          "addressRegion": "Internacional (Online)"
+        },
+        "geo": {
+          "@type": "GeoShape",
+          "box": "-90,-180 90,180"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          }
+        ],
+        "medicalSpecialty": ["Psychiatric", "PublicHealth"],
+        "availableService": [
+          {
+            "@type": "MedicalTherapy",
+            "name": "Terapia do Esquema (Schema Therapy)",
+            "audience": "Adultos, Expatriados, Alta Performance"
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "EMDR Online",
+            "audience": "Tratamento de Trauma"
+          },
+          {
+            "@type": "MedicalTherapy",
+            "name": "Terapia Cognitivo-Comportamental (TCC)",
+            "audience": "Adultos"
+          }
+        ],
+        "provider": {
+          "@id": "https://www.vidare.eu/#ricardo"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Atendimento online para pessoas no Brasil, Europa e América do Norte"
+        },
+        "sameAs": [
+          "https://www.instagram.com/ricardocorrea.psi"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.vidare.eu/#ricardo",
+        "name": "Ricardo Correa",
+        "jobTitle": "Psicólogo Clínico",
+        "identifier": "CRP 05/40839",
+        "url": "https://www.vidare.eu/",
+        "image": "https://www.vidare.eu/assets/07.webp",
+        "description": "Psicólogo clínico brasileiro com 17+ anos de experiência internacional em terapia online para adultos em alta performance emocional.",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Vidare Psicologia Integral"
+        },
+        "sameAs": [
+          "https://www.instagram.com/ricardocorrea.psi"
+        ],
+        "knowsAbout": [
+          "Terapia do Esquema",
+          "EMDR",
+          "Regulação Emocional",
+          "Trauma Complexo",
+          "Saúde Mental de Adultos no Exterior"
+        ],
+        "knowsLanguage": ["Portuguese", "English", "Spanish", "Swedish"],
+        "alumniOf": [
+          {
+            "@type": "Organization",
+            "name": "ISST - International Society of Schema Therapy"
+          },
+          {
+            "@type": "Organization",
+            "name": "Beck Institute"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css?v=13">
+  
+  <!-- GSAP ScrollSmoother -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+  
+  <!-- Glass Effect CSS com fallbacks -->
+  <style>
+    /* Glassmorphism com fallbacks */
+    .glass {
+      background: var(--c-surface, #FAF9F6);
+      background: rgba(249, 248, 244, 0.85);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Fallback para browsers sem backdrop-filter */
+    @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+      .glass {
+        background: rgba(249, 248, 244, 0.98);
+      }
+    }
+    
+    /* Mobile: blur reduzido para performance */
+    @media (max-width: 768px) {
+      .glass {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background: rgba(249, 248, 244, 0.95);
+      }
+    }
+    
+    /* Glass para cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    @supports not ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))) {
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--c-border, rgba(44, 44, 44, 0.08));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .glass-card {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+      }
+    }
+    
+    /* Container do smooth scroll */
+    #smooth-content {
+      will-change: transform;
+    }
+    
+    /* Fallback se GSAP falhar */
+    .no-smooth-scroll #smooth-content {
+      will-change: auto;
+    }
+    
+    /* Reduzir motion para preferências de usuário */
+    @media (prefers-reduced-motion: reduce) {
+      #smooth-content {
+        will-change: auto !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- CORTINA DE SENHA - Preview Privado -->
+  <div id="password-curtain" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif;">
+    <div style="text-align: center; padding: 2rem; max-width: 400px;">
+      <h2 style="color: #CFB096; font-size: 2rem; margin-bottom: 0.5rem; font-weight: 300;">Vidare</h2>
+      <p style="color: #888; font-size: 0.9rem; margin-bottom: 2rem; font-family: 'DM Sans', sans-serif;">Área de preview restrita</p>
+      
+      <input type="password" id="preview-password" placeholder="Digite a senha" style="width: 100%; padding: 1rem; border: 1px solid #444; background: #1a1a1a; color: #fff; font-size: 1rem; text-align: center; margin-bottom: 1rem; border-radius: 4px; font-family: 'DM Sans', sans-serif;">
+      
+      <button onclick="checkPassword()" style="width: 100%; padding: 1rem; background: #CFB096; color: #2C2C2C; border: none; font-size: 0.9rem; cursor: pointer; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: opacity 0.3s;">Acessar</button>
+      
+      <p id="password-error" style="color: #c44; font-size: 0.85rem; margin-top: 1rem; display: none; font-family: 'DM Sans', sans-serif;">Senha incorreta</p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById('preview-password').value;
+      const correctPassword = 'clenia'; // Mude esta senha
+      
+      if (password === correctPassword) {
+        document.getElementById('password-curtain').style.display = 'none';
+        sessionStorage.setItem('vidare_preview_access', 'true');
+      } else {
+        document.getElementById('password-error').style.display = 'block';
+      }
+    }
+    
+    // Verificar se já está autenticado nesta sessão
+    if (sessionStorage.getItem('vidare_preview_access') === 'true') {
+      document.getElementById('password-curtain').style.display = 'none';
+    }
+    
+    // Permitir Enter para submeter
+    document.getElementById('preview-password').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+  </script>
+  <!-- FIM DA CORTINA -->
+
+  <!-- Botão de acessibilidade -->
+  <a href="#contato" class="skip-link btn btn-primary">
+    <strong>Pular para contato</strong>
+  </a>
+
+  <!-- Smooth Scroll Wrapper -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+  <!-- HEADER -->
+<header class="site-header glass">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-dark1.webp" alt="Logotipo Vidare Psicologia Integral" class="logo light-mode" width="140" height="auto" loading="lazy">
+      <img src="assets/logo-light.webp" alt="Logotipo Vidare Psicologia Integral" class="logo dark-mode" width="140" height="auto" loading="lazy">
+    </a>
+
+    <nav class="main-nav" aria-label="Principal">
+        <ul id="menu">
+          <li class="nav-item-home"><a href="#inicio">Início</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#como-funciona">O Processo</a></li>
+          <li><a href="#sobre">Filosofia</a></li>
+          <li><a href="#recursos">Conteúdos</a></li>
+          <!-- Links ocultos: Blog, Cadastro, Pagamento -->
+        </ul>
+      </nav>
+    <a class="btn btn-primary" 
+       href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20quero%20saber%20como%20come%C3%A7ar%20a%20minha%20jornada%20com%20a%20Vidare.&utm_source=site&utm_medium=whatsapp&utm_campaign=atendimento_organico" 
+       target="_blank" 
+       rel="noopener noreferrer">
+       Saber mais
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+</header>
+
+  <!-- HERO / INÍCIO -->
+  <section class="hero hero-video-section" id="inicio">
+    <!-- Vídeo Background -->
+    <div class="hero-video-container">
+      <!-- Vídeo Desktop (Horizontal) -->
+      <video 
+        class="hero-video hero-video-desktop"
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        preload="auto"
+        poster="assets/preview.webp">
+        <source src="assets/videohorizontal.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+      
+      <!-- Vídeo Mobile (Vertical) -->
+      <video 
+        class="hero-video hero-video-mobile"
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        preload="auto"
+        poster="assets/preview.webp">
+        <source src="assets/videovertical.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+      
+      <!-- Overlay escuro para legibilidade -->
+      <div class="hero-video-overlay"></div>
+    </div>
+    
+    <!-- Conteúdo do Hero -->
+    <div class="container hero-grid hero-content">
+      <div class="hero-copy">
+        <h1 class="hero-intro">
+          Um refúgio para quem segue adiante
+        </h1>
+
+        <p class="subtitle hero-subtitle">
+          Psicoterapia online para expatriados e quem busca alta performance emocional. 
+          Um espaço onde distância e presença encontram-se.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" 
+             id="cta-whatsapp-hero"
+             data-cta-type="agendamento"
+             data-cta-location="hero"
+             href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20quero%20saber%20como%20come%C3%A7ar%20a%20minha%20jornada%20com%20a%20Vidare.&utm_source=site&utm_medium=whatsapp&utm_campaign=atendimento_organico"
+             target="_blank" 
+             rel="noopener noreferrer">
+            <strong>Iniciar conversa</strong>
+          </a>
+          <a class="btn btn-ghost-light" href="#como-funciona">Entender o processo</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise" class="section section-bg-cream">
+    <div class="container">
+      <div class="section-header">
+        <h2>Fundamentos Científicos de Transformação</h2>
+        <p class="section-subtitle">
+          Caminhos comprovados para dar novo sentido à história pessoal
+        </p>
+      </div>
+
+      <div class="carousel-container" data-carousel="expertise">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>Terapia do Esquema</h3>
+              <p>
+                Para compreender os ecos do passado que insistem em se repetir no presente. Esta abordagem integrativa vai à raiz das emoções, permitindo identificar e acolher as necessidades que ficaram para trás. É o caminho para que antigos modos de se relacionar deem lugar a conexões mais autênticas, maduras e leves.
+                <br><br>
+                <em>(Certificação Internacional pela ISST)</em>
+              </p>
+            </article>
+          </div>
+
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>EMDR (Dessensibilização e Reprocessamento)</h3>
+              <p>
+                Quando a memória da dor ainda ocupa espaço demais no agora. Reconhecido mundialmente pela OMS, este método facilita a digestão emocional de experiências difíceis. Através da estimulação bilateral, permite que o cérebro e o corpo finalmente arquivem o que precisa ser deixado para trás, destravando o potencial de cura natural.
+                <br><br>
+                <em>(Certificação pela EMDRIA e EMDR Europe)</em>
+              </p>
+            </article>
+          </div>
+
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>Terapia Cognitivo-Comportamental (TCC)</h3>
+              <p>
+                Ferramentas para organizar o ruído mental. O foco aqui é a clareza: entender como a interpretação dos fatos influencia o sentir e o agir. É uma construção prática de estratégias para navegar o dia a dia com mais equilíbrio, desarmando a ansiedade e fortalecendo a autonomia.
+                <br><br>
+                <em>(Formação pelo Beck Institute - EUA)</em>
+              </p>
+            </article>
+          </div>
+        </div>
+        
+        <div class="carousel-indicators" data-carousel-indicators="expertise">
+          <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA (SESSÕES ONLINE) -->
+  <section id="como-funciona" class="section section-bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>A Dinâmica do Encontro Online</h2>
+      </div>
+      <div class="how-it-works-layout">
+        <figure class="issues-banner how-it-works-visual about-photo">
+          <img src="assets/33.webp" alt="Banner destacando a praticidade das sessões de terapia online" loading="lazy" width="1024" height="1024">
+        </figure>
+        
+        <div class="carousel-container" data-carousel="como-funciona">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <article class="carousel-card">
+                <h3>A Presença em Qualquer Distância</h3>
+                <p>
+                  A terapia online transforma a distância em presença. É a possibilidade de manter um espaço de escuta e acolhimento que acompanha o movimento da vida, sem que a geografia ou a agenda se tornem obstáculos para o autocuidado.
+                </p>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="carousel-card">
+                <h3>A Estrutura de Segurança</h3>
+                <p>
+                  O ambiente virtual é construído sobre pilares rigorosos de segurança. Plataformas criptografadas e em conformidade com normas globais de privacidade (GDPR, HIPAA, LGPD) asseguram que cada sessão seja um reduto inviolável de sigilo.
+                </p>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="carousel-card">
+                <h3>A Leveza do Cuidado</h3>
+                <p>
+                  Basta um ambiente tranquilo para que o consultório se instale onde for necessário. É a liberdade de olhar para dentro com a mesma profundidade e ética do encontro presencial, mas com a leveza e a fluidez que o mundo atual exige.
+                </p>
+              </article>
+            </div>
+          </div>
+          
+          <div class="carousel-indicators" data-carousel-indicators="como-funciona">
+            <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="problemas" class="problems-block" aria-labelledby="problemas-titulo">
+        <div class="section-header">
+          <h2 id="problemas-titulo">Caminhos de Reconstrução</h2>
+          <p class="section-subtitle">
+            Acolhimento para as narrativas e sentimentos que, muitas vezes, tornam-se pesados demais para serem carregados em silêncio.
+          </p>
+        </div>
+
+        <div class="how-it-works-layout">
+          <figure class="issues-banner how-it-works-visual about-photo">
+            <img src="assets/30.webp"
+                 alt="Temas emocionais comuns trabalhados na psicoterapia" loading="lazy" width="900" height="900">
+          </figure>
+        </div>
+
+        <div class="carousel-container" data-carousel="problemas">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <article class="carousel-card">
+                <h3>Vínculos e a Solidão Invisível</h3>
+                <p>
+                  Quando a presença física dos outros não é suficiente para preencher o vazio interno. Investiga-se a raiz do distanciamento e os mecanismos de defesa que impedem a entrega genuína. O processo busca desarmar o medo de confiar, construindo, aos poucos, a segurança necessária para estabelecer conexões reais e profundas.
+                </p>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="carousel-card">
+                <h3>Ecos do Passado e Marcas Emocionais</h3>
+                <p>
+                  Experiências antigas — perdas, rupturas ou ambientes desorganizados — que insistem em ditar as reações do presente. O trabalho foca em retirar a carga dolorosa dessas memórias, utilizando abordagens clínicas para processar o que ficou suspenso no tempo e devolver ao corpo e à mente a sensação de segurança que foi interrompida.
+                </p>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="carousel-card">
+                <h3>O Peso da Autocrítica</h3>
+                <p>
+                  A exaustão gerada por uma voz interna que não permite pausas e exige perfeição constante. Mapeia-se a origem dessa rigidez para desarmar a culpa como único motor de ação, abrindo espaço para o acolhimento dos limites humanos em vez de puni-los.
+                </p>
+              </article>
+            </div>
+          </div>
+          
+          <div class="carousel-indicators" data-carousel-indicators="problemas">
+            <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bg-sage" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Estrutura e Clareza do Processo</h2>
+        <p class="section-subtitle">
+          Para que a decisão de iniciar o cuidado seja tomada com a segurança de quem conhece o terreno onde pisa.
+        </p>
+      </div>
+
+      <div class="carousel-container" data-carousel="faq">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>O Primeiro Movimento</h3>
+              <p>
+                Mais do que uma apresentação, este é o momento de cartografia. Um espaço dedicado a organizar a narrativa interna, identificar o que pesa e traçar as primeiras linhas do horizonte terapêutico.
+              </p>
+            </article>
+          </div>
+
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>A Estrutura do Processo</h3>
+              <p>
+                Cada sessão é um intervalo de 50 minutos protegido da velocidade do mundo externo. A cura não reside na sala física, mas na qualidade da conexão humana estabelecida.
+              </p>
+            </article>
+          </div>
+
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>O Foco da Atuação</h3>
+              <p>
+                O trabalho é direcionado para a complexidade da experiência humana: traumas, lutos, ansiedades e relacionamentos. Atendimento em Português, Inglês, Espanhol ou Sueco.
+              </p>
+            </article>
+          </div>
+        </div>
+        
+        <div class="carousel-indicators" data-carousel-indicators="faq">
+          <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE / HISTÓRIA DA VIDARE -->
+  <section class="section section-bg-warm" id="sobre">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text">
+          <h2>A Essência Vidare</h2>
+          <h3>Uma trajetória dedicada à escuta do que não é dito.</h3>
+          <p class="subtitle">
+            Desde 2008, a prática clínica tem sido um espaço de encontro com histórias de quem, muitas vezes, sustenta o mundo externo com maestria, mas carrega um silêncio pesado por dentro.
+          </p>
+          <p class="subtitle">
+            A vivência entre culturas — do Brasil à naturalização na Suécia — moldou um olhar sensível às nuances de quem vive em trânsito, seja geográfico ou emocional. Compreende-se profundamente a realidade de quem reside fora, os desafios dos fusos horários e a necessidade de um porto seguro na língua materna.
+          </p>
+          <p class="subtitle">
+            O trabalho é fundamentado na integração de abordagens robustas como o EMDR e a Terapia do Esquema, não apenas como técnicas, mas como caminhos para respeitar a complexidade humana. O foco é construir um plano de cuidado que faça sentido para a história de vida, no tempo e no contexto de cada um.
+          </p>
+
+          <div class="about-highlight">
+            <h3>O Significado</h3>
+            <h4>A convergência entre movimento e percepção.</h4>
+            <p class="subtitle">
+              O nome Vidare carrega a síntese de dois mundos. Do sueco, traz o impulso de seguir adiante, o movimento contínuo da vida. Da raiz latina, resgata o convite a ver com os olhos da alma, a clareza que só o olhar interior permite.
+            </p>
+            <p class="subtitle">
+              É a união entre o progresso pessoal e a profundidade do insight terapêutico — a capacidade de caminhar para o futuro, mas com a visão límpida de quem compreende a si mesmo.
+            </p>
+          </div>
+
+          <!-- Oculto temporariamente
+          <h3>Alicerces da Prática</h3>
+          <h4>Onde a ciência encontra a sensibilidade.</h4>
+          <p class="subtitle">
+            A segurança do processo terapêutico apoia-se em uma formação técnica rigorosa e internacional.
+          </p>
+          <ul class="about-list">
+            <li><strong>Psicologia Clínica:</strong> Atuação fundamentada e ética desde 2008 (Ricardo Correa - CRP 05/40839).</li>
+            <li><strong>Terapia Cognitivo-Comportamental:</strong> Especialização avançada pelo Beck Institute (EUA).</li>
+            <li><strong>EMDR:</strong> Certificação internacional para o tratamento de traumas e reprocessamento neurobiológico.</li>
+            <li><strong>Terapia do Esquema:</strong> Treinamento alinhado às diretrizes globais da ISST (International Society of Schema Therapy).</li>
+          </ul>
+
+          <h3>Ética e Ritmo</h3>
+          <h4>Um compromisso com a verdade do processo.</h4>
+          <p class="subtitle">
+            O trabalho é guiado pela ética do sigilo e pelo respeito absoluto ao tempo de cada pessoa. A terapia não é um lugar de julgamento, mas de investigação cuidadosa das narrativas e das defesas construídas para sobreviver.
+          </p>
+          <p class="subtitle">
+            Longe de promessas de soluções mágicas, o que se oferece é a consistência. É a construção de um processo real e possível, onde a técnica baseada em evidências se une a uma escuta humana para transformar a dor em compreensão e a exaustão em novas formas de viver.
+          </p>
+          -->
+        </div>
+        
+        <div class="about-visual">
+          <div class="about-photo-frame">
+            <figure class="about-photo">
+              <img src="assets/07.webp" alt="Ricardo Correa em sessão online" loading="lazy" width="787" height="1400">
+            </figure>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Carrossel de credenciais oculto temporariamente
+      <div class="carousel-container about-credentials-carousel" data-carousel="credentials">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>Psicólogo desde 2008</h3>
+              <p>CRP 05/40839</p>
+            </article>
+          </div>
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>Carreira Internacional</h3>
+              <p>Clientes em mais de 20 países. Fluente em Português, Inglês, Espanhol e Sueco.</p>
+            </article>
+          </div>
+          <div class="carousel-slide">
+            <article class="carousel-card">
+              <h3>Certificações Internacionais</h3>
+              <p>Certificações avançadas em <strong>EMDR e Terapia do Esquema</strong> (Brasil, Suécia e Espanha), <strong>Teoria Cognitivo-Comportamental</strong> (Estados Unidos)</p>
+            </article>
+          </div>
+        </div>
+        
+        <div class="carousel-indicators" data-carousel-indicators="credentials">
+          <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- CTA - NO SEU TEMPO -->
+  <section class="section cta-timing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>No seu tempo</h2>
+        <p class="section-subtitle">
+          O momento certo é quando você estiver pronto. A terapia não tem prazo de validade.
+        </p>
+      </div>
+      <div class="cta-timing-wrapper">
+        <div class="cta-timing-frame">
+          <figure class="cta-timing-image">
+            <img src="assets/35.webp" alt="Grupo de pessoas em conexão e acolhimento" loading="lazy" width="1200" height="800">
+          </figure>
+        </div>
+        <div class="cta-timing-content">
+          <p class="subtitle">
+            A terapia espera pacientemente pelo instante em que a necessidade de olhar para dentro se torna mais urgente que o medo de começar. Quando você estiver pronto, estarei aqui.
+          </p>
+          <a class="btn btn-primary" 
+             id="cta-whatsapp-timing"
+             data-cta-type="agendamento"
+             data-cta-location="timing"
+             href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20quero%20saber%20como%20come%C3%A7ar%20a%20minha%20jornada%20com%20a%20Vidare.&utm_source=site&utm_medium=whatsapp&utm_campaign=atendimento_organico" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            <strong>Iniciar a conversa</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS / CONTEÚDOS -->
+  <section id="recursos" class="section final-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Recursos e conteúdos para apoiar o seu processo</h2>
+        <p class="subtitle">
+          Acesse materiais psicoeducativos, exercícios e reflexões que podem acompanhar a sua terapia
+          ou servir como um primeiro passo cuidadoso para olhar com mais clareza para o que você está vivendo.
+        </p>
+        
+        <div class="cta-actions">
+          <a class="btn btn-ghost" 
+             href="https://subscribepage.io/vidare" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            Acessar Conteúdos
+          </a>
+          <a class="btn btn-primary" 
+             id="cta-whatsapp-recursos"
+             data-cta-type="agendamento"
+             data-cta-location="recursos"
+             href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20quero%20saber%20como%20come%C3%A7ar%20a%20minha%20jornada%20com%20a%20Vidare.&utm_source=site&utm_medium=whatsapp&utm_campaign=atendimento_organico" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            <strong>Mais informações</strong>
+          </a>
+        </div>
+
+        <div class="insta-embed">
+          <h3>Instagram</h3>
+          <p class="caption">@ricardocorrea.psi • acompanhe os conteúdos mais recentes</p>
+          <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-09955748-449b-400a-b403-d9c18968e354" data-elfsight-app-lazy></div>
+        </div>
+
+        <div class="resources-topics" style="display: none;">
+          <h3>Temas presentes nos conteúdos da Vidare</h3>
+          <p class="subtitle">
+            Conteúdos voltados a pessoas que desejam compreender melhor suas emoções, suas histórias
+            e seus relacionamentos.
+          </p>
+
+          <ul>
+            <li>Sentimentos de desconexão ou distância emocional.</li>
+            <li>Impacto de traumas na vida adulta.</li>
+            <li>Padrões emocionais e relacionais difíceis de mudar.</li>
+            <li>Cansaço interno, autocobrança e esgotamento.</li>
+            <li>Adaptação a mudanças de país e busca por pertencimento.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTATO -->
+  <footer id="contato" class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <section class="footer-brand">
+          <h3>Vidare Psicologia Integral</h3>
+          <p class="caption">Atendimento apenas online</p>
+          <p class="caption">
+            Atendimento 100% online, com base no Brasil, para pessoas que vivem em diferentes países e fusos horários.
+          </p>
+        </section>
+
+        <div class="footer-columns">
+          <nav class="footer-links" aria-label="Links rápidos">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#expertise">Expertise</a></li>
+              <li><a href="#como-funciona">O Processo</a></li>
+              <li><a href="#sobre">Filosofia</a></li>
+              <li><a href="#recursos">Conteúdos</a></li>
+            </ul>
+          </nav>
+
+          <section class="footer-contacts">
+            <h4>Contatos</h4>
+            <ul class="contact-list">
+              <li>
+                <a href="mailto:contato@vidare.eu" class="contact-link"
+                   id="cta-email-footer"
+                   data-cta-type="email"
+                   data-cta-location="footer">
+                  <span class="contact-icon">
+                    <img src="assets/email.svg" alt="Ícone de e-mail" loading="lazy">
+                  </span>
+                  <span>contato@vidare.eu</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20quero%20saber%20como%20come%C3%A7ar%20a%20minha%20jornada%20com%20a%20Vidare.&utm_source=site&utm_medium=whatsapp&utm_campaign=atendimento_organico" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="contact-link"
+                   id="cta-whatsapp-footer"
+                   data-cta-type="agendamento"
+                   data-cta-location="footer">
+                  <span class="contact-icon">
+                    <img src="assets/Whatsapp.svg" alt="Ícone do WhatsApp" loading="lazy">
+                  </span>
+                  <span>(22) 9 8858-3868</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/ricardocorrea.psi" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="contact-link"
+                   id="cta-instagram-footer"
+                   data-cta-type="social"
+                   data-cta-location="footer">
+                  <span class="contact-icon">
+                    <img src="assets/instagram.svg" alt="Ícone do Instagram" loading="lazy">
+                  </span>
+                  <span>@ricardocorrea.psi</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="footer-contact-form">
+            <h4>Envie uma mensagem</h4>
+            <form id="contactForm" action="https://formspree.io/f/xojnavvb" method="POST" class="contact-form">
+              <input type="hidden" name="_next" value="" />
+              <input type="hidden" name="_subject" value="Nova mensagem do site Vidare" />
+              <div class="form-group">
+                <input type="text" id="nome" name="Nome" placeholder="Nome e Sobrenome" required>
+              </div>
+              
+              <div class="form-group">
+                <input type="tel" id="whatsapp" name="WhatsApp" placeholder="WhatsApp" required>
+              </div>
+              
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+              </div>
+              
+              <div class="form-group">
+                <textarea id="mensagem" name="Mensagem" rows="5" maxlength="500" placeholder="Escreva aqui a sua mensagem" required></textarea>
+                <small class="char-count">Máximo 500 caracteres</small>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+            </form>
+            
+            <!-- Mensagem de sucesso (inicialmente oculta) -->
+            <div id="formSuccess" class="form-success" style="display: none;">
+              <h4>Obrigado pela sua mensagem</h4>
+              <p>Responderei o mais breve possível.</p>
+            </div>
+          </section>
+        </div>
+        
+        <div class="crisis-alert" role="note">
+          <span class="crisis-icon" aria-hidden="true">
+            <img src="assets/13.webp" alt="Aviso de atenção" loading="lazy" width="540" height="960">
+          </span>
+          <p class="crisis-text">
+            Este site não oferece atendimento de urgência. Em situações de crise ou risco imediato de vida, 
+            entre em contato com o serviço de emergência da sua região 
+            (por exemplo, 190 no Brasil, 112 em países da União Europeia, 911 nos Estados Unidos e Canadá) 
+            ou procure o serviço local de saúde. No Brasil, você também pode ligar para o <strong>188</strong> 
+            (CVV – Centro de Valorização da Vida), disponível 24 horas por dia.
+          </p>
+        </div>
+      </div>
+      
+      <div class="legal">
+        <small>
+          © 2025 Vidare Psicologia Integral.<br>
+          Responsável técnico: Ricardo Correa | CRP 05/40839.<br>
+          Todos os direitos reservados.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JavaScript -->
+
+
+  <div class="cookie-consent" id="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Preferências de privacidade" hidden>
+    <div class="cookie-consent__content">
+      <p class="cookie-consent__title">Privacidade e Consentimento</p>
+      <p class="cookie-consent__text">
+        Utilizo cookies analíticos e de marketing apenas com o seu consentimento explícito. Eles me ajudam a melhorar o site e manter campanhas relevantes, sempre de acordo com GDPR e LGPD. Você pode aceitar ou recusar e alterar sua decisão quando desejar.
+      </p>
+    </div>
+    <div class="cookie-consent__actions">
+      <button class="btn btn-secondary cookie-button" data-consent-choice="reject">Recusar</button>
+      <button class="btn btn-primary cookie-button" data-consent-choice="accept">Aceitar</button>
+      <a class="cookie-consent__link" href="#contato">Política de privacidade</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+  <!-- Script simples para garantir autoplay do vídeo -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var videos = document.querySelectorAll('.hero-video');
+      videos.forEach(function(video) {
+        video.play().catch(function() {
+          // Se autoplay falhar, tenta após primeiro clique
+          document.body.addEventListener('click', function() {
+            video.play();
+          }, { once: true });
+        });
+      });
+    });
+  </script>
+  <script>
+    // Forçar estilo do link ativo da navegação
+    (function() {
+      const style = document.createElement('style');
+      style.textContent = `
+        #menu a.active, .main-nav a.active {
+          background: transparent !important;
+          background-color: transparent !important;
+          color: #2C2C2C !important;
+          border-color: #CFB096 !important;
+          box-shadow: inset 0 0 0 1px #CFB096 !important;
+        }
+      `;
+      document.head.appendChild(style);
+    })();
+  </script>
+
+  <!-- Estilos do formulário de contato -->
+  <style>
+    .footer-contact-form {
+      margin-top: var(--space-xl);
+      padding: var(--space-lg);
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+    }
+    
+    .footer-contact-form h4 {
+      font-family: var(--f-title);
+      font-size: 1.125rem;
+      color: var(--c-title);
+      margin-bottom: var(--space-md);
+    }
+    
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    
+    .form-group input,
+    .form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid var(--c-border);
+      background: var(--c-bg);
+      color: var(--c-body);
+      font-family: var(--f-body);
+      font-size: 0.9375rem;
+      transition: var(--transition);
+    }
+    
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--c-muted);
+      opacity: 0.7;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--c-title);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .char-count {
+      font-size: 0.625rem;
+      color: var(--c-muted);
+      text-align: right;
+    }
+    
+    .contact-form .btn-primary {
+      margin-top: var(--space-sm);
+      align-self: flex-start;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--space-lg);
+      }
+      
+      .footer-contact-form {
+        margin-top: 0;
+      }
+    }
+    
+    /* Mensagem de sucesso */
+    .form-success {
+      text-align: center;
+      padding: var(--space-xl) var(--space-lg);
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+    }
+    
+    .form-success h4 {
+      font-family: var(--f-title);
+      font-size: 1.25rem;
+      color: var(--c-title);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .form-success p {
+      color: var(--c-muted);
+      font-size: 0.9375rem;
+    }
+  </style>
+
+  <!-- Script para envio assíncrono do formulário -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = this;
+      const formData = new FormData(form);
+      
+      const successMessage = document.getElementById('formSuccess');
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Esconde o formulário e mostra mensagem de sucesso
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+          
+          // Opcional: resetar o formulário após 5 segundos
+          setTimeout(() => {
+            form.reset();
+            form.style.display = 'flex';
+            successMessage.style.display = 'none';
+          }, 10000);
+        } else {
+          alert('Houve um problema ao enviar a mensagem. Por favor, tente novamente.');
+        }
+      })
+      .catch(error => {
+        alert('Houve um problema ao enviar a mensagem. Por favor, tente novamente.');
+      });
+    });
+  </script>
+
+    </div><!-- /smooth-content -->
+  </div><!-- /smooth-wrapper -->
+
+  <!-- GSAP ScrollSmoother - Shared Initialization -->
+  <script src="js/init-gsap.js"></script>
+
+  <!-- Carousel Functionality -->
+  <script>
+    /**
+     * Carousel Manager - Sistema Unificado de Carrosséis
+     * 
+     * Correções aplicadas:
+     * - Evento resize global único (não duplicado por carrossel)
+     * - Mouse events global único (não duplicado por carrossel)
+     * - Código morto removido
+     * - Otimização de performance
+     */
+    (function() {
+      'use strict';
+      
+      // Estado global do mouse (singleton)
+      const mouseState = {
+        activeCarousel: null,
+        clientX: 0,
+        isDragging: false
+      };
+      
+      // Sistema global de resize (singleton)
+      let resizeTimeout = null;
+      let resizeCallbacks = [];
+      
+      function onGlobalResize(callback) {
+        resizeCallbacks.push(callback);
+      }
+      
+      function triggerGlobalResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          resizeCallbacks.forEach(function(cb) {
+            try {
+              cb();
+            } catch (e) {
+              console.error('Erro no resize callback:', e);
+            }
+          });
+        }, 150);
+      }
+      
+      // Adicionar listener de resize apenas uma vez
+      window.addEventListener('resize', triggerGlobalResize);
+      window.addEventListener('orientationchange', function() {
+        setTimeout(triggerGlobalResize, 300);
+      });
+      
+      // Sistema global de mouse (apenas para desktop)
+      function initGlobalMouseHandlers() {
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+        if (isTouchDevice) return;
+        
+        document.addEventListener('mousemove', function(e) {
+          if (mouseState.activeCarousel && mouseState.isDragging) {
+            mouseState.clientX = e.clientX;
+            mouseState.activeCarousel.handleDragMove(e.clientX);
+          }
+        });
+        
+        document.addEventListener('mouseup', function() {
+          if (mouseState.activeCarousel && mouseState.isDragging) {
+            mouseState.isDragging = false;
+            mouseState.activeCarousel.handleDragEnd();
+            mouseState.activeCarousel = null;
+          }
+        });
+        
+        // Prevenir drag de imagens
+        document.addEventListener('dragstart', function(e) {
+          if (e.target.closest('.carousel-track')) {
+            e.preventDefault();
+          }
+        });
+      }
+      
+      // Inicializar handlers globais apenas uma vez
+      initGlobalMouseHandlers();
+      
+      // Classe Carousel individual
+      function Carousel(element) {
+        this.carousel = element;
+        this.carouselId = element.getAttribute('data-carousel');
+        this.track = element.querySelector('.carousel-track');
+        this.indicators = document.querySelector('[data-carousel-indicators="' + this.carouselId + '"]');
+        this.dots = this.indicators ? this.indicators.querySelectorAll('.carousel-dot') : [];
+        this.slides = this.track.querySelectorAll('.carousel-slide');
+        
+        if (this.slides.length === 0) return;
+        
+        this.currentSlide = 0;
+        this.translateX = 0;
+        this.isDragging = false;
+        this.startX = 0;
+        this.startTranslateX = 0;
+        this.isTouching = false;
+        this.startTouchX = 0;
+        this.currentTranslate = 0;
+        this.touchStartTime = 0;
+        
+        this.init();
+      }
+      
+      Carousel.prototype.init = function() {
+        this.createNavigationButtons();
+        this.setupEventListeners();
+        this.setupAccessibility();
+        this.updateCarousel();
+        this.checkSpaceForSlides();
+        this.updateButtons();
+        this.goToSlide(0, false);
+      };
+      
+      Carousel.prototype.createNavigationButtons = function() {
+        this.prevBtn = document.createElement('button');
+        this.prevBtn.className = 'carousel-nav-btn prev';
+        this.prevBtn.innerHTML = '&#8249;';
+        this.prevBtn.setAttribute('aria-label', 'Slide anterior');
+        
+        this.nextBtn = document.createElement('button');
+        this.nextBtn.className = 'carousel-nav-btn next';
+        this.nextBtn.innerHTML = '&#8250;';
+        this.nextBtn.setAttribute('aria-label', 'Próximo slide');
+        
+        this.carousel.appendChild(this.prevBtn);
+        this.carousel.appendChild(this.nextBtn);
+      };
+      
+      Carousel.prototype.getSlidesPerView = function() {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+      };
+      
+      Carousel.prototype.getMaxSlide = function() {
+        // Sempre permitir navegar até o último slide individual
+        return Math.max(0, this.slides.length - 1);
+      };
+      
+      Carousel.prototype.getSlideWidth = function() {
+        const slidesPerView = this.getSlidesPerView();
+        if (slidesPerView === 1) return 100;
+        if (slidesPerView === 2) return 50;
+        return 33.333;
+      };
+      
+      Carousel.prototype.updateCarousel = function() {
+        this.track.style.width = '100%';
+      };
+      
+      Carousel.prototype.updateButtons = function() {
+        const maxSlide = this.getMaxSlide();
+        this.prevBtn.disabled = this.currentSlide <= 0;
+        this.nextBtn.disabled = this.currentSlide >= maxSlide;
+        this.prevBtn.classList.toggle('is-disabled', this.currentSlide <= 0);
+        this.nextBtn.classList.toggle('is-disabled', this.currentSlide >= maxSlide);
+      };
+      
+      Carousel.prototype.goToSlide = function(index, animate) {
+        if (animate === undefined) animate = true;
+        
+        const maxSlide = this.getMaxSlide();
+        this.currentSlide = Math.max(0, Math.min(index, maxSlide));
+        
+        const slidesPerView = this.getSlidesPerView();
+        const slideWidth = this.getSlideWidth();
+        
+        this.translateX = -(this.currentSlide * slideWidth);
+        
+        if (animate) {
+          this.track.classList.remove('is-dragging');
+          this.track.style.transition = 'transform 0.4s ease-out';
+        } else {
+          this.track.classList.add('is-dragging');
+          this.track.style.transition = 'none';
+        }
+        
+        this.track.style.transform = 'translateX(' + this.translateX + '%)';
+        
+        // Update dots
+        var self = this;
+        this.dots.forEach(function(dot, i) {
+          dot.classList.toggle('active', i === self.currentSlide);
+          dot.setAttribute('aria-selected', i === self.currentSlide ? 'true' : 'false');
+        });
+        
+        // Update slides ARIA e classes visual (glass effect)
+        this.slides.forEach(function(slide, i) {
+          var isVisible = i >= self.currentSlide && i < self.currentSlide + slidesPerView;
+          var isActive = i === self.currentSlide;
+          slide.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+          
+          // Classes para efeito visual glass
+          slide.classList.toggle('is-active', isActive);
+          slide.classList.toggle('is-inactive', !isActive);
+          slide.classList.toggle('is-visible', isVisible);
+        });
+        
+        this.updateButtons();
+      };
+      
+      Carousel.prototype.nextSlide = function() {
+        const maxSlide = this.getMaxSlide();
+        if (this.currentSlide < maxSlide) {
+          this.goToSlide(this.currentSlide + 1);
+        } else {
+          this.goToSlide(0); // Loop back to start
+        }
+      };
+      
+      Carousel.prototype.prevSlide = function() {
+        if (this.currentSlide > 0) {
+          this.goToSlide(this.currentSlide - 1);
+        } else {
+          this.goToSlide(this.getMaxSlide()); // Loop to end
+        }
+      };
+      
+      Carousel.prototype.handleDragStart = function(clientX) {
+        this.isDragging = true;
+        this.startX = clientX;
+        this.startTranslateX = this.translateX;
+        this.track.classList.add('is-dragging');
+        this.track.style.cursor = 'grabbing';
+      };
+      
+      Carousel.prototype.handleDragMove = function(clientX) {
+        if (!this.isDragging) return;
+        
+        const diff = clientX - this.startX;
+        const containerWidth = this.carousel.offsetWidth;
+        const diffPercent = (diff / containerWidth) * 100;
+        
+        // Adicionar resistência nos limites
+        const maxSlide = this.getMaxSlide();
+        let newTranslateX = this.startTranslateX + diffPercent;
+        
+        if (this.currentSlide === 0 && diff > 0) {
+          newTranslateX = this.startTranslateX + diffPercent * 0.3;
+        } else if (this.currentSlide >= maxSlide && diff < 0) {
+          newTranslateX = this.startTranslateX + diffPercent * 0.3;
+        }
+        
+        this.translateX = newTranslateX;
+        this.track.style.transform = 'translateX(' + this.translateX + '%)';
+      };
+      
+      Carousel.prototype.handleDragEnd = function() {
+        if (!this.isDragging) return;
+        this.isDragging = false;
+        this.track.style.cursor = '';
+        this.track.classList.remove('is-dragging');
+        
+        const slideWidth = this.getSlideWidth();
+        const expectedPosition = -(this.currentSlide * slideWidth);
+        const diff = this.translateX - expectedPosition;
+        const threshold = slideWidth * 0.2;
+        
+        if (Math.abs(diff) > threshold) {
+          if (diff < 0) {
+            this.goToSlide(this.currentSlide + 1);
+          } else {
+            this.goToSlide(this.currentSlide - 1);
+          }
+        } else {
+          this.goToSlide(this.currentSlide);
+        }
+      };
+      
+      Carousel.prototype.checkSpaceForSlides = function() {
+        const slidesPerView = this.getSlidesPerView();
+        if (slidesPerView >= this.slides.length) {
+          this.carousel.classList.add('has-enough-space');
+          this.track.style.transform = 'none';
+          this.track.style.cursor = 'default';
+        } else {
+          this.carousel.classList.remove('has-enough-space');
+          this.track.style.cursor = 'grab';
+          this.goToSlide(this.currentSlide, false);
+        }
+      };
+      
+      Carousel.prototype.setupEventListeners = function() {
+        var self = this;
+        
+        // Botões de navegação
+        this.prevBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          self.prevSlide();
+        });
+        
+        this.nextBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          self.nextSlide();
+        });
+        
+        // Dots
+        this.dots.forEach(function(dot, index) {
+          dot.addEventListener('click', function() {
+            self.goToSlide(index);
+          });
+        });
+        
+        // Touch events
+        this.track.addEventListener('touchstart', function(e) {
+          self.isTouching = true;
+          self.touchStartTime = Date.now();
+          self.startTouchX = e.touches[0].clientX;
+          self.currentTranslate = self.translateX;
+          self.track.style.transition = 'none';
+        }, { passive: true });
+        
+        this.track.addEventListener('touchmove', function(e) {
+          if (!self.isTouching) return;
+          var currentX = e.touches[0].clientX;
+          var diff = currentX - self.startTouchX;
+          var movePercent = (diff / self.carousel.offsetWidth) * 100;
+          
+          const maxSlide = self.getMaxSlide();
+          if (self.currentSlide === 0 && diff > 0) {
+            movePercent *= 0.3;
+          } else if (self.currentSlide >= maxSlide && diff < 0) {
+            movePercent *= 0.3;
+          }
+          
+          self.translateX = self.currentTranslate + movePercent;
+          self.track.style.transform = 'translateX(' + self.translateX + '%)';
+        }, { passive: true });
+        
+        this.track.addEventListener('touchend', function(e) {
+          if (!self.isTouching) return;
+          self.isTouching = false;
+          self.track.style.transition = '';
+          
+          var endX = e.changedTouches[0].clientX;
+          var diff = self.startTouchX - endX;
+          var touchDuration = Date.now() - self.touchStartTime;
+          
+          var velocityThreshold = touchDuration < 300 && Math.abs(diff) > 30;
+          var distanceThreshold = Math.abs(diff) > 50;
+          
+          if (velocityThreshold || distanceThreshold) {
+            if (diff > 0) {
+              self.nextSlide();
+            } else {
+              self.prevSlide();
+            }
+          } else {
+            self.goToSlide(self.currentSlide);
+          }
+        }, { passive: true });
+        
+        this.track.addEventListener('touchcancel', function() {
+          if (!self.isTouching) return;
+          self.isTouching = false;
+          self.track.style.transition = '';
+          self.goToSlide(self.currentSlide);
+        }, { passive: true });
+        
+        // Mouse drag (apenas se não for touch device)
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+        if (!isTouchDevice) {
+          this.track.addEventListener('mousedown', function(e) {
+            if (self.getSlidesPerView() >= self.slides.length) return;
+            e.preventDefault();
+            
+            mouseState.activeCarousel = self;
+            mouseState.isDragging = true;
+            self.handleDragStart(e.clientX);
+          });
+        }
+        
+        // Keyboard navigation
+        this.carousel.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            self.prevSlide();
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            self.nextSlide();
+          } else if (e.key === 'Home') {
+            e.preventDefault();
+            self.goToSlide(0);
+          } else if (e.key === 'End') {
+            e.preventDefault();
+            self.goToSlide(self.getMaxSlide());
+          }
+        });
+        
+        // Resize global
+        onGlobalResize(function() {
+          self.updateCarousel();
+          const maxSlide = self.getMaxSlide();
+          self.currentSlide = Math.min(self.currentSlide, maxSlide);
+          self.checkSpaceForSlides();
+        });
+      };
+      
+      Carousel.prototype.setupAccessibility = function() {
+        this.carousel.setAttribute('tabindex', '0');
+        this.carousel.setAttribute('role', 'region');
+        this.carousel.setAttribute('aria-label', 'Carrossel de conteúdo');
+        
+        var self = this;
+        this.dots.forEach(function(dot, index) {
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-label', 'Ir para slide ' + (index + 1));
+          dot.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+        });
+        
+        this.slides.forEach(function(slide, index) {
+          slide.setAttribute('role', 'group');
+          slide.setAttribute('aria-label', 'Slide ' + (index + 1) + ' de ' + self.slides.length);
+          slide.setAttribute('aria-hidden', index !== 0 ? 'true' : 'false');
+        });
+      };
+      
+      // Initialize all carousels
+      function initCarousels() {
+        var carousels = document.querySelectorAll('[data-carousel]');
+        carousels.forEach(function(element) {
+          new Carousel(element);
+        });
+      }
+      
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCarousels);
+      } else {
+        initCarousels();
+      }
+    })();
+  </script>
+</body>
+</html>

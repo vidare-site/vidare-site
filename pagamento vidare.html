@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Acompanhamento | Vidare</title>
+    <meta name="description" content="Proposta de honorários e acompanhamento terapêutico exclusivo.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles Base -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuração de Cores Personalizadas (Quiet Luxury Palette) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vidare: {
+                            bg: '#F9F8F4',      // Mesmo do styles.css (--c-bg)
+                            dark: '#2C2C2C',    // Mesmo do styles.css (--c-title)
+                            stone: '#8A8A88',   // Mesmo do styles.css (--c-muted)
+                            gold: '#CFB096',    // Mesmo do styles.css (--c-accent)
+                            surface: '#FAF9F6', // Mesmo do styles.css (--c-surface)
+                            border: 'rgba(44, 44, 44, 0.08)', // Mesmo do styles.css
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"DM Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.03)',
+                        'hover': '0 10px 25px -5px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajustes finos de animação e scroll */
+        /* Smooth scroll handled by GSAP ScrollSmoother */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- GSAP 3.12.2 + ScrollSmoother -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+
+    <!-- Glass Effect CSS com fallbacks -->
+    <style>
+        /* Glass effect com fallbacks para navegadores antigos */
+        .glass {
+            background: rgba(250, 249, 246, 0.75);
+            background: linear-gradient(135deg, rgba(250, 249, 246, 0.85) 0%, rgba(249, 248, 244, 0.65) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(207, 176, 150, 0.2);
+            box-shadow: 0 4px 30px rgba(44, 44, 44, 0.05);
+        }
+
+        /* Fallback para navegadores sem suporte a backdrop-filter */
+        @supports not (backdrop-filter: blur(12px)) {
+            .glass {
+                background: rgba(250, 249, 246, 0.95);
+            }
+        }
+
+        /* Fallback para IE */
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            .glass {
+                background: #FAF9F6;
+                border-bottom: 1px solid #CFB096;
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(207, 176, 150, 0.25);
+            box-shadow: 0 8px 32px rgba(44, 44, 44, 0.06);
+        }
+
+        @supports not (backdrop-filter: blur(16px)) {
+            .glass-card {
+                background: rgba(255, 255, 255, 0.95);
+            }
+        }
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            .glass-card {
+                background: #FFFFFF;
+                border: 1px solid #CFB096;
+            }
+        }
+
+        /* Garantir que o smooth wrapper funcione corretamente */
+        #smooth-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        #smooth-content {
+            position: relative;
+            width: 100%;
+        }
+    </style>
+    <!-- Card animations handled by script.js -->
+</head>
+
+<body class="bg-vidare-bg text-vidare-dark font-sans selection:bg-vidare-stone selection:text-white">
+
+    <!-- Smooth Wrapper -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Header Minimalista com Logo à Esquerda -->
+            <header class="glass w-full py-8 px-6 md:px-12 flex justify-start items-center fade-in-up">
+                <a href="index.html" class="w-24 md:w-32 block">
+                    <img src="assets/logo-dark1.webp" alt="Logotipo Vidare Psicologia Integral"
+                        class="logo light-mode w-32 h-auto object-contain opacity-90 hover:opacity-100 transition duration-500"
+                        width="140" height="auto" loading="lazy">
+                    <img src="assets/logo-light.webp" alt="Logotipo Vidare Psicologia Integral"
+                        class="logo dark-mode w-32 h-auto object-contain opacity-90 hover:opacity-100 transition duration-500 hidden"
+                        width="140" height="auto" loading="lazy">
+                </a>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="max-w-4xl mx-auto px-6 pt-6 pb-16 text-center fade-in-up delay-100">
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+                    Programas de <br /><span class="italic text-vidare-stone">Acompanhamento Terapêutico</span>
+                </h1>
+                <p class="text-lg md:text-xl text-vidare-stone font-light max-w-2xl mx-auto leading-relaxed">
+                    Para garantir a excelência e a continuidade do seu tratamento, desenvolvi formatos exclusivos de
+                    acompanhamento. Escolha a modalidade que melhor se adapta ao seu momento.
+                </p>
+            </section>
+
+            <!-- Cards de Planos (Grid Principal) -->
+            <section class="max-w-7xl mx-auto px-6 pb-20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+                    <!-- PLANO TRIMESTRAL (Destaque) -->
+                    <div
+                        class="relative bg-vidare-surface border border-vidare-gold/40 rounded-sm p-8 shadow-soft transform md:-translate-y-4 hover:shadow-hover transition duration-300 fade-in-up delay-200 flex flex-col h-full approach-card">
+                        <!-- Badge -->
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <span
+                                class="bg-vidare-dark text-white text-xs tracking-widest uppercase px-4 py-1.5 shadow-md">Recomendado</span>
+                        </div>
+
+                        <div class="text-center mb-6 mt-4">
+                            <h3 class="font-serif text-2xl text-vidare-dark mb-1">Trimestral</h3>
+                        </div>
+
+                        <p class="text-vidare-stone text-sm text-center mb-8 leading-relaxed">
+                            O formato de maior compromisso. 12 consultas para um acompanhamento profundo e estruturado
+                            ao longo de 90 dias.
+                        </p>
+
+                        <div class="text-center mb-8 bg-vidare-bg p-6 rounded-sm border border-vidare-border">
+                            <p class="text-xs text-vidare-stone uppercase tracking-wide mb-2">Investimento</p>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-lg text-vidare-stone">3x de</span>
+                                <span class="font-serif text-4xl md:text-5xl text-vidare-dark">R$ 1.500</span>
+                            </div>
+                            <p class="text-xs text-vidare-stone mt-2">Condição Parcelada (Total: R$ 4.500)</p>
+                            <div class="mt-4 pt-4 border-t border-gray-200 w-full mx-auto">
+                                <p class="text-xs text-vidare-stone uppercase tracking-wide mb-1">Condição Especial à
+                                    Vista (PIX)</p>
+                                <p class="text-lg font-medium text-vidare-dark">R$ 4.200</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto">
+                            <button
+                                onclick="contactWhatsapp('Oi Ricardo, vi o site da Vidare e gostaria de mais informações.')"
+                                class="w-full bg-vidare-dark text-white font-sans uppercase tracking-widest text-xs py-4 hover:bg-opacity-90 transition duration-300">
+                                Iniciar Programa
+                            </button>
+                            <p class="text-center text-[10px] text-vidare-stone mt-3 uppercase tracking-wide">Excelência
+                                e Consistência</p>
+                        </div>
+                    </div>
+
+                    <!-- PLANO BIMESTRAL -->
+                    <div
+                        class="bg-vidare-surface border border-vidare-border rounded-sm p-8 shadow-soft hover:shadow-hover transition duration-300 fade-in-up delay-300 flex flex-col h-full opacity-90 hover:opacity-100 approach-card">
+                        <div class="text-center mb-6">
+                            <h3 class="font-serif text-2xl text-vidare-dark mb-1">Bimestral</h3>
+                        </div>
+
+                        <p class="text-vidare-stone text-sm text-center mb-8 leading-relaxed">
+                            Equilíbrio ideal. 8 consultas distribuídas em 60 dias. Perfeito para manter o ritmo com
+                            planejamento.
+                        </p>
+
+                        <div class="text-center mb-8">
+                            <p class="text-xs text-vidare-stone uppercase tracking-wide mb-2">Investimento</p>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-lg text-vidare-stone">2x de</span>
+                                <span class="font-serif text-4xl text-vidare-dark">R$ 1.620</span>
+                            </div>
+                            <p class="text-xs text-vidare-stone mt-2">Condição Parcelada (Total: R$ 3.240)</p>
+                            <div class="mt-4 border-t border-vidare-border/50 pt-3">
+                                <p class="text-xs text-vidare-stone mb-1">Condição Especial à Vista (PIX)</p>
+                                <p class="text-lg font-medium text-vidare-dark">R$ 3.000</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto">
+                            <button
+                                onclick="contactWhatsapp('Oi Ricardo, vi o site da Vidare e gostaria de mais informações.')"
+                                class="w-full bg-transparent border border-vidare-dark text-vidare-dark font-sans uppercase tracking-widest text-xs py-4 hover:bg-vidare-dark hover:text-white transition duration-300">
+                                Selecionar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PLANO MENSAL -->
+                    <div
+                        class="bg-vidare-surface border border-vidare-border rounded-sm p-8 shadow-soft hover:shadow-hover transition duration-300 fade-in-up delay-300 flex flex-col h-full opacity-90 hover:opacity-100 approach-card">
+                        <div class="text-center mb-6">
+                            <h3 class="font-serif text-2xl text-vidare-dark mb-1">Mensal</h3>
+                        </div>
+
+                        <p class="text-vidare-stone text-sm text-center mb-8 leading-relaxed">
+                            Foco intensivo de curto prazo. 4 consultas para o mês corrente. Ideal para manutenção.
+                        </p>
+
+                        <div class="text-center mb-8">
+                            <p class="text-xs text-vidare-stone uppercase tracking-wide mb-2">Investimento</p>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-lg text-vidare-stone">1x de</span>
+                                <span class="font-serif text-4xl text-vidare-dark">R$ 1.790</span>
+                            </div>
+                            <p class="text-xs text-vidare-stone mt-2">Condição Crédito</p>
+                            <div class="mt-4 border-t border-vidare-border/50 pt-3">
+                                <p class="text-xs text-vidare-stone mb-1">Condição Especial à Vista (PIX)</p>
+                                <p class="text-lg font-medium text-vidare-dark">R$ 1.700</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto">
+                            <button
+                                onclick="contactWhatsapp('Oi Ricardo, vi o site da Vidare e gostaria de mais informações.')"
+                                class="w-full bg-transparent border border-vidare-dark text-vidare-dark font-sans uppercase tracking-widest text-xs py-4 hover:bg-vidare-dark hover:text-white transition duration-300">
+                                Selecionar
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CONSULTA PONTUAL (Secundário) -->
+                <div
+                    class="max-w-2xl mx-auto mt-16 pt-10 border-t border-vidare-border text-center fade-in-up delay-300 approach-card">
+                    <h4 class="font-serif text-xl text-vidare-dark mb-2">Necessita de um atendimento pontual?</h4>
+                    <p class="text-vidare-stone text-sm mb-6">Sessão única com foco em demandas específicas ou avaliação
+                        inicial.</p>
+
+                    <div
+                        class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 bg-white p-6 rounded-sm shadow-sm inline-block w-full">
+                        <div class="text-left">
+                            <p class="text-sm font-bold text-vidare-dark uppercase tracking-wide">Consulta Pontual</p>
+                            <p class="text-xs text-vidare-stone">Crédito (1x)</p>
+                        </div>
+                        <div class="flex items-baseline gap-2">
+                            <span class="font-serif text-2xl text-vidare-dark">R$ 475</span>
+                        </div>
+                        <button
+                            onclick="contactWhatsapp('Oi Ricardo, vi o site da Vidare e gostaria de mais informações.')"
+                            class="px-6 py-2 bg-gray-100 hover:bg-gray-200 text-vidare-dark text-xs uppercase tracking-widest transition">
+                            Agendar Sessão
+                        </button>
+                    </div>
+                    <p class="text-xs text-vidare-stone mt-2">Condição Especial no PIX: R$ 450,00</p>
+                </div>
+            </section>
+
+            <!-- Tabela Comparativa (Clean) -->
+            <section class="max-w-4xl mx-auto px-6 pb-20 fade-in-up delay-300 approach-card">
+                <h3 class="font-serif text-2xl text-center mb-10 italic">Resumo das Condições</h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-vidare-dark/10">
+                                <th
+                                    class="py-4 font-sans text-xs uppercase tracking-widest text-vidare-stone font-normal w-1/4">
+                                    Modalidade</th>
+                                <th
+                                    class="py-4 font-sans text-xs uppercase tracking-widest text-vidare-stone font-normal w-1/4">
+                                    Sessões</th>
+                                <th
+                                    class="py-4 font-sans text-xs uppercase tracking-widest text-vidare-stone font-normal w-1/4">
+                                    Cartão (Crédito)</th>
+                                <th
+                                    class="py-4 font-sans text-xs uppercase tracking-widest text-vidare-stone font-normal w-1/4 text-right">
+                                    PIX (Especial)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm text-vidare-dark">
+                            <tr class="border-b border-vidare-dark/5 hover:bg-white transition">
+                                <td class="py-4 font-medium">Trimestral</td>
+                                <td class="py-4">12 Consultas</td>
+                                <td class="py-4">3x de R$ 1.500</td>
+                                <td class="py-4 text-right font-medium">R$ 4.200</td>
+                            </tr>
+                            <tr class="border-b border-vidare-dark/5 hover:bg-white transition">
+                                <td class="py-4 font-medium">Bimestral</td>
+                                <td class="py-4">08 Consultas</td>
+                                <td class="py-4">2x de R$ 1.620</td>
+                                <td class="py-4 text-right font-medium">R$ 3.000</td>
+                            </tr>
+                            <tr class="border-b border-vidare-dark/5 hover:bg-white transition">
+                                <td class="py-4 font-medium">Mensal</td>
+                                <td class="py-4">04 Consultas</td>
+                                <td class="py-4">1x de R$ 1.790</td>
+                                <td class="py-4 text-right font-medium">R$ 1.700</td>
+                            </tr>
+                            <tr class="hover:bg-white transition text-vidare-stone">
+                                <td class="py-4">Consulta Pontual</td>
+                                <td class="py-4">01 Consulta</td>
+                                <td class="py-4">R$ 475</td>
+                                <td class="py-4 text-right">R$ 450</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <p class="text-xs text-vidare-stone max-w-2xl mx-auto leading-relaxed">
+                        *Política de Transparência e Cancelamento: As condições acima contemplam custos administrativos
+                        e reserva de horário. Em caso de interrupção dos pacotes, as sessões já realizadas serão
+                        contabilizadas no valor da tarifa "Consulta Pontual" vigente (R$ 475), sendo reembolsado apenas
+                        o saldo remanescente.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer-simple" role="contentinfo">
+                <div class="container">
+                    <span class="footer-simple__brand">Vidare</span>
+                    <span class="footer-simple__tagline">Psicologia Integral</span>
+
+                    <div class="footer-simple__links">
+                        <a href="index.html">Site principal</a>
+                        <a href="https://wa.me/5522988583868" target="_blank" rel="noopener">WhatsApp</a>
+                        <a href="mailto:ricardo@vidare.eu">Email</a>
+                    </div>
+
+                    <div class="footer-simple__crisis">
+                        <strong>Aviso:</strong> Este site não oferece atendimento de urgência. Em situações de crise,
+                        entre em contato com o serviço de emergência da sua região (190 no Brasil, 112 na UE, 911 nos
+                        EUA)
+                        ou ligue para o <strong>188</strong> (CVV), disponível 24h.
+                    </div>
+
+                    <p class="footer-simple__legal">
+                        © 2025 Vidare Psicologia Integral · Ricardo Correa | CRP 05/40839 · Todos os direitos
+                        reservados.
+                    </p>
+                </div>
+            </footer>
+
+            <!-- Script para funcionalidade do WhatsApp -->
+            <script>
+                function contactWhatsapp(message) {
+                    // SUBSTITUA O NÚMERO ABAIXO PELO SEU NÚMERO REAL
+                    const phoneNumber = "5522988583868";
+
+                    const encodedMessage = encodeURIComponent(message);
+                    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                    window.open(url, '_blank');
+                }
+            </script>
+
+            <!-- GSAP ScrollSmoother - Inline Initialization -->
+            <script>
+                (function () {
+                    if (typeof gsap === 'undefined' || typeof ScrollSmoother === 'undefined') {
+                        console.warn('GSAP or ScrollSmoother not loaded');
+                        document.body.classList.add('no-smooth-scroll');
+                        return;
+                    }
+
+                    gsap.registerPlugin(ScrollSmoother);
+
+                    ScrollSmoother.create({
+                        wrapper: '#smooth-wrapper',
+                        content: '#smooth-content',
+                        smooth: 1,
+                        speed: 1.2,
+                        effects: true,
+                        normalizeScroll: true
+                    });
+                })();
+            </script>
+        </div><!-- /smooth-content -->
+    </div><!-- /smooth-wrapper -->
+</body>
+
+</html>

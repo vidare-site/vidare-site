@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Cadastro | Vidare Psicologia Integral</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    
+    <!-- Meta Tags para Redes Sociais -->
+    <meta property="og:url" content="https://www.vidare.eu/cadastro.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ficha de Cadastro | Vidare Psicologia Integral">
+    <meta property="og:description" content="Ficha de cadastro para atendimento clínico.">
+    <meta property="og:image" content="https://www.vidare.eu/assets/preview.webp">
+
+    <!-- Quiet Luxury Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles Base -->
+    <link rel="stylesheet" href="styles.css?v=13">
+    
+    <!-- Tailwind para utilitários -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* O cadastro usa as cores do styles.css base */
+        /* Variações mínimas para formulário */
+        body {
+            background-color: var(--c-bg);
+        }
+
+        h1, h2, h3 {
+            color: var(--c-title);
+            font-weight: 600;
+        }
+
+        .letterhead-container {
+            background-color: var(--c-surface);
+            position: relative;
+            min-height: 297mm;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--c-border);
+        }
+
+        .primary-text { 
+            color: var(--c-title); 
+        }
+        
+        .btn-finalizar {
+            background-color: var(--c-title);
+            color: var(--c-bg);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            border-radius: 0;
+            font-weight: 500;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-finalizar:hover {
+            background-color: transparent;
+            color: var(--c-title);
+            border: 1px solid var(--c-title);
+        }
+
+        @media print {
+            body { 
+                background: white; 
+                padding: 0; 
+                color: #1A1A1A;
+            }
+            .no-print { display: none; }
+            .letterhead-container { 
+                box-shadow: none; 
+                border: none; 
+                width: 100%; 
+                margin: 0; 
+                padding: 0;
+                background: white;
+            }
+            input, textarea { 
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important; 
+                border-top: none !important;
+                border-left: none !important;
+                border-right: none !important;
+                background: transparent !important;
+                color: #1A1A1A !important;
+            }
+            h1, h2, h3 {
+                color: #1A1A1A !important;
+            }
+        }
+
+        .input-line {
+            border-bottom: 1px solid var(--c-border-hover);
+            background: transparent;
+            transition: border-color 0.3s;
+            color: var(--c-body);
+            font-family: var(--f-body);
+        }
+        .input-line:focus {
+            border-color: var(--c-title);
+            outline: none;
+        }
+        .input-line::placeholder {
+            color: var(--c-muted);
+            opacity: 0.6;
+        }
+
+        input:invalid:focus {
+            border-bottom-color: #c4b8a8;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-header::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--c-border);
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            accent-color: var(--c-title);
+        }
+
+        /* Back link styling */
+        .back-link {
+            color: var(--c-muted);
+            font-size: 0.8125rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover {
+            color: var(--c-title);
+        }
+
+        /* Form label styling */
+        label.block {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--c-muted);
+            font-weight: 600;
+        }
+
+        /* Badge styling */
+        .form-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--c-border-hover);
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--c-muted);
+            background: transparent;
+        }
+
+        /* Subsection header */
+        .subsection-header {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--c-muted);
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        /* Footer text */
+        .footer-text {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--c-muted);
+        }
+
+        .footer-brand {
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--c-muted);
+            opacity: 0.5;
+        }
+    </style>
+    
+    <!-- GSAP ScrollSmoother -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+    
+    <!-- Glass Effect CSS com fallbacks -->
+    <style>
+      /* Glassmorphism com fallbacks */
+      .glass {
+        background: var(--c-surface, #FAF9F6);
+        background: rgba(249, 248, 244, 0.85);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      
+      /* Fallback para browsers sem backdrop-filter */
+      @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+        .glass {
+          background: rgba(249, 248, 244, 0.98);
+        }
+      }
+      
+      /* Mobile: blur reduzido para performance */
+      @media (max-width: 768px) {
+        .glass {
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          background: rgba(249, 248, 244, 0.95);
+        }
+      }
+      
+      /* Glass para cards */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.6);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      }
+      
+      @supports not ((-webkit-backdrop-filter: blur(16px)) or (backdrop-filter: blur(16px))) {
+        .glass-card {
+          background: rgba(255, 255, 255, 0.95);
+          border: 1px solid var(--c-border, rgba(44, 44, 44, 0.08));
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .glass-card {
+          -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+        }
+      }
+      
+      /* Container do smooth scroll */
+      #smooth-content {
+        will-change: transform;
+      }
+      
+      /* Fallback se GSAP falhar */
+      .no-smooth-scroll #smooth-content {
+        will-change: auto;
+      }
+      
+      /* Reduzir motion para preferências de usuário */
+      @media (prefers-reduced-motion: reduce) {
+        #smooth-content {
+          will-change: auto !important;
+          transform: none !important;
+        }
+      }
+      
+      /* Card visibility handled by script.js */
+    </style>
+</head>
+<body class="py-10 px-4">
+
+  <!-- Smooth Scroll Wrapper -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+    <div class="max-w-4xl mx-auto mb-6 no-print">
+        <a href="index.html#inicio" class="back-link inline-flex items-center gap-2 transition">
+            ← Voltar
+        </a>
+    </div>
+
+    <div id="conteudoFicha" class="max-w-4xl mx-auto letterhead-container overflow-hidden">
+        
+        <!-- Cabeçalho Timbrado -->
+        <header class="p-8 md:p-12 flex flex-col md:flex-row justify-between items-center border-b glass" style="border-color: var(--c-border);">
+            <div class="flex items-center gap-6">
+                <!-- Logotipo -->
+                <a href="index.html" class="w-20 h-20 flex items-center justify-center overflow-hidden">
+                    <img src="assets/logo-dark1.webp" alt="Logotipo Vidare Psicologia Integral" class="logo light-mode w-full h-full object-contain block" width="140" height="auto" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="assets/logo-light.webp" alt="Logotipo Vidare Psicologia Integral" class="logo dark-mode w-full h-full object-contain block hidden" width="140" height="auto" loading="lazy">
+                </a>
+                <div>
+                    <h1 class="tracking-tight" style="font-weight: 600; font-size: 2rem;">Ricardo Correa</h1>
+                    <p class="text-xs mt-1" style="color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.15em;">Psicólogo Clínico · CRP 05/40839</p>
+                </div>
+            </div>
+            <div class="mt-6 md:mt-0 text-right">
+                <div class="form-badge">
+                    Ficha de Cadastro
+                </div>
+            </div>
+        </header>
+
+        <form id="cadastroForm" class="p-8 md:p-12 space-y-12" action="https://formspree.io/f/mwvnepvk" method="POST">
+            <div id="formSuccess" class="hidden" style="background: var(--c-surface); border: 1px solid var(--c-border); padding: 2rem; text-align: center; margin-bottom: 2rem;">
+              <h3 style="font-family: var(--f-title); font-size: 1.5rem; margin-bottom: 1rem; color: var(--c-title);">Cadastro enviado com sucesso!</h3>
+              <p style="color: var(--c-body);">Recebemos suas informações e entraremos em contato em breve.</p>
+            </div>
+
+            <!-- Seção: Identificação -->
+            <section class="approach-card">
+                <div class="section-header">
+                    <h2 style="text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 0.9375rem; text-align: left;">01. Identificação Pessoal</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-y-6 gap-x-8">
+                    <div class="md:col-span-8">
+                        <label class="block mb-1">Nome Completo *</label>
+                        <input type="text" id="nome" name="Nome Completo" class="w-full input-line py-2" style="font-weight: 400;" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block mb-1">Idade *</label>
+                        <input type="number" name="Idade" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block mb-1">Nascimento *</label>
+                        <input type="text" name="Data de Nascimento" id="data_nasc" placeholder="DD/MM/AAAA" maxlength="10" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-4">
+                        <label class="block mb-1">Naturalidade *</label>
+                        <input type="text" name="Naturalidade" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-4">
+                        <label class="block mb-1">Data Primeira Consulta *</label>
+                        <input type="date" name="Data da Primeira Consulta" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block mb-1">CPF *</label>
+                        <input type="text" name="CPF" id="cpf" maxlength="14" placeholder="000.000.000-00" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block mb-1">RG *</label>
+                        <input type="text" name="RG" id="rg" maxlength="12" placeholder="00.000.000-0" class="w-full input-line py-2" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção: Endereço -->
+            <section class="approach-card">
+                <div class="section-header">
+                    <h2 style="text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 0.9375rem; text-align: left;">02. Endereço e Contatos</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-y-6 gap-x-8">
+                    <div class="md:col-span-9">
+                        <label class="block mb-1">Endereço *</label>
+                        <input type="text" name="Endereço" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-3">
+                        <label class="block mb-1">Número / Apto *</label>
+                        <input type="text" name="Número" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-4">
+                        <label class="block mb-1">Bairro *</label>
+                        <input type="text" name="Bairro" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-5">
+                        <label class="block mb-1">Complemento (Opcional)</label>
+                        <input type="text" name="Complemento" class="w-full input-line py-2">
+                    </div>
+                    <div class="md:col-span-3">
+                        <label class="block mb-1">CEP *</label>
+                        <input type="text" name="CEP" id="cep" maxlength="9" placeholder="00000-000" class="w-full input-line py-2" required>
+                    </div>
+                    <div class="md:col-span-6">
+                        <label class="block mb-1">Telefone Principal *</label>
+                        <input type="tel" name="Telefone Principal" id="tel_principal" maxlength="15" placeholder="(00) 00000-0000" class="w-full input-line py-2" style="font-weight: 500;" required>
+                    </div>
+                    <div class="md:col-span-6">
+                        <label class="block mb-1">WhatsApp Paciente *</label>
+                        <input type="tel" name="WhatsApp Paciente" id="whatsapp" maxlength="15" placeholder="(00) 00000-0000" class="w-full input-line py-2" style="font-weight: 500;" required>
+                    </div>
+
+                    <!-- Emergência -->
+                    <div class="md:col-span-12 mt-4">
+                        <h3 class="subsection-header mb-4">Contatos de Emergência</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-6 gap-x-8">
+                            <div class="md:col-span-6">
+                                <label class="block mb-1">Nome Emergência *</label>
+                                <input type="text" name="Nome Emergência" class="w-full input-line py-2" required>
+                            </div>
+                            <div class="md:col-span-6">
+                                <label class="block mb-1">E-mail Emergência *</label>
+                                <input type="email" name="E-mail Emergência" class="w-full input-line py-2" required>
+                            </div>
+                            <div class="md:col-span-6">
+                                <label class="block mb-1">Telefone Emergência *</label>
+                                <input type="tel" name="Telefone Emergência" id="emergencia_tel" maxlength="15" placeholder="(00) 00000-0000" class="w-full input-line py-2" required>
+                            </div>
+                            <div class="md:col-span-6">
+                                <label class="block mb-1">WhatsApp Emergência *</label>
+                                <input type="tel" name="WhatsApp Emergência" id="emergencia_whatsapp" maxlength="15" placeholder="(00) 00000-0000" class="w-full input-line py-2" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção: Profissional -->
+            <section class="approach-card">
+                <div class="section-header">
+                    <h2 style="text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 0.9375rem; text-align: left;">03. Formação e Trabalho</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div>
+                        <label class="block mb-1">Escolaridade *</label>
+                        <input type="text" name="Escolaridade" class="w-full input-line py-2" required>
+                    </div>
+                    <div>
+                        <label class="block mb-1">Profissão *</label>
+                        <input type="text" name="Profissão" class="w-full input-line py-2" required>
+                    </div>
+                    <div>
+                        <label class="block mb-1">Instituição *</label>
+                        <input type="text" name="Instituição" class="w-full input-line py-2" required>
+                    </div>
+                    <div>
+                        <label class="block mb-1">Local de Trabalho *</label>
+                        <input type="text" name="Local de Trabalho" class="w-full input-line py-2" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção: Histórico -->
+            <section class="approach-card">
+                <div class="section-header">
+                    <h2 style="text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 0.9375rem; text-align: left;">04. Histórico Terapêutico</h2>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+                        <span class="text-sm" style="color: var(--c-body);">Já fez terapia antes? *</span>
+                        <div class="flex gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer text-sm" style="color: var(--c-body);">
+                                <input type="radio" name="Fez terapia antes?" value="sim" required>
+                                <span>Sim</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer text-sm" style="color: var(--c-body);">
+                                <input type="radio" name="Fez terapia antes?" value="nao" required>
+                                <span>Não</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        <div class="md:col-span-4">
+                            <label class="block mb-1">Quanto tempo? (Opcional)</label>
+                            <input type="text" name="Tempo de Terapia" class="w-full input-line py-2">
+                        </div>
+                        <div class="md:col-span-8">
+                            <label class="block mb-3">Abordagem Utilizada (Opcional)</label>
+                            <div class="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs" style="color: var(--c-body);">
+                                <label class="flex items-center"><input type="checkbox" name="Abordagem" value="TCC" class="mr-1"> TCC</label>
+                                <label class="flex items-center"><input type="checkbox" name="Abordagem" value="Psicanálise" class="mr-1"> Psicanálise</label>
+                                <label class="flex items-center"><input type="checkbox" name="Abordagem" value="Gestalt" class="mr-1"> Gestalt</label>
+                                <label class="flex items-center"><input type="checkbox" name="Abordagem" value="Psicodrama" class="mr-1"> Psicodrama</label>
+                                <label class="flex items-center"><input type="checkbox" name="Abordagem" value="TE" class="mr-1"> TE</label>
+                                <label class="flex items-center"><input type="checkbox" name="Abordagem" value="Outro" class="mr-1"> Outro</label>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" name="Outra Abordagem" placeholder="Se outro, qual? (Opcional)" class="w-full input-line py-1 text-sm" style="font-style: italic; color: var(--c-muted);">
+                </div>
+            </section>
+
+            <!-- Seção: Saúde -->
+            <section class="approach-card">
+                <div class="section-header">
+                    <h2 style="text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 0.9375rem; text-align: left;">05. Quadro Clínico e Saúde (Opcional)</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block mb-1">Médico Psiquiatra (nome e contato)</label>
+                            <input type="text" name="Psiquiatra" class="w-full input-line py-2">
+                        </div>
+                        <div>
+                            <label class="block mb-1">Médico Neurologista (nome e contato)</label>
+                            <input type="text" name="Neurologista" class="w-full input-line py-2">
+                        </div>
+                        <div>
+                            <label class="block mb-1">Diagnósticos</label>
+                            <textarea name="Diagnósticos" rows="2" class="w-full input-line py-2 resize-none"></textarea>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <label class="block mb-1">Medicamentos</label>
+                            <input type="text" name="Medicamento 01" placeholder="01." class="w-full input-line py-1 text-xs">
+                            <input type="text" name="Medicamento 02" placeholder="02." class="w-full input-line py-1 text-xs">
+                            <input type="text" name="Medicamento 03" placeholder="03." class="w-full input-line py-1 text-xs">
+                            <input type="text" name="Medicamento 04" placeholder="04." class="w-full input-line py-1 text-xs">
+                        </div>
+                        <div class="space-y-4">
+                            <label class="block mb-1">Sintomas</label>
+                            <input type="text" name="Sintoma 01" placeholder="01." class="w-full input-line py-1 text-xs">
+                            <input type="text" name="Sintoma 02" placeholder="02." class="w-full input-line py-1 text-xs">
+                            <input type="text" name="Sintoma 03" placeholder="03." class="w-full input-line py-1 text-xs">
+                            <input type="text" name="Sintoma 04" placeholder="04." class="w-full input-line py-1 text-xs">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botões -->
+            <div class="flex flex-col md:flex-row gap-4 pt-10 no-print">
+                <button type="submit" class="flex-1 btn-finalizar py-4 px-6 transition duration-200 text-xs">
+                    Finalizar e enviar
+                </button>
+            </div>
+        </form>
+
+        <!-- Rodapé Timbrado -->
+        <footer class="p-10 border-t text-center" style="border-color: var(--c-border);">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-x-12 gap-y-4 footer-text">
+                <a href="https://wa.me/5522988583868?text=Oi%20Ricardo%2C%20quero%20saber%20como%20come%C3%A7ar%20a%20minha%20jornada%20com%20a%20Vidare." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--c-title)] transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 01-3.48-8.413Z"/></svg>
+                    (22) 98858-3868
+                </a>
+                <a href="mailto:contato@vidare.eu" class="flex items-center gap-2 hover:text-[var(--c-title)] transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    contato@vidare.eu
+                </a>
+            </div>
+            
+            <!-- Aviso de emergência -->
+            <div class="mt-8 p-4 border" style="border-color: var(--c-border); background: var(--c-bg);">
+                <p style="font-size: 0.625rem; color: var(--c-muted); line-height: 1.6; margin: 0;">
+                    <strong>Aviso:</strong> Este site não oferece atendimento de urgência. Em situações de crise ou risco imediato de vida, 
+                    entre em contato com o serviço de emergência da sua região (190 no Brasil, 112 na UE, 911 nos EUA) 
+                    ou procure o serviço local de saúde. No Brasil, ligue para o <strong>188</strong> (CVV), disponível 24h.
+                </p>
+            </div>
+            
+            <p class="mt-6 footer-brand">
+                © 2025 Vidare Psicologia Integral · Ricardo Correa | CRP 05/40839 · Todos os direitos reservados.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // --- MÁSCARAS DE INPUT ---
+        function maskPhone(value) {
+            let v = value.replace(/\D/g, '');
+            if (v.length > 11) v = v.slice(0, 11);
+            if (v.length > 10) {
+                return v.replace(/^(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            } else if (v.length > 5) {
+                return v.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+            } else if (v.length > 2) {
+                return v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+            } else if (v.length > 0) {
+                return v.replace(/^(\d{0,2})/, '($1');
+            }
+            return v;
+        }
+
+        document.getElementById('data_nasc').addEventListener('input', e => {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 8) v = v.slice(0, 8);
+            if (v.length > 4) v = v.replace(/(\d{2})(\d{2})(\d{1,4})/, '$1/$2/$3');
+            else if (v.length > 2) v = v.replace(/(\d{2})(\d{1,2})/, '$1/$2');
+            e.target.value = v;
+        });
+
+        document.getElementById('cpf').addEventListener('input', e => {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 11) v = v.slice(0, 11);
+            v = v.replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d)/, '$1.$2').replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            e.target.value = v;
+        });
+
+        document.getElementById('rg').addEventListener('input', e => {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 9) v = v.slice(0, 9);
+            if (v.length > 8) v = v.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4');
+            else if (v.length > 5) v = v.replace(/(\d{2})(\d{3})(\d{1,3})/, '$1.$2.$3');
+            else if (v.length > 2) v = v.replace(/(\d{2})(\d{1,3})/, '$1.$2');
+            e.target.value = v;
+        });
+
+        // Máscara para CEP (00000-000)
+        document.getElementById('cep').addEventListener('input', e => {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 8) v = v.slice(0, 8);
+            if (v.length > 5) {
+                v = v.replace(/^(\d{5})(\d{1,3})/, '$1-$2');
+            }
+            e.target.value = v;
+        });
+
+        document.getElementById('whatsapp').addEventListener('input', e => e.target.value = maskPhone(e.target.value));
+        document.getElementById('tel_principal').addEventListener('input', e => e.target.value = maskPhone(e.target.value));
+        document.getElementById('emergencia_tel').addEventListener('input', e => e.target.value = maskPhone(e.target.value));
+        document.getElementById('emergencia_whatsapp').addEventListener('input', e => e.target.value = maskPhone(e.target.value));
+    </script>
+
+    </div><!-- /smooth-content -->
+  </div><!-- /smooth-wrapper -->
+
+  <!-- GSAP ScrollSmoother - Shared Initialization -->
+  <script src="script.js"></script>
+  <script src="js/init-gsap.js"></script>
+
+  <!-- Form handling script -->
+  <script>
+    document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+      const form = this;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      
+      // Formspree handles the actual submission
+      // This provides visual feedback while submitting
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

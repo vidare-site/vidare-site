@@ -81,33 +81,33 @@ const processSteps = [
 ];
 
 const ContactOptions = () => (
-  <div className="flex flex-col items-center gap-md">
+  <div className="flex flex-col items-center gap-md w-full max-w-md mx-auto">
     <a
       href={whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-sm px-2xl py-md bg-title text-light text-sm font-medium uppercase tracking-[0.1em] hover:bg-transparent hover:text-title border border-title transition-all"
+      className="w-full sm:w-auto inline-flex items-center justify-center gap-sm px-2xl py-md bg-title text-light text-sm font-medium uppercase tracking-[0.1em] hover:bg-transparent hover:text-title border border-title transition-all"
     >
-      <Whatsapp className="w-5 h-5" />
-      Boka en kostnadsfri konsultation
+      <Whatsapp className="w-5 h-5 shrink-0" />
+      <span>Boka en kostnadsfri konsultation</span>
     </a>
     <div className="flex flex-wrap items-center justify-center gap-lg text-sm text-muted">
       <a
         href={smsHref}
         className="inline-flex items-center gap-xs hover:text-title transition-colors underline underline-offset-4"
       >
-        <MessageSquare className="w-4 h-4" />
-        Skicka SMS
+        <MessageSquare className="w-4 h-4 shrink-0" />
+        <span>Skicka SMS</span>
       </a>
       <a
         href={mailHref}
         className="inline-flex items-center gap-xs hover:text-title transition-colors underline underline-offset-4"
       >
-        <Mail className="w-4 h-4" />
-        Skicka e-post
+        <Mail className="w-4 h-4 shrink-0" />
+        <span>Skicka e-post</span>
       </a>
     </div>
-    <p className="text-xs text-muted max-w-sm text-center">
+    <p className="w-full text-xs text-muted text-center leading-relaxed">
       Observera att e-post inte är en krypterad kommunikationskanal. Undvik att skicka känslig
       personlig information via e-post.
     </p>
@@ -159,14 +159,20 @@ const useLandingSeo = () => {
   }, []);
 };
 
+const SectionHeading = ({ children, className = '' }) => (
+  <h2 className={`font-title text-3xl md:text-4xl text-title text-center mb-lg ${className}`}>
+    {children}
+  </h2>
+);
+
 const LandingSV = () => {
   useLandingSeo();
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-bg text-body">
-      <header className="py-lg border-b border-border">
+      <header className="py-md border-b border-border">
         <div className="container mx-auto px-lg flex items-center justify-between">
-          <span className="font-title text-xl text-title">{BRAND_NAME_SV}</span>
+          <span className="font-title text-lg text-title">{BRAND_NAME_SV}</span>
           <span className="hidden sm:inline text-xs uppercase tracking-[0.14em] text-muted">
             Legitimerad psykolog
           </span>
@@ -174,66 +180,71 @@ const LandingSV = () => {
       </header>
 
       <main className="flex-grow">
-        <section className="py-3xl md:py-[7rem] bg-bg">
-          <div className="container mx-auto px-lg max-w-[880px] text-center">
-            <h1 className="font-title text-4xl md:text-6xl leading-tight text-title mb-lg">
+        {/* Hero */}
+        <section className="py-2xl md:py-3xl bg-bg">
+          <div className="container mx-auto px-lg max-w-[820px] text-center">
+            <h1 className="font-title text-4xl md:text-6xl leading-[1.1] text-title mb-lg">
               Har du märkt att du hamnar i samma negativa mönster – om och om igen?
             </h1>
-            <p className="text-lg md:text-xl text-body leading-relaxed mb-xl max-w-[720px] mx-auto">
-              Relationer som efter ett tag får dig att må dåligt och alltid slutar likadant. Känslor
-              som tar överhand. Gamla upplevelser som fortfarande styr. Det går att förstå varför –
-              och det går att förändra, i din egen takt, tillsammans med en psykolog som förstår och
-              har rätt verktyg.
+            <p className="text-lg md:text-xl text-body leading-relaxed mb-xl max-w-[620px] mx-auto text-left md:text-center">
+              Relationer som efter ett tag får dig att må dåligt och alltid slutar likadant.
+              Känslor som tar överhand. Gamla upplevelser som fortfarande styr. Det går att
+              förstå varför – och det går att förändra, i din egen takt, tillsammans med en
+              psykolog som förstår och har rätt verktyg.
             </p>
             <ContactOptions />
           </div>
         </section>
 
-        <section className="py-2xl md:py-3xl bg-section-cream">
+        {/* Identification */}
+        <section className="py-2xl bg-bg">
           <div className="container mx-auto px-lg max-w-[760px]">
-            <h2 className="font-title text-3xl md:text-4xl text-title text-center mb-xl">
-              Känner du igen dig?
-            </h2>
-            <ul className="space-y-md">
+            <SectionHeading>Känner du igen dig?</SectionHeading>
+            <div className="grid sm:grid-cols-2 gap-md mt-xl">
               {identificationPoints.map((point) => (
-                <li
+                <div
                   key={point}
-                  className="flex items-start gap-sm bg-surface border border-border p-lg text-body leading-relaxed"
+                  className="bg-surface border border-border p-lg text-body text-left leading-relaxed"
                 >
-                  <span className="text-accent mt-1">—</span>
-                  <span>{point}</span>
-                </li>
+                  {point}
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
-        <section className="py-2xl md:py-3xl bg-bg">
-          <div className="container mx-auto px-lg max-w-[720px] text-center">
-            <h2 className="font-title text-3xl md:text-4xl text-title mb-lg">Varför blir det så?</h2>
-            <p className="text-lg text-body leading-relaxed">
-              Mönster som upprepas har ofta sin grund i det vi lärde oss tidigt i livet om vad som är
-              bekant och hur trygghet känns – även när det gör ont. Det bekanta kan kännas "rätt",
-              även om det inte är bra för dig.
+        {/* Mechanism */}
+        <section className="py-2xl bg-bg">
+          <div className="container mx-auto px-lg max-w-[680px]">
+            <SectionHeading>Varför blir det så?</SectionHeading>
+            <p className="text-lg text-body leading-relaxed text-left">
+              Mönster som upprepas har ofta sin grund i det vi lärde oss tidigt i livet om vad
+              som är bekant och hur trygghet känns – även när det gör ont. Det bekanta kan
+              kännas "rätt", även om det inte är bra för dig.
             </p>
           </div>
         </section>
 
-        <section className="py-2xl md:py-3xl bg-section-sage text-light">
-          <div className="container mx-auto px-lg max-w-[900px]">
-            <h2 className="font-title text-3xl md:text-4xl text-center mb-2xl">
-              Hur vi arbetar tillsammans
-            </h2>
-            <p className="text-center text-light/85 mb-xl max-w-[600px] mx-auto">
-              Beroende på dina behov och mål arbetar vi med metoder som har starkt vetenskapligt stöd:
+        {/* Method */}
+        <section className="py-2xl bg-bg">
+          <div className="container mx-auto px-lg max-w-[960px]">
+            <SectionHeading>Hur vi arbetar tillsammans</SectionHeading>
+            <p className="text-body text-left md:text-center mb-xl max-w-[600px] md:mx-auto">
+              Beroende på dina behov och mål arbetar vi med metoder som har starkt
+              vetenskapligt stöd:
             </p>
-            <div className="grid md:grid-cols-3 gap-lg">
+            <div className="grid md:grid-cols-3 gap-md">
               {methods.map((method) => (
-                <div key={method.name} className="bg-surface text-body p-lg border border-border-subtle">
+                <div
+                  key={method.name}
+                  className="bg-surface border border-border p-lg flex flex-col"
+                >
                   <h3 className="font-title text-2xl text-title mb-sm">{method.name}</h3>
-                  <p className="text-sm leading-relaxed mb-sm">{method.description}</p>
+                  <p className="text-sm text-body leading-relaxed mb-sm flex-grow">
+                    {method.description}
+                  </p>
                   {method.stat && (
-                    <p className="text-xs text-muted leading-relaxed border-t border-border-subtle pt-sm">
+                    <p className="text-xs text-muted leading-relaxed border-t border-border-subtle pt-sm mt-sm">
                       {method.stat}
                     </p>
                   )}
@@ -243,31 +254,29 @@ const LandingSV = () => {
           </div>
         </section>
 
-        <section className="py-2xl md:py-3xl bg-bg">
-          <div className="container mx-auto px-lg max-w-[720px]">
-            <h2 className="font-title text-3xl md:text-4xl text-title text-center mb-xl">
-              Om Ricardo
-            </h2>
-            <p className="text-body leading-relaxed mb-md">
+        {/* About */}
+        <section className="py-2xl bg-bg">
+          <div className="container mx-auto px-lg max-w-[680px]">
+            <SectionHeading>Om Ricardo</SectionHeading>
+            <p className="text-body leading-relaxed mb-md text-left">
               Ricardo är legitimerad psykolog, med totalt 18 års erfarenhet inom yrket. Han har
-              arbetat inom primärvården, vuxenhabiliteringen och specialistpsykiatrin, och har genom
-              åren genomfört över 25 000 kliniska timmar och tagit emot patienter från mer än 20
-              länder.
+              arbetat inom primärvården, vuxenhabiliteringen och specialistpsykiatrin, och har
+              genom åren genomfört över 25 000 kliniska timmar och tagit emot patienter från
+              mer än 20 länder.
             </p>
-            <p className="text-body leading-relaxed">
-              Ricardo är certifierad i EMDR (EMDRIA och EMDR Europe) samt Schematerapi (ISST), och
-              arbetar även med KBT och ACT. Han har särskild erfarenhet av trauma, återkommande
-              dysfunktionella relationsmönster och långvariga psykiska besvär.
+            <p className="text-body leading-relaxed text-left">
+              Ricardo är certifierad i EMDR (EMDRIA och EMDR Europe) samt Schematerapi (ISST),
+              och arbetar även med KBT och ACT. Han har särskild erfarenhet av trauma,
+              återkommande dysfunktionella relationsmönster och långvariga psykiska besvär.
             </p>
           </div>
         </section>
 
-        <section className="py-2xl md:py-3xl bg-section-warm">
+        {/* Process */}
+        <section className="py-2xl bg-section-warm">
           <div className="container mx-auto px-lg max-w-[820px]">
-            <h2 className="font-title text-3xl md:text-4xl text-title text-center mb-2xl">
-              Så går det till
-            </h2>
-            <div className="grid md:grid-cols-3 gap-lg mb-2xl">
+            <SectionHeading>Så går det till</SectionHeading>
+            <div className="grid md:grid-cols-3 gap-lg mt-xl">
               {processSteps.map((step, index) => (
                 <div key={step.title} className="text-center">
                   <div className="w-10 h-10 mx-auto mb-sm rounded-full bg-title text-light flex items-center justify-center font-title text-lg">
@@ -278,13 +287,11 @@ const LandingSV = () => {
                 </div>
               ))}
             </div>
-            <div className="flex justify-center">
-              <ContactOptions />
-            </div>
           </div>
         </section>
 
-        <section className="py-2xl md:py-3xl bg-section-sage">
+        {/* FAQ */}
+        <section className="py-2xl bg-section-sage">
           <div className="container mx-auto px-lg max-w-[760px]">
             <h2 className="font-title text-3xl md:text-4xl text-light text-center mb-xl">
               Vanliga frågor
@@ -295,7 +302,7 @@ const LandingSV = () => {
                   <AccordionTrigger className="text-title text-left font-title text-lg md:text-xl">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-body leading-relaxed">
+                  <AccordionContent className="text-body text-left leading-relaxed">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -304,21 +311,20 @@ const LandingSV = () => {
           </div>
         </section>
 
+        {/* Final CTA */}
         <section className="py-3xl bg-bg">
-          <div className="container mx-auto px-lg max-w-[680px] text-center">
-            <h2 className="font-title text-3xl md:text-4xl text-title mb-md">
+          <div className="container mx-auto px-lg max-w-[620px] text-center">
+            <h2 className="font-title text-3xl md:text-4xl text-title mb-xl">
               Du behöver inte ha alla svar för att ta första steget.
             </h2>
-            <div className="flex justify-center mt-lg">
-              <ContactOptions />
-            </div>
+            <ContactOptions />
           </div>
         </section>
       </main>
 
       <footer className="py-xl bg-bg border-t border-border">
         <div className="container mx-auto px-lg max-w-[820px] space-y-md">
-          <div className="p-lg bg-surface border border-border text-sm text-body leading-relaxed">
+          <div className="p-lg bg-surface border border-border text-sm text-body leading-relaxed text-left">
             Denna webbsida och informationen som finns här ersätter inte kvalificerad vård. Vid
             nödsituation, ring alltid 112 eller kontakta 1177 för rådgivning.
           </div>

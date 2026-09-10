@@ -81,7 +81,7 @@ const processSteps = [
 ];
 
 const ContactOptions = () => (
-  <div className="flex flex-col items-center gap-md w-full max-w-md mx-auto">
+  <div className="flex flex-col gap-md w-full max-w-md mx-auto">
     <a
       href={whatsappHref}
       target="_blank"

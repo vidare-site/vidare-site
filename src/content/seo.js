@@ -72,27 +72,27 @@ const seoByLocale = {
     areaServed: ['Brasil', 'São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Suécia', 'Portugal', 'Reino Unido', 'Europa', 'Atendimento Online'],
   },
   en: {
-    siteName: 'Vidare Integral Psychology',
+    siteName: 'Vidare Psicologia Integral',
     routes: {
       '/': {
         title: 'Ricardo Correa, Clinical Psychologist | Online Psychotherapy (CBT & EMDR)',
         description:
           'Ricardo Correa, clinical psychologist. Online psychotherapy (CBT, EMDR) for anxiety, depression, trauma, and personal growth. Therapy for expats in Sweden, Europe, and adults in Brazil.',
-        imageAlt: 'Vidare Integral Psychology',
+        imageAlt: 'Vidare Psicologia Integral',
         keywords: 'online psychotherapy, CBT online, cognitive behavioral therapy, anxiety, depression, english speaking therapist, therapy for expats sweden, EMDR online europe, trauma therapy for internationals, psychologist brazil',
       },
       '/blog': {
         title: 'Ricardo Correa, Clinical Psychologist | Mental health, CBT & trauma blog',
         description:
           'Articles by Ricardo Correa on anxiety, depression, CBT, trauma, EMDR, online therapy, and psychotherapy for expats and internationally mobile adults.',
-        imageAlt: 'Vidare Integral Psychology blog',
+        imageAlt: 'Vidare Psicologia Integral blog',
         keywords: 'CBT blog, anxiety, depression, mental health blog, EMDR blog, expat therapy, online psychotherapy, mental health abroad',
       },
       '/cadastro': {
         title: 'Ricardo Correa, Clinical Psychologist | Book confidential online therapy',
         description:
           'Confidential intake to start online psychotherapy with Ricardo Correa for anxiety, depression, and trauma. Support for adults living in Sweden, Europe, and Brazil.',
-        imageAlt: 'Vidare Integral Psychology intake form',
+        imageAlt: 'Vidare Psicologia Integral intake form',
         keywords: 'book online therapy, confidential psychotherapy, CBT therapist online, expat psychologist sweden, english speaking therapist online',
       },
     },
@@ -119,14 +119,14 @@ const seoByLocale = {
         title: 'Ricardo Correa, Psicólogo clínico | Psicoterapia online (TCC y EMDR)',
         description:
           'Ricardo Correa, psicólogo clínico. Psicoterapia online (TCC, EMDR) para ansiedad, depresión, trauma y autoconocimiento. Atención para personas en Europa, Suecia y Brasil.',
-        imageAlt: 'Vidare Psicología Integral',
+        imageAlt: 'Vidare Psicologia Integral',
         keywords: 'psicoterapia online, terapia cognitivo conductual, tcc, ansiedad, depresión, psicólogo online brasil, psicólogo en español, europeos en movilidad, expatriados, psicólogo online europa',
       },
       '/blog': {
         title: 'Ricardo Correa, Psicólogo clínico | Blog de salud mental, TCC y trauma',
         description:
           'Artículos de Ricardo Correa sobre ansiedad, depresión, trauma, EMDR, psicoterapia online y bienestar emocional.',
-        imageAlt: 'Blog Vidare Psicología Integral',
+        imageAlt: 'Blog Vidare Psicologia Integral',
         keywords: 'ansiedad, depresión, salud mental, tcc, EMDR, trauma, psicoterapia online, terapia expatriados, salud mental en el extranjero',
       },
       '/cadastro': {
@@ -153,20 +153,20 @@ const seoByLocale = {
     areaServed: ['Brasil', 'España', 'Suecia', 'Alemania', 'Europa', 'América Latina', 'Atención online'],
   },
   sv: {
-    siteName: 'Vidare Integrerad Psykologi',
+    siteName: 'Vidare Psicologia Integral',
     routes: {
       '/': {
         title: 'Ricardo Correa, Leg. psykolog | Onlineterapi (KBT & EMDR)',
         description:
           'Ricardo Correa, legitimerad psykolog. Onlineterapi (KBT, EMDR) för ångest, depression, trauma och personlig utveckling för vuxna i Sverige, Europa och Brasilien.',
-        imageAlt: 'Vidare Integrerad Psykologi',
+        imageAlt: 'Vidare Psicologia Integral',
         keywords: 'onlineterapi, KBT online, kognitiv beteendeterapi, ångest, depression, EMDR sverige, traumaterapi online, psykolog online sverige, terapi för expats, engelsktalande psykolog',
       },
       '/blog': {
         title: 'Ricardo Correa, Leg. psykolog | Blogg om mental hälsa, KBT och trauma',
         description:
           'Texter av Ricardo Correa om ångest, depression, KBT, trauma, EMDR och onlineterapi för vuxna i Sverige och utomlands.',
-        imageAlt: 'Vidare Integrerad Psykologi blogg',
+        imageAlt: 'Vidare Psicologia Integral blogg',
         keywords: 'ångest, depression, mental hälsa, KBT blogg, EMDR blogg, onlineterapi sverige, terapi för internationella',
       },
       '/cadastro': {
@@ -198,10 +198,6 @@ const buildAbsoluteUrl = (locale, routePath) => `${SITE_URL}${buildLocalePath(lo
 
 const buildBrandVariants = (siteName) => ([
   'Vidare',
-  'Vidare Psicologia Integral',
-  'Vidare Integral Psychology',
-  'Vidare Psicología Integral',
-  'Vidare Integrerad Psykologi',
 ]).filter((name) => name !== siteName);
 
 const getAlternateHreflangs = (routePath) => ([

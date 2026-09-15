@@ -21,7 +21,7 @@ export const en = {
       mainMenuAria: 'Main menu',
     },
     hero: {
-      mainTitle: 'Vidare Integral Psychology',
+      mainTitle: 'Vidare Psicologia Integral',
       tagline:
         'Specialised psychotherapy for adults. Confidential, profound therapy to disarm defences, map emotions, and build real intimacy with your life.',
       ctaLabel: 'Talk to us',
@@ -166,7 +166,7 @@ export const en = {
       infoButton: 'More information',
       instagramTitle: 'Instagram',
       instagramSubtitle: '@ricardocorrea.psi • follow the latest content',
-      brandName: 'Vidare Integral Psychology',
+      brandName: 'Vidare Psicologia Integral',
       availability: 'Online sessions only',
       brandDescription:
         'A fully online practice based in Brazil and Europe, serving people across countries and time zones.',
@@ -192,7 +192,7 @@ export const en = {
       crisisText:
         'This website does not provide emergency support. In situations of crisis or immediate risk to life, contact the emergency service in your region (for example, 190 in Brazil, 112 in European Union countries, and 911 in the United States and Canada) or seek local health services. In Brazil, you can also call 188 (CVV), available 24 hours a day.',
       legal:
-        'Vidare Integral Psychology. Technical director: Ricardo Correa | CRP 05/40839. All rights reserved.',
+        'Vidare Psicologia Integral. Technical director: Ricardo Correa | CRP 05/40839. All rights reserved.',
     },
     cookieConsent: {
       title: 'Privacy and consent',

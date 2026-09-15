@@ -21,7 +21,7 @@ export const sv = {
       mainMenuAria: 'Huvudmeny',
     },
     hero: {
-      mainTitle: 'Vidare Integrerad Psykologi',
+      mainTitle: 'Vidare Psicologia Integral',
       tagline:
         'Specialiserad psykoterapi för vuxna. Konfidentiell och djupgående terapi för att sänka garden, kartlägga känslor och bygga verklig närhet till ditt eget liv.',
       ctaLabel: 'Börja här',
@@ -166,7 +166,7 @@ export const sv = {
       infoButton: 'Mer information',
       instagramTitle: 'Instagram',
       instagramSubtitle: '@ricardocorrea.psi • följ de senaste reflektionerna',
-      brandName: 'Vidare Integrerad Psykologi',
+      brandName: 'Vidare Psicologia Integral',
       availability: 'Endast online',
       brandDescription:
         'En helt digital mottagning med rötter i Brasilien och Europa som möter människor i olika länder och tidszoner.',
@@ -192,7 +192,7 @@ export const sv = {
       crisisText:
         'Den här webbplatsen erbjuder inte akutstöd. Vid kris eller omedelbar fara för liv, kontakta akutmottagning eller larmtjänst i din region (till exempel 190 i Brasilien, 112 i EU-länder och 911 i USA och Kanada) eller sök lokal vård. I Brasilien kan du även ringa 188 (CVV), som är öppet dygnet runt.',
       legal:
-        'Vidare Integrerad Psykologi. Teknisk ansvarig: Ricardo Correa | CRP 05/40839. Alla rättigheter förbehållna.',
+        'Vidare Psicologia Integral. Teknisk ansvarig: Ricardo Correa | CRP 05/40839. Alla rättigheter förbehållna.',
     },
     cookieConsent: {
       title: 'Integritet och samtycke',

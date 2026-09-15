@@ -21,7 +21,7 @@ export const es = {
       mainMenuAria: 'Menú principal',
     },
     hero: {
-      mainTitle: 'Vidare Psicología Integral',
+      mainTitle: 'Vidare Psicologia Integral',
       tagline:
         'Psicoterapia especializada para adultos. Terapia profunda y confidencial para desarmar defensas, mapear emociones y construir intimidad real con tu vida.',
       ctaLabel: 'Saber más',
@@ -166,7 +166,7 @@ export const es = {
       infoButton: 'Más información',
       instagramTitle: 'Instagram',
       instagramSubtitle: '@ricardocorrea.psi • sigue las reflexiones más recientes',
-      brandName: 'Vidare Psicología Integral',
+      brandName: 'Vidare Psicologia Integral',
       availability: 'Atención solo online',
       brandDescription:
         'Una práctica completamente online, con raíces en Brasil y Europa, que acompaña a personas en distintos países y husos horarios.',
@@ -192,7 +192,7 @@ export const es = {
       crisisText:
         'Este sitio no ofrece atención de urgencia. En situaciones de crisis o riesgo inmediato de vida, ponte en contacto con el servicio de emergencia de tu región (por ejemplo, 190 en Brasil, 112 en países de la Unión Europea y 911 en Estados Unidos y Canadá) o busca el servicio local de salud. En Brasil, también puedes llamar al 188 (CVV), disponible las 24 horas.',
       legal:
-        'Vidare Psicología Integral. Responsable técnico: Ricardo Correa | CRP 05/40839. Todos los derechos reservados.',
+        'Vidare Psicologia Integral. Responsable técnico: Ricardo Correa | CRP 05/40839. Todos los derechos reservados.',
     },
     cookieConsent: {
       title: 'Privacidad y consentimiento',

@@ -94,7 +94,7 @@
       "audience": { "@type": "Audience", "audienceType": "Vuxna 30–60 år med återkommande dysfunktionella relationsmönster" }
     },
     {
-      "@type": "WebPage",
+      "@type": ["WebPage", "MedicalWebPage"],
       "@id": "https://www.vidare.eu/sv/landing#webpage",
       "url": "https://www.vidare.eu/sv/landing",
       "name": "Bryt mönstret som upprepas | Ricardo Correa, Leg. psykolog",
@@ -125,6 +125,26 @@
           "@type": "Question",
           "name": "Vad kostar ett samtal?",
           "acceptedAnswer": { "@type": "Answer", "text": "Ett samtal (50 minuter) kostar 1 500 kr. Vid behov av dubbla sessioner, vilket kan bli aktuellt vid EMDR-behandling, kostar det 2 000 kr." }
+        },
+        {
+          "@type": "Question",
+          "name": "Hur bokar jag en tid?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Du hör av dig via WhatsApp, SMS eller e-post för en kostnadsfri konsultation (cirka 15 minuter). Därefter gör Ricardo en preliminär kartläggning av dina behov och återkopplar med förslag till terapiplan." }
+        },
+        {
+          "@type": "Question",
+          "name": "Är samtalen konfidentiella?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Som legitimerad psykolog har Ricardo tystnadsplikt, och all kommunikation sker i enlighet med GDPR (dataskyddsförordningen)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Vad är EMDR?",
+          "acceptedAnswer": { "@type": "Answer", "text": "EMDR (Eye Movement Desensitization and Reprocessing) är en terapiform som hjälper hjärnan att bearbeta och lägga traumatiska minnen till rätta, så att de inte längre styr din vardag. Metoden har starkt vetenskapligt stöd: enligt WHO och internationella riktlinjer (NICE, ISTSS) uppfyller 85–90% av de som genomgår EMDR-terapi inte längre kriterier för PTSD efter behandling." }
+        },
+        {
+          "@type": "Question",
+          "name": "Vad är skillnaden mellan EMDR, Schematerapi och KBT?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Alla tre metoder har starkt vetenskapligt stöd, men arbetar på olika sätt. EMDR hjälper hjärnan bearbeta och lägga traumatiska minnen till rätta. Schematerapi hjälper dig förstå var återkommande mönster kommer ifrån och ger verktyg för att bryta dem, särskilt i relationer och självbild. KBT hjälper dig se sambandet mellan tankar, känslor och beteenden och ger praktiska strategier för vardagen. Vilken metod som passar bäst avgörs tillsammans, utifrån din situation." }
         },
         {
           "@type": "Question",
@@ -205,8 +225,9 @@
   .faq-wrap { background: var(--color-surface); border: 1px solid rgba(44,44,44,0.1); padding: var(--space-lg); }
   details.faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-md) 0; }
   details.faq-item:last-child { border-bottom: none; }
-  details.faq-item summary { cursor: pointer; list-style: none; font-family: var(--font-title); font-size: 1.15rem; color: var(--color-title); display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); }
+  details.faq-item summary { cursor: pointer; list-style: none; }
   details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary h3 { font-size: 1.15rem; display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); }
   details.faq-item summary .chevron { flex-shrink: 0; transition: transform .2s ease; font-size: 1rem; color: var(--color-muted); }
   details.faq-item[open] summary .chevron { transform: rotate(180deg); }
   details.faq-item .faq-answer { margin-top: var(--space-sm); font-size: .98rem; line-height: 1.65; text-align: left; }
@@ -276,16 +297,16 @@
         psykolog som förstår och har rätt verktyg.
       </p>
       <div class="contact-wrap">
-        <a href="https://wa.me/46721524084?text=Hej!%20Jag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation." target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <a href="https://wa.me/46721524084?text=Hej!%20Jag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation." target="_blank" rel="noopener noreferrer" class="btn-primary" data-lead-method="whatsapp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12.001 2C6.478 2 2 6.478 2 12.001c0 1.996.578 3.856 1.586 5.428L2 22l4.671-1.55A9.94 9.94 0 0012 22.002C17.523 22.002 22 17.524 22 12.001 22 6.478 17.523 2 12.001 2zm0 18.062a8.03 8.03 0 01-4.29-1.238l-.308-.192-3.176 1.054 1.07-3.13-.203-.315a8.023 8.023 0 01-1.243-4.24c0-4.44 3.612-8.052 8.053-8.052 4.44 0 8.052 3.612 8.052 8.052 0 4.44-3.612 8.061-8.053 8.061z"></path></svg>
           <span>Boka en kostnadsfri konsultation</span>
         </a>
         <div class="contact-secondary">
-          <a href="sms:+46721524084">
+          <a href="sms:+46721524084" data-lead-method="sms">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span>Skicka SMS</span>
           </a>
-          <a href="mailto:ricardo@vidare.eu?subject=Kostnadsfri%20konsultation&body=Hej%20Ricardo%2C%0A%0AJag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation.%0A%0A">
+          <a href="mailto:ricardo@vidare.eu?subject=Kostnadsfri%20konsultation&body=Hej%20Ricardo%2C%0A%0AJag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation.%0A%0A" data-lead-method="email">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z" style="display:none"/><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6zm-2 0-8 5-8-5"/></svg>
             <span>Skicka e-post</span>
           </a>
@@ -393,15 +414,31 @@
       <h2 class="section-heading on-dark">Vanliga frågor</h2>
       <div class="faq-wrap">
         <details class="faq-item" open>
-          <summary>Vad kostar ett samtal? <span class="chevron">▾</span></summary>
+          <summary><h3>Vad kostar ett samtal? <span class="chevron">▾</span></h3></summary>
           <p class="faq-answer">Ett samtal (50 minuter) kostar 1 500 kr. Vid behov av dubbla sessioner, vilket kan bli aktuellt vid EMDR-behandling, kostar det 2 000 kr.</p>
         </details>
         <details class="faq-item">
-          <summary>Hur vet jag om EMDR passar mig? <span class="chevron">▾</span></summary>
+          <summary><h3>Hur bokar jag en tid? <span class="chevron">▾</span></h3></summary>
+          <p class="faq-answer">Du hör av dig via WhatsApp, SMS eller e-post för en kostnadsfri konsultation (cirka 15 minuter). Därefter gör Ricardo en preliminär kartläggning av dina behov och återkopplar med förslag till terapiplan.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Är samtalen konfidentiella? <span class="chevron">▾</span></h3></summary>
+          <p class="faq-answer">Ja. Som legitimerad psykolog har Ricardo tystnadsplikt, och all kommunikation sker i enlighet med GDPR (dataskyddsförordningen).</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Vad är EMDR? <span class="chevron">▾</span></h3></summary>
+          <p class="faq-answer">EMDR (Eye Movement Desensitization and Reprocessing) är en terapiform som hjälper hjärnan att bearbeta och lägga traumatiska minnen till rätta, så att de inte längre styr din vardag. Metoden har starkt vetenskapligt stöd: enligt WHO och internationella riktlinjer (NICE, ISTSS) uppfyller 85–90% av de som genomgår EMDR-terapi inte längre kriterier för PTSD efter behandling.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Vad är skillnaden mellan EMDR, Schematerapi och KBT? <span class="chevron">▾</span></h3></summary>
+          <p class="faq-answer">Alla tre metoder har starkt vetenskapligt stöd, men arbetar på olika sätt. EMDR hjälper hjärnan bearbeta och lägga traumatiska minnen till rätta. Schematerapi hjälper dig förstå var återkommande mönster kommer ifrån och ger verktyg för att bryta dem, särskilt i relationer och självbild. KBT hjälper dig se sambandet mellan tankar, känslor och beteenden och ger praktiska strategier för vardagen. Vilken metod som passar bäst avgörs tillsammans, utifrån din situation.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3>Hur vet jag om EMDR passar mig? <span class="chevron">▾</span></h3></summary>
           <p class="faq-answer">EMDR passar och fungerar för de flesta. Ricardo gör alltid en individuell bedömning tillsammans med dig för att säkerställa högsta möjliga patientsäkerhet.</p>
         </details>
         <details class="faq-item">
-          <summary>Kan jag få hjälp om jag inte vet vad som orsakar mönstret? <span class="chevron">▾</span></summary>
+          <summary><h3>Kan jag få hjälp om jag inte vet vad som orsakar mönstret? <span class="chevron">▾</span></h3></summary>
           <p class="faq-answer">Ja, det är mycket vanligt att inte veta varför mönstren uppstår. Det är också en central del av terapin – tillsammans navigerar vi dina mönster och arbetar oss fram till en förståelse för orsakerna, vilket är ett grundläggande steg i den terapeutiska processen.</p>
         </details>
       </div>
@@ -413,16 +450,16 @@
     <div class="container narrow-620 center">
       <h2 style="font-size:2rem;margin-bottom:2.5rem;">Du behöver inte ha alla svar för att ta första steget.</h2>
       <div class="contact-wrap">
-        <a href="https://wa.me/46721524084?text=Hej!%20Jag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation." target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <a href="https://wa.me/46721524084?text=Hej!%20Jag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation." target="_blank" rel="noopener noreferrer" class="btn-primary" data-lead-method="whatsapp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12.001 2C6.478 2 2 6.478 2 12.001c0 1.996.578 3.856 1.586 5.428L2 22l4.671-1.55A9.94 9.94 0 0012 22.002C17.523 22.002 22 17.524 22 12.001 22 6.478 17.523 2 12.001 2zm0 18.062a8.03 8.03 0 01-4.29-1.238l-.308-.192-3.176 1.054 1.07-3.13-.203-.315a8.023 8.023 0 01-1.243-4.24c0-4.44 3.612-8.052 8.053-8.052 4.44 0 8.052 3.612 8.052 8.052 0 4.44-3.612 8.061-8.053 8.061z"></path></svg>
           <span>Boka en kostnadsfri konsultation</span>
         </a>
         <div class="contact-secondary">
-          <a href="sms:+46721524084">
+          <a href="sms:+46721524084" data-lead-method="sms">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span>Skicka SMS</span>
           </a>
-          <a href="mailto:ricardo@vidare.eu?subject=Kostnadsfri%20konsultation&body=Hej%20Ricardo%2C%0A%0AJag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation.%0A%0A">
+          <a href="mailto:ricardo@vidare.eu?subject=Kostnadsfri%20konsultation&body=Hej%20Ricardo%2C%0A%0AJag%20skulle%20vilja%20boka%20en%20kostnadsfri%20konsultation.%0A%0A" data-lead-method="email">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6zm-2 0-8 5-8-5"/></svg>
             <span>Skicka e-post</span>
           </a>
@@ -536,6 +573,22 @@
     document.getElementById('cookie-accept').addEventListener('click', function () { decide('accept'); });
     document.getElementById('cookie-reject').addEventListener('click', function () { decide('reject'); });
   })();
+
+  // Lead-intent tracking: fires a standard GA4 "generate_lead" event whenever a visitor
+  // clicks a WhatsApp/SMS/e-post contact link. Mark this event as a Key Event in GA4
+  // (Admin > Events) to import it into Google Ads as a conversion action for Smart
+  // Bidding — this works even before a dedicated Google Ads conversion ID (AW-...) is set.
+  document.querySelectorAll('[data-lead-method]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          method: el.getAttribute('data-lead-method'),
+          content_group: 'sv_landing_trauma',
+          page_location: window.location.href
+        });
+      }
+    });
+  });
 </script>
 
 </body>

@@ -3,7 +3,6 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
 import Cadastro from './pages/Cadastro';
-import LandingSV from './pages/landing/LandingSV';
 import { LanguageProvider } from './i18n/LanguageProvider';
 import {
   DEFAULT_LOCALE,
@@ -47,7 +46,6 @@ function App() {
         <Route path="/" element={<AutoLocaleRedirect />} />
         <Route path="/blog" element={<AutoLocaleRedirect path="/blog" />} />
         <Route path="/cadastro" element={<AutoLocaleRedirect path="/cadastro" />} />
-        <Route path="/sv/landing" element={<LandingSV />} />
 
         <Route path="/:locale" element={<LocalizedShell />}>
           <Route index element={<Home />} />

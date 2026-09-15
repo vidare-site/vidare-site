@@ -81,33 +81,60 @@ const processSteps = [
 ];
 
 const ContactOptions = () => (
-  <div className="flex flex-col gap-md w-full max-w-md mx-auto">
+  <div style={{ width: "100%", maxWidth: "28rem", margin: "0 auto", boxSizing: "border-box" }}>
     <a
       href={whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full sm:w-auto inline-flex items-center justify-center gap-sm px-2xl py-md bg-title text-light text-sm font-medium uppercase tracking-[0.1em] hover:bg-transparent hover:text-title border border-title transition-all"
+      style={{
+        display: "flex",
+        width: "100%",
+        boxSizing: "border-box",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "0.5rem",
+        padding: "1rem 1.5rem",
+        textAlign: "center",
+      }}
+      className="bg-title text-light text-sm font-medium uppercase tracking-[0.1em] hover:bg-transparent hover:text-title border border-title transition-all"
     >
-      <Whatsapp className="w-5 h-5 shrink-0" />
+      <Whatsapp style={{ width: "1.25rem", height: "1.25rem", flexShrink: 0 }} />
       <span>Boka en kostnadsfri konsultation</span>
     </a>
-    <div className="flex flex-wrap items-center justify-center gap-lg text-sm text-muted">
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        width: "100%",
+        boxSizing: "border-box",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1.5rem",
+        marginTop: "1rem",
+      }}
+      className="text-sm text-muted"
+    >
       <a
         href={smsHref}
-        className="inline-flex items-center gap-xs hover:text-title transition-colors underline underline-offset-4"
+        style={{ display: "flex", alignItems: "center", gap: "0.25rem", whiteSpace: "nowrap" }}
+        className="hover:text-title transition-colors underline underline-offset-4"
       >
-        <MessageSquare className="w-4 h-4 shrink-0" />
+        <MessageSquare style={{ width: "1rem", height: "1rem", flexShrink: 0 }} />
         <span>Skicka SMS</span>
       </a>
       <a
         href={mailHref}
-        className="inline-flex items-center gap-xs hover:text-title transition-colors underline underline-offset-4"
+        style={{ display: "flex", alignItems: "center", gap: "0.25rem", whiteSpace: "nowrap" }}
+        className="hover:text-title transition-colors underline underline-offset-4"
       >
-        <Mail className="w-4 h-4 shrink-0" />
+        <Mail style={{ width: "1rem", height: "1rem", flexShrink: 0 }} />
         <span>Skicka e-post</span>
       </a>
     </div>
-    <p className="w-full text-xs text-muted text-center leading-relaxed">
+    <p
+      style={{ width: "100%", boxSizing: "border-box", marginTop: "1rem", textAlign: "center" }}
+      className="text-xs text-muted leading-relaxed"
+    >
       Observera att e-post inte är en krypterad kommunikationskanal. Undvik att skicka känslig
       personlig information via e-post.
     </p>

@@ -202,7 +202,7 @@
   .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
   header.site-header { padding: var(--space-md) 0; border-bottom: 1px solid var(--color-border); }
   header.site-header .container { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-family: var(--font-title); font-size: 1.15rem; color: var(--color-title); }
+  .brand { font-family: var(--font-title); font-size: 1.35rem; font-weight: 500; color: var(--color-title); }
   .badge { display: none; font-size: .7rem; text-transform: uppercase; letter-spacing: .14em; color: var(--color-muted); }
   section { padding: var(--space-2xl) 0; }
   .narrow-620 { max-width: 620px; margin: 0 auto; }
@@ -213,6 +213,7 @@
   .center { text-align: center; }
   .left { text-align: left; }
   .eyebrow { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--color-muted); margin-bottom: var(--space-sm); }
+  .hero-name { font-size: 1.8rem; color: var(--color-title); margin-bottom: var(--space-sm); }
   h1 { font-size: 2.4rem; line-height: 1.15; margin-bottom: var(--space-lg); }
   h2.section-heading { font-size: 1.9rem; text-align: center; margin-bottom: var(--space-lg); }
   h2.section-heading.on-dark { color: var(--color-light); }
@@ -277,6 +278,7 @@
   }
   @media (min-width: 768px) {
     h1 { font-size: 3.5rem; }
+    .hero-name { font-size: 2.2rem; }
     h2.section-heading { font-size: 2.3rem; }
     .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
     .steps { grid-template-columns: 1fr 1fr 1fr; }
@@ -300,6 +302,7 @@
   <!-- Hero -->
   <section>
     <div class="container narrow-820 center">
+      <p class="hero-name">Ricardo Correa</p>
       <p class="eyebrow">Privat legitimerad psykolog · Traumaterapi online · PTSD &amp; komplex PTSD</p>
       <h1>Har du märkt att du hamnar i samma negativa mönster – om och om igen?</h1>
       <p class="lead narrow-620" style="margin-left:auto;margin-right:auto;">

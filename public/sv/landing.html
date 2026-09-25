@@ -613,6 +613,31 @@
       }
     });
   });
+
+  // Copy-to-clipboard fallback for the e-post/SMS links. A mailto:/sms: link only
+  // does something visible if the device has a default mail/SMS app configured —
+  // on plenty of desktops it silently does nothing, which looks like a broken
+  // button. This still tries to open that app as before, but also always copies
+  // the address/number and shows a brief on-button confirmation, so the visitor
+  // gets a usable result either way.
+  function attachCopyFallback(selector, value) {
+    document.querySelectorAll(selector).forEach(function (el) {
+      const label = el.querySelector('span');
+      const originalText = label ? label.textContent : null;
+      if (!label) return;
+      el.addEventListener('click', function () {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) return;
+        navigator.clipboard.writeText(value).then(function () {
+          label.textContent = 'Kopierad: ' + value;
+          setTimeout(function () {
+            label.textContent = originalText;
+          }, 3000);
+        }).catch(function () {});
+      });
+    });
+  }
+  attachCopyFallback('a[data-lead-method="email"]', 'ricardo@vidare.eu');
+  attachCopyFallback('a[data-lead-method="sms"]', '+46 72-1524084');
 </script>
 
 </body>

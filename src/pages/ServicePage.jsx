@@ -26,7 +26,7 @@ const ServicePage = () => {
           <h1 className="max-w-4xl font-title text-3xl leading-tight text-title sm:text-4xl lg:text-5xl">
             {service.title}
           </h1>
-          <p className="mt-md max-w-3xl text-base leading-relaxed text-body sm:text-lg">
+          <p className="mt-md max-w-[48rem] text-base leading-relaxed text-body sm:text-lg">
             {service.intro}
           </p>
         </div>
@@ -56,7 +56,7 @@ const ServicePage = () => {
 
       <section className="border-y border-border-subtle bg-surface py-2xl">
         <div className="container mx-auto px-lg md:px-xl xl:px-[3.5rem]">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-[48rem] text-center">
             <h2 className="font-title text-3xl leading-tight text-title sm:text-4xl">
               {service.ctaTitle}
             </h2>

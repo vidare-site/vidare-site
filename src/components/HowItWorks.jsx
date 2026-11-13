@@ -1,5 +1,6 @@
+import OptimizedImage from './OptimizedImage';
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useI18n } from '../i18n/LanguageProvider';
 
 /* Instagram-style progress dots that show on mobile or when content overflows */
@@ -105,13 +106,12 @@ function useDraggableScroll() {
 const SectionBlock = ({ kicker, title, image, items, bgClass, slideLabel }) => {
   const scrollRef = useDraggableScroll();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <div className={`mb-0 ${bgClass || 'bg-light'}`}>
       {/* Wide Photo with Title Overlay */}
       <div className="relative w-full max-w-[1003px] mx-auto h-[60vh] md:h-[55vh] lg:h-[600px] xl:h-[650px] group overflow-hidden">
-        <img
+        <OptimizedImage
           src={image}
           alt={title}
           className="w-full h-full object-cover object-[center_20%] transition-transform duration-[2000ms] group-hover:scale-105"
@@ -141,8 +141,8 @@ const SectionBlock = ({ kicker, title, image, items, bgClass, slideLabel }) => {
               <motion.div
                 key={idx}
                 className="w-full md:w-[320px] lg:w-[350px] flex-shrink-0 snap-start flex flex-col px-[clamp(0.75rem,4vw,1rem)] md:px-0"
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                initial={false}
+                animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 + (idx * 0.1) }}
               >
                 <div className="w-full h-[1px] bg-title/20 mb-lg"></div>
@@ -185,3 +185,4 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
+

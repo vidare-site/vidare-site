@@ -31,7 +31,7 @@ const LanguageSwitcher = ({ tone = 'dark', className = '' }) => {
         const to = `${switchLocalePath(location.pathname, item.code)}${location.hash}`;
 
         return (
-          <Link
+          <Link reloadDocument
             key={item.code}
             to={to}
             onClick={() => saveStoredLocalePreference(item.code)}

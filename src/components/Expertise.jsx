@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useI18n } from '../i18n/LanguageProvider';
 
 /* Instagram-style progress dots that show on mobile or when content overflows */
@@ -69,7 +69,6 @@ const Expertise = () => {
   const { content } = useI18n();
   const ref = useRef(null);
   const scrollContainerRef = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const expertise = content.expertise;
   const approaches = expertise.approaches;
 
@@ -78,8 +77,8 @@ const Expertise = () => {
       <div className="container mx-auto px-lg">
         <motion.div
           ref={ref}
-          initial={{ y: 30, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+          initial={false}
+          animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-2xl w-full max-w-[800px] mx-auto px-sm"
         >
@@ -95,8 +94,8 @@ const Expertise = () => {
             <motion.div
               key={index}
               className="w-full md:w-[330px] lg:w-[320px] flex-shrink-0 snap-start px-[clamp(0.75rem,4vw,1rem)] md:px-0"
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              initial={false}
+              animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 + (index * 0.15), ease: "easeOut" }}
               style={{ opacity: 1, transform: 'none' }}
             >
@@ -122,3 +121,4 @@ const Expertise = () => {
 };
 
 export default Expertise;
+

@@ -1,4 +1,4 @@
-import { WHATSAPP_HREF } from './shared';
+import { WHATSAPP_HREF } from './shared.js';
 
 export const pt = {
     languageSwitcher: {
@@ -105,33 +105,6 @@ export const pt = {
         },
       ],
     },
-    faq: {
-      title: 'O Funcionamento Clínico',
-      subtitle:
-        'Transparência absoluta sobre a estrutura do acompanhamento, para que você tome decisões sobre a sua saúde emocional com total clareza.',
-      items: [
-        {
-          question: 'Por que sinto uma exaustão emocional constante sem motivo aparente?',
-          answer:
-            'A exaustão, mesmo quando a vida parece estar sob absoluto controle, costuma nascer do peso silencioso da autoexigência. O trabalho clínico foca diretamente na regulação do seu sistema nervoso, fornecendo ferramentas para que a sua mente consiga, finalmente, desligar e descansar.',
-        },
-        {
-          question: 'A terapia pode ajudar quem tem tudo, mas convive com uma sensação de vazio?',
-          answer:
-            'Sim. A culpa por não se sentir satisfeito, mesmo após tantas conquistas, é uma dor recorrente em adultos de alta performance. Na terapia, mapeamos esse "vazio no topo" para separar quem você é dos resultados que você entrega, resgatando um sentido de identidade que traga paz.',
-        },
-        {
-          question: 'Como funciona a primeira sessão e qual a frequência?',
-          answer:
-            'A primeira sessão é dedicada exclusivamente ao mapeamento do seu momento atual e das suas expectativas, sem pressões ou urgências. Os encontros duram 50 minutos e a frequência é desenhada de forma 100% personalizada, respeitando o seu ritmo clínico e a complexidade da sua agenda.',
-        },
-        {
-          question: 'Posso garantir o sigilo absoluto e a confidencialidade?',
-          answer:
-            'Absolutamente. A discrição e o sigilo são os pilares inegociáveis desta prática. Desde a sua primeira mensagem, toda a sua história é protegida através de plataformas de grau médico com criptografia avançada, alinhadas às mais rigorosas normas internacionais (HIPAA, GDPR e LGPD).',
-        },
-      ],
-    },
     about: {
       eyebrow: 'Ricardo Correa | CRP 05/40839',
       title: 'Experiência clínica focada em resultados desde 2008.',
@@ -196,10 +169,10 @@ export const pt = {
     },
     cookieConsent: {
       title: 'Privacidade e Consentimento',
-      body:
-        'Utilizo cookies analíticos e de marketing apenas com o seu consentimento explícito. Eles me ajudam a melhorar o site e manter campanhas relevantes, sempre de acordo com GDPR e LGPD. Você pode aceitar ou recusar e alterar sua decisão quando desejar.',
+      body: 'Com sua autorização, o Google Analytics mede apenas ações de contato, sem receber o conteúdo dos formulários. Você pode recusar ou mudar sua escolha em “Preferências de cookies”. O Instagram só é carregado se você clicar em “Carregar Instagram”.',
       reject: 'Recusar',
       accept: 'Aceitar',
+      settings: 'Preferências de cookies',
     },
     blog: {
       eyebrow: 'Acervo Clínico',
@@ -297,6 +270,8 @@ export const pt = {
       },
     },
     faq: {
+      title: 'Perguntas frequentes sobre psicoterapia',
+      subtitle: 'Transparência absoluta sobre a estrutura do acompanhamento, para que você tome decisões sobre a sua saúde emocional com total clareza.',
       items: [
         {
           question: 'Ricardo Correa atende pacientes que moram no Brasil?',
@@ -321,3 +296,4 @@ export const pt = {
       ],
     },
 };
+

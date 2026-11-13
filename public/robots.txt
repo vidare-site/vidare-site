@@ -1,5 +1,5 @@
+# Public content can be indexed by search and AI search crawlers.
 User-agent: *
 Allow: /
 
-Host: https://www.vidare.eu
-Sitemap: https://www.vidare.eu/sitemap.xml
+Sitemap: https://vidare.eu/sitemap.xml

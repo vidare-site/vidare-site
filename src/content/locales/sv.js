@@ -1,4 +1,4 @@
-import { WHATSAPP_HREF } from './shared';
+import { WHATSAPP_HREF } from './shared.js';
 
 export const sv = {
     languageSwitcher: {
@@ -105,33 +105,6 @@ export const sv = {
         },
       ],
     },
-    faq: {
-      title: 'Kliniska Riktlinjer',
-      subtitle:
-        'Fullständig transparens kring vårdens struktur, för att du med total klarhet ska kunna fatta beslut om din emotionella hälsa.',
-      items: [
-        {
-          question: 'Varför känner jag konstant känslomässig utmattning utan synbar anledning?',
-          answer:
-            'Utmattning, även när livet verkar vara under absolut kontroll, härstammar ofta från den tysta tyngden av höga självkrav. Det kliniska arbetet fokuserar direkt på att reglera ditt nervsystem och ge dig verktyg så att ditt sinne äntligen kan koppla bort och vila.',
-        },
-        {
-          question: 'Kan terapi hjälpa någon som har allt, men lever med en känsla av tomhet?',
-          answer:
-            'Ja. Skulden över att inte känna sig nöjd, ens efter många framgångar, är en återkommande smärta hos högpresterande vuxna. I terapin kartlägger vi denna "tomhet på toppen" för att skilja vem du är från de resultat du levererar, och återskapa en känsla av identitet som ger frid.',
-        },
-        {
-          question: 'Hur fungerar det första samtalet och hur ofta ses vi?',
-          answer:
-            'Det första samtalet ägnas uteslutande åt att kartlägga din nuvarande situation och dina förväntningar, helt utan press eller brådska. Sessionerna är 50 minuter långa, och frekvensen utformas på ett helt personligt sätt, med respekt för din kliniska takt och ett komplext schema.',
-        },
-        {
-          question: 'Kan jag garanteras absolut integritet och sekretess?',
-          answer:
-            'Absolut. Diskretion och tystnadsplikt är icke förhandlingsbara grundpelare i denna verksamhet. Från ditt allra första meddelande skyddas hela din historia av plattformar med medicinsk standard och avancerad kryptering, i enlighet med de strängaste internationella normerna (GDPR, HIPAA och LGPD).',
-        },
-      ],
-    },
     about: {
       eyebrow: 'Ricardo Correa | CRP 05/40839',
       title: 'Resultatinriktad klinisk erfarenhet sedan 2008.',
@@ -196,10 +169,10 @@ export const sv = {
     },
     cookieConsent: {
       title: 'Integritet och samtycke',
-      body:
-        'Analytiska och marknadsföringsrelaterade cookies används endast med ditt uttryckliga samtycke. De hjälper till att förbättra webbplatsen och hålla kommunikationen relevant, alltid i linje med GDPR och LGPD. Du kan acceptera eller avvisa och ändra ditt val senare.',
+      body: 'Med ditt tillstånd mäter Google Analytics kontaktåtgärder utan formulärinnehåll. Du kan avböja eller ändra ditt val under ”Cookieinställningar”. Instagram laddas bara när du klickar på ”Ladda Instagram”.',
       reject: 'Avvisa',
       accept: 'Acceptera',
+      settings: 'Cookieinställningar',
     },
     blog: {
       eyebrow: 'Kliniskt Arkiv',
@@ -297,6 +270,8 @@ export const sv = {
       },
     },
     faq: {
+      title: 'Vanliga frågor om psykoterapi',
+      subtitle: 'Fullständig transparens kring vårdens struktur, för att du med total klarhet ska kunna fatta beslut om din emotionella hälsa.',
       items: [
         {
           question: 'Tar Ricardo Correa emot patienter som bor i Brasilien?',
@@ -321,3 +296,4 @@ export const sv = {
       ],
     },
 };
+

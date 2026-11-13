@@ -1,4 +1,4 @@
-import { WHATSAPP_HREF } from './shared';
+import { WHATSAPP_HREF } from './shared.js';
 
 export const es = {
     languageSwitcher: {
@@ -105,33 +105,6 @@ export const es = {
         },
       ],
     },
-    faq: {
-      title: 'El Funcionamiento Clínico',
-      subtitle:
-        'Transparencia absoluta sobre la estructura del acompañamiento, para que tomes decisiones sobre tu salud emocional con total claridad.',
-      items: [
-        {
-          question: '¿Por qué siento un agotamiento emocional constante sin motivo aparente?',
-          answer:
-            'El agotamiento, incluso cuando la vida parece estar bajo absoluto control, suele nacer del peso silencioso de la autoexigencia. El trabajo clínico se enfoca directamente en la regulación de tu sistema nervioso, brindando herramientas para que tu mente logre, finalmente, desconectar y descansar.',
-        },
-        {
-          question: '¿Puede la terapia ayudar a quien tiene todo, pero convive con una sensación de vacío?',
-          answer:
-            'Sí. La culpa por no sentirse satisfecho, incluso después de tantos logros, es un dolor recurrente en adultos de alto rendimiento. En terapia, mapeamos ese "vacío en la cima" para separar quién eres de los resultados que entregas, rescatando un sentido de identidad que traiga paz.',
-        },
-        {
-          question: '¿Cómo funciona la primera sesión y con qué frecuencia ocurren?',
-          answer:
-            'La primera sesión está dedicada exclusivamente a trazar el mapa de tu momento actual y tus expectativas, sin presiones ni urgencias. Los encuentros duran 50 minutos y la frecuencia se diseña de forma 100% personalizada, respetando tu ritmo clínico y la complejidad de tu agenda.',
-        },
-        {
-          question: '¿Puedo tener garantía de privacidad y confidencialidad absoluta?',
-          answer:
-            'Absolutamente. La discreción y el secreto son los pilares innegociables de esta práctica. Desde tu primer mensaje, toda tu historia está protegida mediante plataformas de grado médico con cifrado avanzado, alineadas con las más estrictas normas internacionales (HIPAA, GDPR y LGPD).',
-        },
-      ],
-    },
     about: {
       eyebrow: 'Ricardo Correa | CRP 05/40839',
       title: 'Experiencia clínica enfocada en resultados desde 2008.',
@@ -196,10 +169,10 @@ export const es = {
     },
     cookieConsent: {
       title: 'Privacidad y consentimiento',
-      body:
-        'Las cookies analíticas y de marketing se utilizan solo con tu consentimiento explícito. Ayudan a mejorar el sitio y a mantener campañas relevantes, siempre de acuerdo con GDPR y LGPD. Puedes aceptar o rechazar, y cambiar tu decisión más adelante.',
+      body: 'Con tu autorización, Google Analytics mide acciones de contacto sin recibir el contenido de los formularios. Puedes rechazar o cambiar tu elección en “Preferencias de cookies”. Instagram solo se carga al pulsar “Cargar Instagram”.',
       reject: 'Rechazar',
       accept: 'Aceptar',
+      settings: 'Preferencias de cookies',
     },
     blog: {
       eyebrow: 'Archivo Clínico',
@@ -297,6 +270,8 @@ export const es = {
       },
     },
     faq: {
+      title: 'Preguntas frecuentes sobre psicoterapia',
+      subtitle: 'Transparencia absoluta sobre la estructura del acompañamiento, para que tomes decisiones sobre tu salud emocional con total claridad.',
       items: [
         {
           question: '¿Ricardo Correa ofrece terapia para pacientes que viven en Brasil?',
@@ -321,3 +296,4 @@ export const es = {
       ],
     },
 };
+

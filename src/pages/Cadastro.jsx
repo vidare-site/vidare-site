@@ -1,3 +1,4 @@
+import OptimizedImage from '../components/OptimizedImage';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useI18n } from '../i18n/LanguageProvider';
@@ -44,14 +45,14 @@ const Cadastro = () => {
     <div className="min-h-screen bg-bg py-xl sm:py-3xl px-lg">
       <motion.div
         className="max-w-4xl mx-auto bg-surface border border-border shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
-        initial={{ opacity: 0, y: 30 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <header className="p-xl md:p-2xl flex flex-col md:flex-row justify-between items-center border-b border-border bg-surface/50 backdrop-blur">
           <div className="flex items-center gap-md">
             <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
-              <img
+              <OptimizedImage
                 src="/assets/logo-dark1.webp"
                 alt={content.footer.brandName}
                 className="w-full h-full object-contain"
@@ -59,7 +60,7 @@ const Cadastro = () => {
             </div>
             <div>
               <h1 className="text-2xl font-semibold font-title text-title tracking-tight">
-                Ricardo Correa
+                {intake.badge}
               </h1>
               <p className="text-[10px] sm:text-xs mt-1 text-muted uppercase tracking-[0.15em]">
                 {intake.clinicianRole}
@@ -346,3 +347,4 @@ const Cadastro = () => {
 };
 
 export default Cadastro;
+

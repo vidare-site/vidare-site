@@ -32,7 +32,7 @@ const ScrollJourneyCTA = () => {
       }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link
+      <Link reloadDocument
         to={buildPath('/cadastro')}
         className="pointer-events-auto inline-flex min-h-[58px] items-center justify-between gap-4 rounded-full border border-title/15 bg-[rgba(249,248,244,0.84)] px-5 py-3 text-title shadow-[0_8px_30px_rgba(30,24,20,0.08)] backdrop-blur-md transition-all hover:bg-[rgba(249,248,244,0.92)]"
       >

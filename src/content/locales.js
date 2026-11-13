@@ -1,7 +1,7 @@
-import { pt } from './locales/pt';
-import { en } from './locales/en';
-import { es } from './locales/es';
-import { sv } from './locales/sv';
+import { pt } from './locales/pt.js';
+import { en } from './locales/en.js';
+import { es } from './locales/es.js';
+import { sv } from './locales/sv.js';
 
 export const localizedContent = {
   pt,
@@ -9,3 +9,4 @@ export const localizedContent = {
   es,
   sv,
 };
+

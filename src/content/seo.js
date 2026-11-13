@@ -1,494 +1,503 @@
-import { localizedContent } from './locales';
+import { localizedContent } from './locales.js';
+import { servicePages, getServicesHubContent } from './servicePages.js';
+import { SITE_URL, INDEXABLE_PATHS, PAGE_PATHS } from './site.js';
 import {
   DEFAULT_LOCALE,
   SUPPORTED_LOCALES,
   buildLocalePath,
-  localeMeta,
-} from '../i18n/config';
+} from '../i18n/config.js';
 
-const SITE_URL = 'https://www.vidare.eu';
-const DEFAULT_IMAGE = `${SITE_URL}/assets/600.webp`;
+const DEFAULT_IMAGE = `${SITE_URL}/assets/og-home-pt.png`;
 const SITE_LOGO = `${SITE_URL}/assets/logo-dark1.webp`;
 const SITE_EMAIL = 'ricardo@vidare.eu';
 const SITE_PHONE = '+5522988583868';
-const SITE_PHONE_SV = '+46721524084';
 const SITE_INSTAGRAM = 'https://www.instagram.com/ricardocorrea.psi';
 const ORGANIZATION_ID = `${SITE_URL}#organization`;
 const WEBSITE_ID = `${SITE_URL}#website`;
-const PERSON_ID = `${SITE_URL}#ricardo-correa`;
-const SERVICE_ID = `${SITE_URL}#online-psychotherapy`;
-const SITE_FOUNDER = 'Ricardo Correa';
-const SITE_PROFESSION = 'Clinical psychologist';
-const PROFESSIONAL_REGISTRATION = 'CRP 05/40839';
-const PRACTICE_START_YEAR = '2008';
-const CREDENTIALS = [
-  'EMDRIA and EMDR Europe certification',
-  'ISST international certification in Schema Therapy',
-  'Training by Beck Institute',
-];
-const SITE_SAME_AS = [SITE_INSTAGRAM];
-const AVAILABLE_LANGUAGES = ['pt-BR', 'en', 'es', 'sv-SE'];
+const PRACTITIONER_ID = `${SITE_URL}#ricardo-correa`;
+const PRACTITIONER_IMAGE = `${SITE_URL}/assets/optimized/07-640.webp`;
+const PRACTITIONER_LICENSE = 'CRP 05/40839';
+const localeSeoTargets = {
+  pt: {
+    htmlLang: 'pt-BR',
+    hreflang: 'pt-BR',
+    ogLocale: 'pt_BR',
+  },
+  en: {
+    htmlLang: 'en',
+    hreflang: 'en',
+    ogLocale: 'en_US',
+  },
+  es: {
+    htmlLang: 'es',
+    hreflang: 'es',
+    ogLocale: 'es_ES',
+  },
+  sv: {
+    htmlLang: 'sv',
+    hreflang: 'sv',
+    ogLocale: 'sv_SE',
+  },
+};
 
 const seoByLocale = {
   pt: {
     siteName: 'Vidare Psicologia Integral',
     routes: {
       '/': {
-        title: 'Ricardo Correa, Psicólogo Clínico | Psicoterapia online (TCC e EMDR)',
+        title: 'Ricardo Correa | Psicólogo online | Vidare',
         description:
-          'Ricardo Correa, psicólogo clínico (CRP 05/40839). Psicoterapia online (TCC, EMDR e Esquemas) para ansiedade, depressão, trauma e autoconhecimento. Atendimento para pacientes no Brasil e expatriados na Europa.',
-        imageAlt: 'Vidare Psicologia Integral',
-        keywords: 'psicoterapia online, psicólogo online brasil, terapia online brasil, tcc, terapia cognitivo comportamental, ansiedade, depressão, autoconhecimento, psicólogo brasileiro na europa, emdr online, trauma, psicólogo na suécia, terapeuta para expatriados',
+          'Ricardo Correa, psicólogo clínico (CRP 05/40839). Psicoterapia online para adultos no Brasil e na Europa: EMDR, TCC e Terapia do Esquema.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'Ricardo Correa — Vidare Psicologia Integral',
       },
       '/blog': {
-        title: 'Ricardo Correa, Psicólogo Clínico | Blog sobre psicologia, ansiedade e EMDR',
-        description:
-          'Textos de Ricardo Correa sobre saúde mental, ansiedade, depressão, TCC, EMDR, relacionamentos e psicoterapia online para brasileiros no Brasil e na Europa.',
-        imageAlt: 'Blog Vidare Psicologia Integral',
-        keywords: 'psicologia, ansiedade, depressão, autoconhecimento, tcc, emdr, trauma, psicoterapia online, terapia para expatriados, saúde mental, psicólogo brasileiro',
+        title: 'Blog de psicologia | Ricardo Correa',
+        description: 'Reflexões de Ricardo Correa sobre psicologia, ansiedade, relações, TCC, EMDR e psicoterapia online.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'Vidare Psicologia Integral',
       },
       '/cadastro': {
-        title: 'Ricardo Correa, Psicólogo Clínico | Agendar psicoterapia online',
+        title: 'Cadastro para psicoterapia | Ricardo Correa',
         description:
-          'Formulário confidencial para iniciar psicoterapia online com Ricardo Correa. Sigilo clínico para acompanhamento de ansiedade, depressão e traumas. Atendimento para todo o Brasil e Europa.',
+          'Dê o primeiro passo com discrição, sigilo clínico e acolhimento. Entre em contato para iniciar seu acompanhamento com clareza e segurança.',
+        image: `${SITE_URL}/assets/og-cadastro-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-cadastro-pt.png`,
         imageAlt: 'Agendamento confidencial Vidare',
-        keywords: 'agendar psicoterapia online, psicólogo online brasil, marcar consulta psicólogo online, terapia brasileiros europa, atendimento confidencial, consulta psicológica online tcc',
+      },
+      '/services/online-psychotherapy-adults': {
+        title: 'Psicoterapia Online para Adultos | Vidare',
+        description:
+          'Psicoterapia online para adultos com confidencialidade e profundidade clínica. Atendimento internacional com continuidade terapêutica.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'Psicoterapia online para adultos',
+      },
+      '/services/trauma': {
+        title: 'Psicoterapia informada por trauma | Ricardo Correa',
+        description:
+          'Terapia para trauma com abordagem baseada em evidências. Foco em experiências dolorosas, regulação emocional e segurança interna.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'Terapia para trauma',
+      },
+      '/services/anxiety': {
+        title: 'Psicoterapia para Ansiedade | Vidare',
+        description:
+          'Psicoterapia para ansiedade com foco em regulação emocional, gatilhos e redução da sobrecarga interna.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'Psicoterapia para ansiedade',
+      },
+      '/services/burnout': {
+        title: 'Terapia Online para Burnout | Vidare',
+        description:
+          'Terapia online para burnout e exaustão emocional. Reorganize limites, reduza sobrecarga e recupere energia de forma sustentável.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'Terapia online para burnout',
+      },
+      '/services/emdr': {
+        title: 'EMDR para Trauma Relacional | Vidare',
+        description:
+          'EMDR para trauma relacional e experiências dolorosas. Método estruturado e baseado em evidências para processamento de memórias.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'EMDR para trauma relacional',
+      },
+      '/services/schema-therapy': {
+        title: 'Terapia do Esquema | Padrões Emocionais Repetitivos | Vidare',
+        description:
+          'Terapia do Esquema para padrões que se repetem em relacionamentos e autoestima. Trabalho clínico profundo e personalizado.',
+        image: `${SITE_URL}/assets/og-home-pt.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
+        imageAlt: 'Terapia do Esquema',
       },
     },
     knowsAbout: [
-      'Ansiedade',
-      'Depressão',
-      'Estresse',
-      'Autoconhecimento',
-      'Terapia Cognitivo-Comportamental (TCC)',
       'EMDR',
       'Psicoterapia informada por trauma',
       'Trauma complexo',
       'Psicoterapia online',
       'Terapia do Esquema',
-      'Psicologia para expatriados',
-      'Adaptação cultural'
+      'Terapia Cognitivo-Comportamental',
     ],
-    areaServed: ['Brasil', 'São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Suécia', 'Portugal', 'Reino Unido', 'Europa', 'Atendimento Online'],
+    areaServed: ['Brasil', 'Suécia', 'Europa', 'Estados Unidos', 'Atendimento Online'],
   },
   en: {
     siteName: 'Vidare Psicologia Integral',
     routes: {
       '/': {
-        title: 'Ricardo Correa, Clinical Psychologist | Online Psychotherapy (CBT & EMDR)',
+        title: 'Ricardo Correa | Online Psychologist | Vidare',
         description:
-          'Ricardo Correa, clinical psychologist. Online psychotherapy (CBT, EMDR) for anxiety, depression, trauma, and personal growth. Therapy for expats in Sweden, Europe, and adults in Brazil.',
-        imageAlt: 'Vidare Psicologia Integral',
-        keywords: 'online psychotherapy, CBT online, cognitive behavioral therapy, anxiety, depression, english speaking therapist, therapy for expats sweden, EMDR online europe, trauma therapy for internationals, psychologist brazil',
+          'Ricardo Correa, clinical psychologist (CRP 05/40839). Online psychotherapy for adults in Brazil and Europe, with EMDR, CBT and Schema Therapy.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'Ricardo Correa — Vidare Psicologia Integral',
       },
       '/blog': {
-        title: 'Ricardo Correa, Clinical Psychologist | Mental health, CBT & trauma blog',
-        description:
-          'Articles by Ricardo Correa on anxiety, depression, CBT, trauma, EMDR, online therapy, and psychotherapy for expats and internationally mobile adults.',
-        imageAlt: 'Vidare Psicologia Integral blog',
-        keywords: 'CBT blog, anxiety, depression, mental health blog, EMDR blog, expat therapy, online psychotherapy, mental health abroad',
+        title: 'Psychology blog | Ricardo Correa',
+        description: 'Reflections by Ricardo Correa on psychology, anxiety, relationships, CBT, EMDR and online psychotherapy.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'Vidare Psicologia Integral',
       },
       '/cadastro': {
-        title: 'Ricardo Correa, Clinical Psychologist | Book confidential online therapy',
+        title: 'Psychotherapy intake form | Ricardo Correa',
         description:
-          'Confidential intake to start online psychotherapy with Ricardo Correa for anxiety, depression, and trauma. Support for adults living in Sweden, Europe, and Brazil.',
+          'Confidential online psychotherapy for adults. Get in touch to begin with clinical clarity, discretion, and care.',
+        image: `${SITE_URL}/assets/og-cadastro-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-cadastro-en.png`,
         imageAlt: 'Vidare Psicologia Integral intake form',
-        keywords: 'book online therapy, confidential psychotherapy, CBT therapist online, expat psychologist sweden, english speaking therapist online',
+      },
+      '/services/online-psychotherapy-adults': {
+        title: 'Online Psychotherapy for Adults | Vidare',
+        description:
+          'Confidential online psychotherapy for adults with clinical depth, consistency, and international continuity.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'Online psychotherapy for adults',
+      },
+      '/services/trauma': {
+        title: 'Therapy for Trauma | Trauma-Informed Psychotherapy | Vidare',
+        description:
+          'Therapy for trauma focused on emotional regulation, memory processing, and restoring internal safety with evidence-based care.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'Therapy for trauma',
+      },
+      '/services/anxiety': {
+        title: 'Psychotherapy for Anxiety | Vidare',
+        description:
+          'Psychotherapy for anxiety to reduce overactivation, understand triggers, and regain emotional steadiness.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'Psychotherapy for anxiety',
+      },
+      '/services/burnout': {
+        title: 'Online Therapy for Burnout | Vidare',
+        description:
+          'Online therapy for burnout and chronic exhaustion. Rebuild energy, boundaries, and sustainable emotional regulation.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'Online therapy for burnout',
+      },
+      '/services/emdr': {
+        title: 'EMDR for Relational Trauma | Vidare',
+        description:
+          'EMDR for relational trauma and distressing experiences, integrated into a personalized and evidence-based clinical plan.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'EMDR for relational trauma',
+      },
+      '/services/schema-therapy': {
+        title: 'Schema Therapy for Repeating Patterns | Vidare',
+        description:
+          'Schema Therapy for long-standing emotional and relational patterns, with personalized clinical depth and clarity.',
+        image: `${SITE_URL}/assets/og-home-en.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-en.png`,
+        imageAlt: 'Schema Therapy',
       },
     },
     knowsAbout: [
-      'Anxiety',
-      'Depression',
-      'Stress management',
-      'Personal growth',
-      'Cognitive Behavioral Therapy (CBT)',
       'EMDR',
       'Trauma-informed psychotherapy',
       'Complex trauma',
       'Online psychotherapy',
       'Schema Therapy',
-      'Expat mental health',
-      'Cultural adaptation'
+      'Cognitive Behavioral Therapy',
     ],
-    areaServed: ['Brazil', 'Sweden', 'Stockholm', 'Europe', 'United Kingdom', 'Germany', 'Spain', 'Online care'],
+    areaServed: ['Brazil', 'Sweden', 'Europe', 'United States', 'Online care'],
   },
   es: {
     siteName: 'Vidare Psicologia Integral',
     routes: {
       '/': {
-        title: 'Ricardo Correa, Psicólogo clínico | Psicoterapia online (TCC y EMDR)',
+        title: 'Ricardo Correa | Psicólogo online en español | Vidare',
         description:
-          'Ricardo Correa, psicólogo clínico. Psicoterapia online (TCC, EMDR) para ansiedad, depresión, trauma y autoconocimiento. Atención para personas en Europa, Suecia y Brasil.',
-        imageAlt: 'Vidare Psicologia Integral',
-        keywords: 'psicoterapia online, terapia cognitivo conductual, tcc, ansiedad, depresión, psicólogo online brasil, psicólogo en español, europeos en movilidad, expatriados, psicólogo online europa',
+          'Ricardo Correa, psicólogo clínico (CRP 05/40839). Psicoterapia online para adultos en Brasil y Europa: EMDR, TCC y Terapia de Esquemas.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'Ricardo Correa — Vidare Psicología Integral',
       },
       '/blog': {
-        title: 'Ricardo Correa, Psicólogo clínico | Blog de salud mental, TCC y trauma',
-        description:
-          'Artículos de Ricardo Correa sobre ansiedad, depresión, trauma, EMDR, psicoterapia online y bienestar emocional.',
-        imageAlt: 'Blog Vidare Psicologia Integral',
-        keywords: 'ansiedad, depresión, salud mental, tcc, EMDR, trauma, psicoterapia online, terapia expatriados, salud mental en el extranjero',
+        title: 'Blog de psicología | Ricardo Correa',
+        description: 'Reflexiones de Ricardo Correa sobre psicología, ansiedad, relaciones, TCC, EMDR y psicoterapia online.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'Vidare Psicologia Integral',
       },
       '/cadastro': {
-        title: 'Ricardo Correa, Psicólogo clínico | Contacto confidencial para terapia online',
+        title: 'Formulario de admisión | Ricardo Correa',
         description:
-          'Contacto confidencial para iniciar psicoterapia online con Ricardo Correa para ansiedad, depresión o trauma. Atención para Europa, Suecia y Brasil.',
+          'Psicoterapia online para adultos con confidencialidad, claridad clínica y cuidado humano. Ponte en contacto para comenzar.',
+        image: `${SITE_URL}/assets/og-cadastro-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-cadastro-es.png`,
         imageAlt: 'Formulario de admisión Vidare',
-        keywords: 'reservar psicoterapia online, psicólogo online tcc, consulta psicológica confidencial, terapia online europa, psicólogo online brasil',
+      },
+      '/services/online-psychotherapy-adults': {
+        title: 'Psicoterapia para adultos en español | Vidare',
+        description:
+          'Psicoterapia online para adultos con confidencialidad, continuidad y profundidad clínica.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'Psicoterapia online para adultos',
+      },
+      '/services/trauma': {
+        title: 'Psicoterapia informada en trauma | Ricardo Correa',
+        description:
+          'Terapia para trauma enfocada en regulación emocional, procesamiento de experiencias dolorosas y recuperación de seguridad interna.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'Terapia para trauma',
+      },
+      '/services/anxiety': {
+        title: 'Psicoterapia para Ansiedad | Vidare',
+        description:
+          'Psicoterapia para ansiedad para reducir hiperactivación, comprender detonantes y recuperar equilibrio emocional.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'Psicoterapia para ansiedad',
+      },
+      '/services/burnout': {
+        title: 'Psicoterapia online para el burnout | Vidare',
+        description:
+          'Terapia online para burnout y agotamiento crónico. Recupera energía, límites saludables y estabilidad emocional.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'Terapia online para burnout',
+      },
+      '/services/emdr': {
+        title: 'EMDR online para el trauma relacional | Vidare',
+        description:
+          'EMDR para trauma relacional y experiencias dolorosas con protocolo estructurado y base clínica.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'EMDR para trauma relacional',
+      },
+      '/services/schema-therapy': {
+        title: 'Terapia de Esquemas para Patrones Repetitivos | Vidare',
+        description:
+          'Terapia de Esquemas para transformar patrones emocionales y vinculares que se repiten.',
+        image: `${SITE_URL}/assets/og-home-es.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
+        imageAlt: 'Terapia de Esquemas',
       },
     },
     knowsAbout: [
-      'Ansiedad',
-      'Depresión',
-      'Manejo del estrés',
-      'Autoconocimiento',
-      'Terapia Cognitivo-Conductual (TCC)',
       'EMDR',
       'Psicoterapia informada por trauma',
       'Trauma complejo',
       'Psicoterapia online',
       'Terapia de esquemas',
-      'Salud mental para expatriados'
+      'Terapia cognitivo-conductual',
     ],
-    areaServed: ['Brasil', 'España', 'Suecia', 'Alemania', 'Europa', 'América Latina', 'Atención online'],
+    areaServed: ['Brasil', 'Suecia', 'Europa', 'Estados Unidos', 'Atención online'],
   },
   sv: {
     siteName: 'Vidare Psicologia Integral',
     routes: {
       '/': {
-        title: 'Ricardo Correa, Leg. psykolog | Onlineterapi (KBT & EMDR)',
+        title: 'Ricardo Correa | Psykolog online | Vidare',
         description:
-          'Ricardo Correa, legitimerad psykolog. Onlineterapi (KBT, EMDR) för ångest, depression, trauma och personlig utveckling för vuxna i Sverige, Europa och Brasilien.',
-        imageAlt: 'Vidare Psicologia Integral',
-        keywords: 'onlineterapi, KBT online, kognitiv beteendeterapi, ångest, depression, EMDR sverige, traumaterapi online, psykolog online sverige, terapi för expats, engelsktalande psykolog',
+          'Ricardo Correa, klinisk psykolog (CRP 05/40839). Onlineterapi för vuxna i Brasilien och Europa med EMDR, KBT och schematerapi.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'Ricardo Correa — Vidare Psicologia Integral',
       },
       '/blog': {
-        title: 'Ricardo Correa, Leg. psykolog | Blogg om mental hälsa, KBT och trauma',
-        description:
-          'Texter av Ricardo Correa om ångest, depression, KBT, trauma, EMDR och onlineterapi för vuxna i Sverige och utomlands.',
-        imageAlt: 'Vidare Psicologia Integral blogg',
-        keywords: 'ångest, depression, mental hälsa, KBT blogg, EMDR blogg, onlineterapi sverige, terapi för internationella',
+        title: 'Psykologiblogg | Ricardo Correa',
+        description: 'Reflektioner av Ricardo Correa om psykologi, ångest, relationer, KBT, EMDR och onlineterapi.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'Vidare Psicologia Integral',
       },
       '/cadastro': {
-        title: 'Ricardo Correa, Leg. psykolog | Boka konfidentiell onlineterapi',
+        title: 'Boka ett första samtal | Vidare',
         description:
-          'Ta kontakt för konfidentiell onlineterapi med Ricardo Correa gällande ångest, depression eller trauma. Stöd för vuxna i Sverige, Europa och Brasilien.',
+          'Onlineterapi för vuxna med sekretess, klinisk tydlighet och trygghet. Hör av dig för att komma igång.',
+        image: `${SITE_URL}/assets/og-cadastro-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-cadastro-sv.png`,
         imageAlt: 'Vidares inskrivningsformulär',
-        keywords: 'boka onlineterapi, KBT psykolog online, psykolog online sverige, terapi europa, konfidentiell terapi',
+      },
+      '/services/online-psychotherapy-adults': {
+        title: 'Onlineterapi för vuxna | Vidare',
+        description:
+          'Onlineterapi för vuxna med klinisk tydlighet, sekretess och kontinuitet över länder och tidszoner.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'Onlineterapi för vuxna',
+      },
+      '/services/trauma': {
+        title: 'Terapi vid Trauma | Traumainformerad Psykoterapi | Vidare',
+        description:
+          'Terapi vid trauma med fokus på reglering, bearbetning av svåra erfarenheter och ökad inre trygghet.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'Terapi vid trauma',
+      },
+      '/services/anxiety': {
+        title: 'Psykoterapi vid Ångest | Vidare',
+        description:
+          'Psykoterapi vid ångest för att minska överaktivering, förstå triggers och återfå känslomässig balans.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'Psykoterapi vid ångest',
+      },
+      '/services/burnout': {
+        title: 'Onlineterapi vid Burnout | Vidare',
+        description:
+          'Onlineterapi vid burnout och långvarig utmattning med fokus på återhämtning, gränser och hållbar belastning.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'Onlineterapi vid burnout',
+      },
+      '/services/emdr': {
+        title: 'EMDR vid Relationstrauma | Vidare',
+        description:
+          'EMDR vid relationstrauma och smärtsamma minnen inom en personligt anpassad, evidensbaserad behandlingsplan.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'EMDR vid relationstrauma',
+      },
+      '/services/schema-therapy': {
+        title: 'Schematerapi för Upprepade Mönster | Vidare',
+        description:
+          'Schematerapi för långvariga känslomässiga och relationella mönster som återkommer.',
+        image: `${SITE_URL}/assets/og-home-sv.png`,
+        twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
+        imageAlt: 'Schematerapi',
       },
     },
     knowsAbout: [
-      'Ångest',
-      'Depression',
-      'Stresshantering',
-      'Personlig utveckling',
-      'Kognitiv beteendeterapi (KBT)',
       'EMDR',
       'Traumainformerad psykoterapi',
       'Komplext trauma',
       'Onlineterapi',
       'Schematerapi',
-      'Psykologi för expats'
+      'Kognitiv beteendeterapi',
     ],
-    areaServed: ['Brasilien', 'Sverige', 'Stockholm', 'Göteborg', 'Europa', 'Onlinebehandling'],
+    areaServed: ['Brasilien', 'Sverige', 'Europa', 'USA', 'Onlinebehandling'],
   },
 };
 
-const buildAbsoluteUrl = (locale, routePath) => `${SITE_URL}${buildLocalePath(locale, routePath)}`;
+const absoluteUrl = (locale, path = '/') => `${SITE_URL}${buildLocalePath(locale, path)}`;
+const localeMetaFor = (locale) => localeSeoTargets[locale] || localeSeoTargets.pt;
+const languages = SUPPORTED_LOCALES.map((code) => localeMetaFor(code).htmlLang);
 
-const buildBrandVariants = (siteName) => ([
-  'Vidare',
-]).filter((name) => name !== siteName);
+export const getSiteSeoDefaults = (locale = DEFAULT_LOCALE) => ({
+  siteName: (seoByLocale[locale] || seoByLocale.pt).siteName,
+  locale: localeMetaFor(locale).ogLocale,
+  localeAlternates: SUPPORTED_LOCALES.filter((code) => code !== locale).map((code) => localeMetaFor(code).ogLocale),
+  twitterCard: 'summary_large_image',
+});
 
-const getAlternateHreflangs = (routePath) => ([
-  ...SUPPORTED_LOCALES.map((code) => ({
-    hreflang: localeMeta[code]?.htmlLang ?? code,
-    href: buildAbsoluteUrl(code, routePath),
-  })),
-  {
-    hreflang: 'x-default',
-    href: buildAbsoluteUrl('en', routePath),
-  },
-]);
-
-const buildOrganizationStructuredData = (locale) => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const homeSeo = seoByLocale[safeLocale].routes['/'];
-  const siteName = seoByLocale[safeLocale].siteName;
-  const phone = safeLocale === 'sv' ? SITE_PHONE_SV : SITE_PHONE;
-
-  const areaServedObjects = seoByLocale[safeLocale].areaServed.map(area => ({
-    '@type': 'Place',
-    name: area
-  }));
-
-  return {
-    '@type': ['MedicalBusiness', 'Organization'],
-    '@id': ORGANIZATION_ID,
-    name: siteName,
-    alternateName: buildBrandVariants(siteName),
-    url: SITE_URL,
-    logo: SITE_LOGO,
-    image: DEFAULT_IMAGE,
-    description: homeSeo.description,
-    email: SITE_EMAIL,
-    telephone: phone,
-    medicalSpecialty: 'Psychotherapy',
-    founder: {
-      '@id': PERSON_ID,
-    },
-    foundingDate: PRACTICE_START_YEAR,
-    availableLanguage: AVAILABLE_LANGUAGES,
-    areaServed: areaServedObjects,
-    location: {
-      '@type': 'VirtualLocation',
-      url: SITE_URL
-    },
-    knowsAbout: seoByLocale[safeLocale].knowsAbout,
-    sameAs: SITE_SAME_AS,
-    contactPoint: [{
-      '@type': 'ContactPoint',
-      contactType: 'customer support',
-      email: SITE_EMAIL,
-      telephone: phone,
-      availableLanguage: AVAILABLE_LANGUAGES,
-      areaServed: areaServedObjects,
-    }],
-  };
-};
-
-const buildPersonStructuredData = (locale) => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const homeSeo = seoByLocale[safeLocale].routes['/'];
-  const phone = safeLocale === 'sv' ? SITE_PHONE_SV : SITE_PHONE;
-
-  return {
-    '@type': 'Person',
-    '@id': PERSON_ID,
-    name: SITE_FOUNDER,
-    jobTitle: SITE_PROFESSION,
-    image: SITE_LOGO,
-    url: SITE_URL,
-    sameAs: SITE_SAME_AS,
-    description: homeSeo.description,
-    identifier: PROFESSIONAL_REGISTRATION,
-    worksFor: {
-      '@id': ORGANIZATION_ID,
-    },
-    hasCredential: CREDENTIALS.map((credential) => ({
+function buildStructuredData(locale, path, page) {
+  const home = absoluteUrl(locale);
+  const hub = getServicesHubContent(locale);
+  const person = {
+    '@type': 'Person', '@id': PRACTITIONER_ID,
+    name: 'Ricardo Correa', url: home, image: PRACTITIONER_IMAGE,
+    jobTitle: { pt: 'Psicólogo clínico', en: 'Clinical psychologist', es: 'Psicólogo clínico', sv: 'Klinisk psykolog' }[locale],
+    worksFor: { '@id': ORGANIZATION_ID },
+    hasCredential: {
       '@type': 'EducationalOccupationalCredential',
-      credentialCategory: 'Professional certification',
-      name: credential,
-    })),
-    knowsAbout: seoByLocale[safeLocale].knowsAbout,
-    knowsLanguage: AVAILABLE_LANGUAGES,
-    alumniOf: [
-      {
-        '@type': 'Organization',
-        name: 'Beck Institute',
-      },
-    ],
-    memberOf: [
-      {
-        '@type': 'Organization',
-        name: 'EMDR Europe',
-      },
-      {
-        '@type': 'Organization',
-        name: 'ISST',
-      },
-    ],
-    hasOccupation: {
-      '@type': 'Occupation',
-      name: SITE_PROFESSION,
-      occupationalCategory: 'Psychology',
+      credentialCategory: 'Professional license',
+      name: PRACTITIONER_LICENSE, identifier: PRACTITIONER_LICENSE,
+      recognizedBy: { '@type': 'Organization', name: 'Conselho Regional de Psicologia' },
     },
-    email: SITE_EMAIL,
-    telephone: phone,
-    startDate: PRACTICE_START_YEAR,
+    knowsLanguage: languages,
+    knowsAbout: seoByLocale[locale].knowsAbout,
+    sameAs: [SITE_INSTAGRAM],
   };
-};
-
-const buildServiceStructuredData = (locale) => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const homeSeo = seoByLocale[safeLocale].routes['/'];
-
-  const areaServedObjects = seoByLocale[safeLocale].areaServed.map(area => ({
-    '@type': 'Place',
-    name: area
+  const business = {
+    '@type': 'ProfessionalService', '@id': ORGANIZATION_ID,
+    name: seoByLocale[locale].siteName, url: home,
+    logo: SITE_LOGO, image: PRACTITIONER_IMAGE,
+    description: seoByLocale[locale].routes['/'].description,
+    email: SITE_EMAIL, telephone: SITE_PHONE,
+    areaServed: [{ '@type': 'Country', name: 'Brazil' }, { '@type': 'Country', name: 'Sweden' }, { '@type': 'Continent', name: 'Europe' }],
+    founder: { '@id': PRACTITIONER_ID }, sameAs: [SITE_INSTAGRAM],
+    contactPoint: {
+      '@type': 'ContactPoint', contactType: 'Appointment enquiries',
+      email: SITE_EMAIL, telephone: SITE_PHONE,
+      url: 'https://wa.me/5522988583868', availableLanguage: languages,
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog', name: hub.title,
+      itemListElement: hub.items.map((item) => ({
+        '@type': 'Offer', itemOffered: { '@id': `${absoluteUrl(locale, item.routePath)}#service` },
+      })),
+    },
+  };
+  const services = hub.items.map((item) => ({
+    '@type': 'Service', '@id': `${absoluteUrl(locale, item.routePath)}#service`,
+    name: item.label, description: item.description, url: absoluteUrl(locale, item.routePath),
+    provider: { '@id': ORGANIZATION_ID }, areaServed: business.areaServed,
+    availableChannel: { '@type': 'ServiceChannel', serviceUrl: absoluteUrl(locale, item.routePath), availableLanguage: languages },
   }));
-
-  return {
-    '@type': 'Service',
-    '@id': SERVICE_ID,
-    name: homeSeo.title,
-    description: homeSeo.description,
-    url: buildAbsoluteUrl(safeLocale, '/'),
-    serviceType: 'Online psychotherapy',
-    areaServed: areaServedObjects,
-    availableLanguage: AVAILABLE_LANGUAGES,
-    provider: {
-      '@id': ORGANIZATION_ID,
-    },
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Adults, expats, internationally mobile professionals, and Portuguese-speaking adults in Europe',
-    },
+  const breadcrumb = {
+    '@type': 'BreadcrumbList', '@id': `${page.canonical}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: seoByLocale[locale].siteName, item: home },
+      ...(path === '/' ? [] : [{ '@type': 'ListItem', position: 2, name: page.title.split(' | ')[0], item: page.canonical }]),
+    ],
   };
-};
-
-const buildWebsiteStructuredData = (locale) => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const siteName = seoByLocale[safeLocale].siteName;
-
-  return {
-    '@type': 'WebSite',
-    '@id': WEBSITE_ID,
-    url: SITE_URL,
-    name: `${SITE_FOUNDER} | ${siteName}`,
-    alternateName: [SITE_FOUNDER, siteName, ...buildBrandVariants(siteName)],
-    inLanguage: localeMeta[safeLocale]?.htmlLang ?? localeMeta[DEFAULT_LOCALE].htmlLang,
-    publisher: {
-      '@id': ORGANIZATION_ID,
-    },
+  const webpage = {
+    '@type': 'WebPage', '@id': `${page.canonical}#webpage`,
+    url: page.canonical, name: page.title, description: page.description,
+    inLanguage: localeMetaFor(locale).htmlLang,
+    isPartOf: { '@id': WEBSITE_ID }, about: { '@id': PRACTITIONER_ID },
+    author: { '@id': PRACTITIONER_ID }, breadcrumb: { '@id': breadcrumb['@id'] },
+    ...(path.startsWith('/services/') ? { mainEntity: { '@id': `${page.canonical}#service` } } : {}),
   };
-};
-
-const buildBreadcrumbStructuredData = (locale, routePath = '/') => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const safeRoute = seoByLocale[safeLocale].routes[routePath] ? routePath : '/';
-  const items = [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: seoByLocale[safeLocale].siteName,
-      item: buildAbsoluteUrl(safeLocale, '/'),
-    },
+  const graph = [
+    person, business,
+    { '@type': 'WebSite', '@id': WEBSITE_ID, url: SITE_URL, name: seoByLocale[locale].siteName, publisher: { '@id': ORGANIZATION_ID }, inLanguage: languages },
+    breadcrumb, webpage, ...services,
   ];
-
-  if (safeRoute !== '/') {
-    const routeNames = {
-      '/blog': 'Blog',
-      '/cadastro': 'Cadastro',
-    };
-    items.push({
-      '@type': 'ListItem',
-      position: 2,
-      name: routeNames[safeRoute] ?? safeRoute,
-      item: buildAbsoluteUrl(safeLocale, safeRoute),
+  if (path === '/') {
+    const faqs = [...localizedContent[locale].faq.items, {
+      question: hub.title,
+      answer: `${hub.description} ${hub.items.map((item) => `${item.label} — ${item.description}`).join(' ')}`,
+    }];
+    graph.push({
+      '@type': 'FAQPage', '@id': `${home}#faq`,
+      mainEntity: faqs.map((item) => ({
+        '@type': 'Question', name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
     });
   }
+  return { '@context': 'https://schema.org', '@graph': graph };
+}
 
-  return {
-    '@type': 'BreadcrumbList',
-    '@id': `${buildAbsoluteUrl(safeLocale, safeRoute)}#breadcrumb`,
-    itemListElement: items,
-  };
-};
-
-const buildPageStructuredData = (locale, routePath = '/') => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const safeRoute = seoByLocale[safeLocale].routes[routePath] ? routePath : '/';
-  const routeSeo = seoByLocale[safeLocale].routes[safeRoute];
-  const canonical = buildAbsoluteUrl(safeLocale, safeRoute);
-  const pageTypeByRoute = {
-    '/': 'WebPage',
-    '/blog': 'CollectionPage',
-    '/cadastro': 'ContactPage',
-  };
-
-  return {
-    '@type': pageTypeByRoute[safeRoute] ?? 'WebPage',
-    '@id': `${canonical}#webpage`,
-    url: canonical,
-    name: routeSeo.title,
-    description: routeSeo.description,
-    inLanguage: localeMeta[safeLocale]?.htmlLang ?? localeMeta[DEFAULT_LOCALE].htmlLang,
-    author: {
-      '@id': PERSON_ID,
-    },
-    publisher: {
-      '@id': ORGANIZATION_ID,
-    },
-    isPartOf: {
-      '@id': WEBSITE_ID,
-    },
-    about: {
-      '@id': ORGANIZATION_ID,
-    },
-    breadcrumb: {
-      '@id': `${canonical}#breadcrumb`,
-    },
-  };
-};
-
-const buildFaqStructuredData = (locale) => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const content = localizedContent[safeLocale];
-  const canonical = buildAbsoluteUrl(safeLocale, '/');
-
-  return {
-    '@type': 'FAQPage',
-    '@id': `${canonical}#faq`,
-    url: canonical,
-    inLanguage: localeMeta[safeLocale]?.htmlLang ?? localeMeta[DEFAULT_LOCALE].htmlLang,
-    mainEntity: content.faq.items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-};
-
-const buildStructuredData = (locale, routePath = '/') => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const safeRoute = seoByLocale[safeLocale].routes[routePath] ? routePath : '/';
-  const graph = [buildPageStructuredData(safeLocale, safeRoute)];
-  graph.push(buildBreadcrumbStructuredData(safeLocale, safeRoute));
-
-  if (safeRoute === '/') {
-    graph.unshift(
-      buildOrganizationStructuredData(safeLocale),
-      buildPersonStructuredData(safeLocale),
-      buildWebsiteStructuredData(safeLocale),
-      buildServiceStructuredData(safeLocale),
-    );
-    graph.push(buildFaqStructuredData(safeLocale));
-  }
-
-  return {
-    '@context': 'https://schema.org',
-    '@graph': graph,
-  };
-};
-
-export const getSiteSeoDefaults = (locale = DEFAULT_LOCALE) => {
-  const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-
-  return {
-    siteName: seoByLocale[safeLocale].siteName,
-    locale: localeMeta[safeLocale]?.ogLocale ?? localeMeta[DEFAULT_LOCALE].ogLocale,
-    twitterCard: 'summary_large_image',
-    robots: 'index, follow',
-    author: SITE_FOUNDER,
-  };
+const missingPage = {
+  pt: ['Página não encontrada | Vidare', 'O endereço solicitado não existe. Acesse as páginas da Vidare.'],
+  en: ['Page not found | Vidare', 'The requested address does not exist. Visit the Vidare website.'],
+  es: ['Página no encontrada | Vidare', 'La dirección solicitada no existe. Visita las páginas de Vidare.'],
+  sv: ['Sidan hittades inte | Vidare', 'Adressen finns inte. Besök Vidares webbplats.'],
 };
 
 export const getRouteSeo = (locale = DEFAULT_LOCALE, routePath = '/') => {
   const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const safeRoute = seoByLocale[safeLocale].routes[routePath] ? routePath : '/';
-  const routeSeo = seoByLocale[safeLocale].routes[safeRoute];
-
-  return {
-    ...routeSeo,
-    canonical: buildAbsoluteUrl(safeLocale, safeRoute),
-    ogType: 'website',
-    image: DEFAULT_IMAGE,
-    keywords: routeSeo.keywords,
-    alternates: getAlternateHreflangs(safeRoute),
-    structuredData: buildStructuredData(safeLocale, safeRoute),
+  const route = seoByLocale[safeLocale].routes[routePath];
+  if (!PAGE_PATHS.includes(routePath) || !route) return {
+    title: missingPage[safeLocale][0], description: missingPage[safeLocale][1],
+    robots: 'noindex, follow', canonical: null, alternates: [], structuredData: null,
+    image: DEFAULT_IMAGE, twitterImage: DEFAULT_IMAGE, imageAlt: 'Vidare', ogType: 'website',
   };
+  const page = {
+    ...route,
+    robots: INDEXABLE_PATHS.includes(routePath) ? 'index, follow' : 'noindex, follow',
+    canonical: absoluteUrl(safeLocale, routePath), ogType: 'website',
+    image: route.image || DEFAULT_IMAGE, twitterImage: route.twitterImage || route.image || DEFAULT_IMAGE,
+    alternates: [
+      ...SUPPORTED_LOCALES.map((code) => ({ hreflang: localeMetaFor(code).hreflang, href: absoluteUrl(code, routePath) })),
+      { hreflang: 'x-default', href: absoluteUrl(DEFAULT_LOCALE, routePath) },
+    ],
+  };
+  return { ...page, structuredData: buildStructuredData(safeLocale, routePath, page) };
 };

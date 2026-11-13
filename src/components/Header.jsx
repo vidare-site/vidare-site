@@ -76,13 +76,13 @@ const Header = () => {
       <div className="container mx-auto px-lg py-sm min-h-[70px] flex items-center justify-between">
         
         {/* Logo */}
-        <Link to={buildPath('/')} className="flex-shrink-0 mr-sm">
+        <Link reloadDocument to={buildPath('/')} className="flex-shrink-0 mr-sm">
           {/* We will toggle these via CSS or handle SVGs correctly soon */}
           <div className="w-[140px] text-title hidden sm:block">
-            <LogoDark width="100%" height="auto" />
+            <LogoDark />
           </div>
           <div className="w-[140px] text-title sm:hidden">
-            <LogoLight width="100%" height="auto" /> 
+            <LogoLight /> 
             {/* assuming we might want light logo on mobile hero, adjust as needed */}
           </div>
         </Link>
@@ -92,7 +92,7 @@ const Header = () => {
           <ul className="flex items-center gap-md">
             {navItems.map((item) => (
               <li key={item.target}>
-                <Link
+                <Link reloadDocument
                   to={buildPath(item.target)}
                   onClick={(e) => handleNavClick(e, item.target)}
                   className="text-sm uppercase tracking-wider hover:text-primary transition-colors"
@@ -137,7 +137,7 @@ const Header = () => {
               </li>
               {navItems.map((item) => (
                 <li key={item.target} className="w-full text-right py-sm">
-                  <Link
+                  <Link reloadDocument
                     to={buildPath(item.target)}
                     onClick={(e) => handleNavClick(e, item.target)}
                     className="block text-title hover:text-primary transition-colors"
@@ -165,3 +165,4 @@ const Header = () => {
 };
 
 export default Header;
+

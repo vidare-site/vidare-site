@@ -17,7 +17,9 @@ const Layout = ({ children }) => {
       return;
     }
 
-    const target = document.querySelector(location.hash);
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
     if (!target) {
       return;
     }
@@ -45,3 +47,4 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+

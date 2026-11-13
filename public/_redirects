@@ -1,12 +1,14 @@
-# Explicit redirect: legacy unlocalized /cadastro page → localized version
+# Static fallback for hosts that support Cloudflare Pages/Netlify redirects.
+# Cloudflare advanced mode uses deployment/handler.mjs instead.
+https://www.vidare.eu/* https://vidare.eu/:splat 301
+/ /pt 301
+/index.html /pt 301
 /cadastro /pt/cadastro 301
 /cadastro.html /pt/cadastro 301
-
-# Cloudflare Pages SPA routing
-/* /index.html 200
-
-# Language-specific routes (handled by React)
-/pt/* /index.html 200
-/en/* /index.html 200
-/es/* /index.html 200
-/sv/* /index.html 200
+/blog /pt/blog 301
+/services/online-psychotherapy-adults /pt/services/online-psychotherapy-adults 301
+/services/trauma /pt/services/trauma 301
+/services/anxiety /pt/services/anxiety 301
+/services/burnout /pt/services/burnout 301
+/services/emdr /pt/services/emdr 301
+/services/schema-therapy /pt/services/schema-therapy 301

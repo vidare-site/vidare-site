@@ -19,20 +19,34 @@ const Hero = ({
   const videoMobileRef = useRef(null);
 
   useEffect(() => {
-    const playVideo = (ref) => {
-      if (ref.current) {
-        ref.current.play().catch(() => {
-          const handleClick = () => {
-            ref.current?.play();
-            document.removeEventListener('click', handleClick);
-          };
-          document.addEventListener('click', handleClick);
-        });
-      }
+    const desktop = window.matchMedia('(min-width: 768px)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let timer;
+    const start = () => {
+      clearTimeout(timer);
+      [videoDesktopRef.current, videoMobileRef.current].forEach((video) => {
+        if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
+      });
+      setDesktopPlaying(false);
+      setMobilePlaying(false);
+      if (reducedMotion.matches || navigator.connection?.saveData) return;
+      timer = setTimeout(() => {
+        const video = desktop.matches ? videoDesktopRef.current : videoMobileRef.current;
+        if (!video) return;
+        video.muted = true;
+        video.src = desktop.matches ? videoDesktop : videoMobile;
+        video.play().catch(() => { /* Keep the poster when autoplay is unavailable. */ });
+      }, 1500);
     };
-    playVideo(videoDesktopRef);
-    playVideo(videoMobileRef);
-  }, []);
+    start();
+    desktop.addEventListener('change', start);
+    reducedMotion.addEventListener('change', start);
+    return () => {
+      clearTimeout(timer);
+      desktop.removeEventListener('change', start);
+      reducedMotion.removeEventListener('change', start);
+    };
+  }, [videoDesktop, videoMobile]);
 
   return (
     <section id="inicio" className="relative min-h-screen w-full overflow-hidden bg-bg text-light">
@@ -41,23 +55,16 @@ const Hero = ({
         className="absolute inset-0 z-0"
         style={{ y: yRange }}
       >
-        <video 
-          ref={videoDesktopRef}
-          className={`hidden md:block w-full h-full object-cover transition-opacity duration-500 ${desktopPlaying ? 'opacity-100' : 'opacity-0'}`}
-          autoPlay muted loop playsInline preload="auto"
-          onPlaying={() => setDesktopPlaying(true)}
-        >
-          <source src={videoDesktop} type="video/mp4" />
-        </video>
-        
-        <video 
-          ref={videoMobileRef}
-          className={`block md:hidden w-full h-full object-cover transition-opacity duration-500 ${mobilePlaying ? 'opacity-100' : 'opacity-0'}`}
-          autoPlay muted loop playsInline preload="auto"
-          onPlaying={() => setMobilePlaying(true)}
-        >
-          <source src={videoMobile} type="video/mp4" />
-        </video>
+        <picture className="absolute inset-0">
+          <source media="(min-width: 768px)" srcSet="/assets/optimized/hero-desktop.webp" width="1440" height="866" />
+          <img src="/assets/optimized/hero-mobile.webp" alt="" aria-hidden="true" width="720" height="1280" fetchPriority="high" className="w-full h-full object-cover" />
+        </picture>
+        <video ref={videoDesktopRef} aria-hidden="true" width="1184" height="712"
+          className={`absolute inset-0 hidden md:block w-full h-full object-cover transition-opacity duration-500 ${desktopPlaying ? 'opacity-100' : 'opacity-0'}`}
+          muted loop playsInline preload="none" onPlaying={() => setDesktopPlaying(true)} />
+        <video ref={videoMobileRef} aria-hidden="true" width="720" height="1280"
+          className={`absolute inset-0 block md:hidden w-full h-full object-cover transition-opacity duration-500 ${mobilePlaying ? 'opacity-100' : 'opacity-0'}`}
+          muted loop playsInline preload="none" onPlaying={() => setMobilePlaying(true)} />
 
         <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(12,10,8,0.3)_0%,rgba(12,10,8,0.16)_30%,rgba(12,10,8,0.24)_58%,rgba(12,10,8,0.82)_100%)] pointer-events-none" />
         <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_top,rgba(255,247,238,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(245,224,200,0.12),transparent_35%)] pointer-events-none" />
@@ -66,7 +73,7 @@ const Hero = ({
       <motion.div 
         className="relative z-20 flex min-h-screen flex-col"
         style={{ opacity: opacityRange }}
-        initial={{ y: 30, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
@@ -109,3 +116,4 @@ const Hero = ({
 };
 
 export default Hero;
+

@@ -5,7 +5,7 @@ import { useI18n } from '../i18n/LanguageProvider';
 const BlogCard = ({ date, title, excerpt, readSoon }) => (
   <motion.article 
     className="p-xl bg-surface border border-border flex flex-col transition-colors hover:border-title/30 h-full"
-    initial={{ opacity: 0, y: 20 }}
+    initial={false}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-50px" }}
     transition={{ duration: 0.6 }}
@@ -33,19 +33,19 @@ const Blog = () => {
         <div className="container mx-auto max-w-[800px]">
           <motion.p 
             className="text-xs uppercase tracking-[0.2em] mb-sm opacity-80"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}
+            initial={false} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}
           >
             {blog.eyebrow}
           </motion.p>
           <motion.h1 
             className="text-4xl md:text-5xl font-title font-light mb-md leading-tight"
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
+            initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}
           >
             {blog.title}
           </motion.h1>
           <motion.p 
             className="text-lg opacity-90 leading-relaxed max-w-prose mx-auto"
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+            initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
           >
             {blog.subtitle}
           </motion.p>
@@ -67,3 +67,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

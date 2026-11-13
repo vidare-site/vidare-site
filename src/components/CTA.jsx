@@ -1,12 +1,12 @@
+import OptimizedImage from './OptimizedImage';
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useI18n } from '../i18n/LanguageProvider';
 
 const CTA = () => {
   const { content } = useI18n();
   const cta = content.cta;
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section className="py-3xl bg-surface relative overflow-hidden" ref={ref}>
@@ -15,11 +15,11 @@ const CTA = () => {
         <div className="flex flex-col md:flex-row items-center gap-xl md:gap-2xl">
           <motion.div 
             className="w-full md:w-1/2 relative aspect-[3/2] overflow-hidden"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            initial={false}
+            animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img 
+            <OptimizedImage 
               src="/assets/35.webp" 
               alt={cta.imageAlt} 
               className="w-full h-full object-cover"
@@ -29,8 +29,8 @@ const CTA = () => {
           
           <motion.div 
             className="w-full md:w-1/2"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={false}
+            animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <h2 className="text-3xl md:text-5xl font-title text-title mb-sm leading-tight">{cta.title}</h2>
@@ -58,3 +58,4 @@ const CTA = () => {
 };
 
 export default CTA;
+

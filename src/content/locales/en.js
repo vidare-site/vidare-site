@@ -1,4 +1,4 @@
-import { WHATSAPP_HREF } from './shared';
+import { WHATSAPP_HREF } from './shared.js';
 
 export const en = {
     languageSwitcher: {
@@ -105,33 +105,6 @@ export const en = {
         },
       ],
     },
-    faq: {
-      title: 'Clinical Operations',
-      subtitle:
-        'Absolute transparency regarding the structure of our care, empowering you to make decisions about your emotional health with total clarity.',
-      items: [
-        {
-          question: 'Why do I feel constant emotional exhaustion for no apparent reason?',
-          answer:
-            'Exhaustion, even when life appears to be under absolute control, often stems from the silent weight of self-demand. Clinical work focuses directly on regulating your nervous system, providing tools so your mind can, finally, switch off and rest.',
-        },
-        {
-          question: 'Can therapy help someone who has everything but lives with a feeling of emptiness?',
-          answer:
-            'Yes. The guilt of feeling unsatisfied, even after profound achievements, is a recurring pain among high-performing adults. In therapy, we map this "emptiness at the top" to separate who you are from the results you deliver, restoring a sense of identity that brings peace.',
-        },
-        {
-          question: 'How does the first session work, and how frequent is the therapy?',
-          answer:
-            'The first session is dedicated exclusively to mapping your current situation and expectations, free from pressure or urgency. Sessions last 50 minutes, and the frequency is designed in a 100% personalized manner, respecting your clinical rhythm and the complexity of your schedule.',
-        },
-        {
-          question: 'Can I be guaranteed absolute privacy and confidentiality?',
-          answer:
-            'Absolutely. Discretion and secrecy are the non-negotiable pillars of this practice. From your very first message, your entire history is protected by medical-grade platforms with advanced encryption, aligned with the strictest international standards (HIPAA, GDPR, and LGPD).',
-        },
-      ],
-    },
     about: {
       eyebrow: 'Ricardo Correa | CRP 05/40839',
       title: 'Results-driven clinical experience since 2008.',
@@ -196,10 +169,10 @@ export const en = {
     },
     cookieConsent: {
       title: 'Privacy and consent',
-      body:
-        'Analytical and marketing cookies are used only with your explicit consent. They help improve the site and keep campaigns relevant, always in line with GDPR and LGPD. You can accept or decline, and you may change your decision later.',
+      body: 'With your permission, Google Analytics measures contact actions without receiving form contents. You can decline or change your choice in “Cookie preferences”. Instagram loads only when you click “Load Instagram”.',
       reject: 'Decline',
       accept: 'Accept',
+      settings: 'Cookie preferences',
     },
     blog: {
       eyebrow: 'Clinical Archive',
@@ -297,6 +270,8 @@ export const en = {
       },
     },
     faq: {
+      title: 'Frequently asked questions about psychotherapy',
+      subtitle: 'Absolute transparency regarding the structure of our care, empowering you to make decisions about your emotional health with total clarity.',
       items: [
         {
           question: 'Does Ricardo Correa provide therapy for patients living in Brazil?',
@@ -321,3 +296,4 @@ export const en = {
       ],
     },
 };
+

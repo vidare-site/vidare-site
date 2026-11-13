@@ -1,5 +1,6 @@
+import OptimizedImage from './OptimizedImage';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Email from './icons/Email';
 // Ensure correct case: the svgr generated them as Whatsapp.js, Email.js, Instagram.js
 import Whatsapp from './icons/Whatsapp';
@@ -10,6 +11,7 @@ import { useI18n } from '../i18n/LanguageProvider';
 const Footer = () => {
   const { content, buildPath } = useI18n();
   const footer = content.footer;
+  const sensitivePage = useLocation().pathname.endsWith('/cadastro');
   const [status, setStatus] = useState('');
   const currentYear = new Date().getFullYear();
   const quickLinks = [
@@ -22,6 +24,8 @@ const Footer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (status === 'SUBMITTING') return;
+    setStatus('SUBMITTING');
     const form = e.target;
     const formData = new FormData(form);
 
@@ -35,6 +39,7 @@ const Footer = () => {
       });
       if (response.ok) {
         setStatus('SUCCESS');
+        window.__vidareTrack?.('contact_form_success');
         setTimeout(() => {
           form.reset();
           setStatus('');
@@ -89,7 +94,7 @@ const Footer = () => {
           {/* Brand & Links */}
           <div className="md:col-span-5 lg:col-span-4 space-y-xl">
             <section className="max-w-[30rem] pr-4 md:pr-6 lg:pr-8">
-              <h3 className="text-xl font-title mb-xs">{footer.brandName}</h3>
+              <h2 className="text-xl font-title mb-xs">{footer.brandName}</h2>
               <p className="text-xs text-muted tracking-wider uppercase mb-xs">{footer.availability}</p>
               <p className="text-sm text-body leading-relaxed max-w-[28rem]">
                 {footer.brandDescription}
@@ -97,11 +102,11 @@ const Footer = () => {
             </section>
             
             <nav aria-label={footer.quickLinksAria}>
-              <h4 className="text-lg font-title mb-sm">{footer.quickLinksTitle}</h4>
+              <h3 className="text-lg font-title mb-sm">{footer.quickLinksTitle}</h3>
               <ul className="space-y-sm text-body">
                 {quickLinks.map((item) => (
                   <li key={item.to}>
-                    <Link to={buildPath(item.to)} className="hover:text-primary transition-colors">
+                    <Link reloadDocument to={buildPath(item.to)} className="hover:text-primary transition-colors">
                       {item.label}
                     </Link>
                   </li>
@@ -112,7 +117,7 @@ const Footer = () => {
 
           {/* Contacts */}
           <div className="md:col-span-3 lg:col-span-3">
-            <h4 className="mb-md text-base font-title tracking-[0.02em] text-title">{footer.contactsTitle}</h4>
+            <h3 className="mb-md text-base font-title tracking-[0.02em] text-title">{footer.contactsTitle}</h3>
             <ul className="space-y-md">
               <li>
                 <a href="mailto:ricardo@vidare.eu" className="flex items-center gap-sm text-body text-base transition-colors hover:text-primary group">
@@ -143,10 +148,10 @@ const Footer = () => {
 
           {/* Contact Form */}
           <div className="md:col-span-4 lg:col-span-5">
-            <h4 className="text-lg font-title mb-md">{footer.messageTitle}</h4>
+            <h3 className="text-lg font-title mb-md">{footer.messageTitle}</h3>
             {status === 'SUCCESS' ? (
               <div className="text-center p-xl bg-surface border border-border">
-                <h4 className="font-title text-xl text-title mb-sm">{footer.successTitle}</h4>
+                <h3 className="font-title text-xl text-title mb-sm">{footer.successTitle}</h3>
                 <p className="text-muted text-sm relative">{footer.successBody}</p>
               </div>
             ) : (
@@ -154,18 +159,18 @@ const Footer = () => {
                 <input type="hidden" name="_next" value="" />
                 <input type="hidden" name="_subject" value={footer.formSubject} />
                 
-                <input type="text" name="full_name" placeholder={footer.form.fullName} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted" />
-                <input type="tel" name="whatsapp" placeholder={footer.form.whatsapp} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted" />
-                <input type="email" name="email" placeholder={footer.form.email} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted" />
+                <input aria-label={footer.form.fullName} autoComplete="name" type="text" name="full_name" placeholder={footer.form.fullName} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted" />
+                <input aria-label={footer.form.whatsapp} autoComplete="tel" type="tel" name="whatsapp" placeholder={footer.form.whatsapp} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted" />
+                <input aria-label={footer.form.email} autoComplete="email" type="email" name="email" placeholder={footer.form.email} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted" />
                 
                 <div className="flex flex-col">
-                  <textarea name="message" rows="4" maxLength="500" placeholder={footer.form.message} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted resize-y min-h-[120px]"></textarea>
+                  <textarea aria-label={footer.form.message} name="message" rows="4" maxLength="500" placeholder={footer.form.message} required className="w-full p-sm border border-border bg-bg text-body focus:outline-none focus:border-title transition-colors placeholder-muted resize-y min-h-[120px]"></textarea>
                   <span className="text-[10px] text-muted text-right mt-1">{footer.form.maxChars}</span>
                 </div>
                 
                 {status === 'ERROR' && <p className="text-xs text-red-500">{footer.form.error}</p>}
                 
-                <button type="submit" className="self-start mt-sm px-xl py-md bg-title text-light text-xs font-medium uppercase tracking-[0.12em] hover:bg-transparent hover:text-title border border-transparent hover:border-title transition-all">
+                <button type="submit" disabled={status === 'SUBMITTING'} className="self-start mt-sm px-xl py-md bg-title text-light text-xs font-medium uppercase tracking-[0.12em] hover:bg-transparent hover:text-title border border-transparent hover:border-title transition-all">
                   {footer.form.submit}
                 </button>
               </form>
@@ -176,7 +181,7 @@ const Footer = () => {
         {/* Crisis Alert */}
         <div className="mt-2xl p-lg bg-surface border border-border flex flex-col sm:flex-row items-center sm:items-start gap-md text-sm text-body leading-relaxed">
           <div className="w-12 h-12 flex-shrink-0 opacity-50">
-            <img src="/assets/13.webp" alt={footer.crisisImageAlt} loading="lazy" className="w-full h-full object-cover rounded" />
+            <OptimizedImage src="/assets/13.webp" alt={footer.crisisImageAlt} loading="lazy" className="w-full h-full object-cover rounded" />
           </div>
           <div>
             <p className="mb-1 text-[10px] uppercase tracking-[0.18em] text-muted">
@@ -190,6 +195,7 @@ const Footer = () => {
 
         {/* Legal */}
         <div className="mt-xl pt-lg border-t border-border-subtle text-xs text-muted text-center sm:text-left">
+          {!sensitivePage && <button type="button" className="mb-sm underline" onClick={() => window.__vidareConsent?.open()}>{content.cookieConsent.settings}</button>}
           <p>© {currentYear} {footer.legal}</p>
         </div>
       </div>
@@ -198,3 +204,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

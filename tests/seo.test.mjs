@@ -19,6 +19,10 @@ test('www, HTTPS, root, legacy routes and trailing slashes use permanent redirec
     ['https://vidare.eu/en/', 'https://vidare.eu/en'],
     ['https://vidare.eu/sv/index.html', 'https://vidare.eu/sv'],
     ['https://vidare.eu/services/emdr', 'https://vidare.eu/pt/services/emdr'],
+    ['https://vidare.eu/es', 'https://vidare.eu/pt'],
+    ['https://vidare.eu/es/services/emdr?source=old', 'https://vidare.eu/pt/services/emdr?source=old'],
+    ['https://www.vidare.eu/es/blog/', 'https://vidare.eu/pt/blog'],
+    ['https://vidare.eu/es/cadastro', 'https://vidare.eu/pt/cadastro'],
   ];
   for (const [source, target] of cases) {
     const response = await app.fetch(new Request(source), env);
@@ -92,7 +96,7 @@ test('the generated production Worker serves real built HTML and a 404 response 
     try { return new Response(fs.readFileSync(file), { headers: { 'content-type': 'text/html' } }); }
     catch { return new Response('Missing', { status: 404 }); }
   } } };
-  for (const path of ['/pt', '/en/services/emdr', '/es/cadastro']) {
+  for (const path of ['/pt', '/en/services/emdr', '/sv/cadastro']) {
     const response = await production.fetch(new Request(SITE_URL + path), realAssets);
     assert.equal(response.status, 200);
     const html = await response.text();

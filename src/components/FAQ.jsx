@@ -26,7 +26,7 @@ export default function FAQ() {
                   {faq.relatedThemes.map((item) => (
                     <li id={item.anchorId} key={item.slug} className="border-l border-title/20 pl-sm">
                       <Link reloadDocument to={buildPath(item.routePath)} className="text-title underline underline-offset-4">{item.label}</Link>
-                      <span className="text-muted"> — {item.description}</span>
+                      <span className="text-muted"> ,  {item.description}</span>
                     </li>
                   ))}
                 </ul>}

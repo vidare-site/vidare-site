@@ -21,9 +21,9 @@ export const en = {
       mainMenuAria: 'Main menu',
     },
     hero: {
-      mainTitle: 'Vidare Psicologia Integral',
+      mainTitle: "Online psychotherapy for adults",
       tagline:
-        'Specialised psychotherapy for adults. Confidential, profound therapy to disarm defences, map emotions, and build real intimacy with your life.',
+        "For Brazilians in Brazil and Europe. A space to discuss trauma, anxiety, stress, relationships and recurring patterns, in Portuguese, English or Swedish.",
       ctaLabel: 'Talk to us',
       sideLabels: {
         left: 'Online care',
@@ -32,100 +32,96 @@ export const en = {
       ctaHref: WHATSAPP_HREF,
     },
     expertise: {
-      title: 'Core Pillars of Clinical Excellence',
-      subtitle: 'Scientific knowledge applied to the resolution of persistent emotional patterns',
-      approaches: [
-        {
-          title: 'EMDR (Profound Reprocessing)',
-          description:
-            'For when the body cannot forget what caused pain. A cutting-edge approach to processing the emotional impact of chronic or acute adverse experiences, allowing the mind to reintegrate memories in a healthy way and stop living in survival mode.',
-          certification: '(Certified by EMDRIA and EMDR Europe)',
-        },
-        {
-          title: 'Schema Therapy (Long-Standing Patterns)',
-          description:
-            'To understand the origin of your "autopilot." A profound tool to deconstruct the roots of excessive self-criticism and the fear of vulnerability. The focus is on healing unmet needs so that echoes of the past stop dictating your current choices.',
-          certification: '(International certification by ISST)',
-        },
-        {
-          title: 'Cognitive Behavioral Therapy (Active Clarity)',
-          description:
-            'The map to organizing internal chaos. A structured approach to how your mind processes challenges and pressure, providing essential daily tools to interrupt anxiety spikes and put autonomy back in your hands.',
-          certification: '(Training by the Beck Institute - USA)',
-        },
-      ],
+  "title": "Approaches used in psychotherapy",
+  "subtitle": "The plan considers your history, your needs and the goals we develop together.",
+  "approaches": [
+    {
+      "title": "EMDR",
+      "description": "An approach with scientific support for trauma and PTSD. It may be considered for other concerns after assessment, taking each person’s circumstances and pace into account.",
+      "certification": "Training in EMDR (Sweden and Spain)"
     },
+    {
+      "title": "Schema Therapy",
+      "description": "A way of working with recurring emotional and relationship patterns. It may help explore how life experiences and emotional needs relate to difficulties in the present.",
+      "certification": "Training in Schema Therapy, recognised by ISST"
+    },
+    {
+      "title": "Cognitive Behavioural Therapy (CBT)",
+      "description": "Explores the relationships between thoughts, emotions and behaviour. Work may include strategies for anxiety, stress and everyday situations.",
+      "certification": "CBT training at the Beck Institute"
+    },
+    {
+      "title": "Acceptance and Commitment Therapy (ACT)",
+      "description": "May help you recognise difficult inner experiences and develop actions connected to what matters to you, taking account of the possibilities and limits of your circumstances.",
+      "certification": "ACT and FACT training, from 2017 to 2019"
+    }
+  ]
+},
     process: {
       slides: [
         {
-          kicker: 'The Clinical Setting',
-          title: 'A Therapeutic Space Without Borders',
+          kicker: "How care takes place",
+          title: "Online care with attention to your circumstances",
           image: '/assets/33.webp',
           bgClass: 'bg-light',
           items: [
-            {
-              title: 'Continuity and Belonging',
-              description:
-                'Your life does not stop, and your clinical care should not have to either. A fully online practice ensures that your safe space travels with you across time zones and countries, maintaining maximum depth wherever you are.',
-            },
-            {
-              title: 'Absolute Confidentiality and Discretion',
-              description:
-                'The privacy of a premium, in-person practice, brought into the virtual space. Using medical-grade platforms with end-to-end encryption (HIPAA, GDPR, LGPD compliance), we guarantee every session is completely secure.',
-            },
-            {
-              title: 'Flexibility for High Performance',
-              description:
-                'A quiet environment is all you need to restore your mental clarity. This structure allows you to sustain your commitment to your emotional health, even amid the most demanding and unpredictable schedules.',
-            },
-          ],
+  {
+    "title": "Continuity and life context",
+    "description": "Online care may support continuity across different routines and time zones. We assess the conditions for privacy and support where you live."
+  },
+  {
+    "title": "Professional confidentiality and privacy",
+    "description": "I respect professional confidentiality under the Code of Ethics. Online sessions use an encrypted platform that meets HIPAA, GDPR and LGPD requirements."
+  },
+  {
+    "title": "A place in your routine",
+    "description": "Sessions last 50 minutes, or 90 minutes for EMDR. A private space and a stable connection help create suitable conditions for the conversation."
+  }
+],
         },
         {
           kicker: 'Clinical Focus',
-          title: 'A holding space for what is too heavy to carry in silence.',
+          title: "Themes we can explore in therapy",
           image: '/assets/30.webp',
           bgClass: 'bg-section-cream',
           items: [
-            {
-              title: 'The Paradox of Invisible Loneliness',
-              description:
-                'When being surrounded by people does not relieve the emptiness of someone who cannot let their guard down. We explore the roots of distance to disarm the fear of trusting, building the vulnerability needed for real and mature connections.',
-            },
-            {
-              title: 'Deactivating Emotional Imprints',
-              description:
-                'Mapping old experiences that continue to dictate your present reactions. The work focuses on processing the painful emotional weight that has been left suspended, returning the body to a genuine state of regulation and safety.',
-            },
-            {
-              title: 'The Exhaustion of Self-Criticism',
-              description:
-                'The silent fatigue driven by an inner voice that demands perfection and allows no rest. We work to disarm guilt as the exclusive engine of action, opening space to re-establish compassionate human limits.',
-            },
-          ],
+  {
+    "title": "Relationships and ways of protecting yourself",
+    "description": "Difficulties trusting others, expressing needs or setting limits can be explored in the context of your history. Therapy offers space to notice these experiences and consider other ways of relating."
+  },
+  {
+    "title": "Experiences that still feel difficult",
+    "description": "Sometimes memories and earlier experiences remain associated with distress in the present. We can explore these connections without assuming a diagnosis and assess how to approach them in therapy."
+  },
+  {
+    "title": "Self-criticism and overload",
+    "description": "Difficulty resting often coexists with guilt, demanding expectations and fear of disappointing others. Therapy may involve recognising these patterns and exploring limits that reflect your needs."
+  }
+],
         },
       ],
     },
     about: {
       eyebrow: 'Ricardo Correa | CRP 05/40839',
-      title: 'Results-driven clinical experience since 2008.',
+      title: "Clinical psychologist since 2008",
       paragraphs: [
-        'Ricardo Correa leads the clinical practice at Vidare. With a continuous trajectory since 2008, his online work is designed for global patients, sustained by the scientific rigor of cutting-edge approaches such as EMDR, Schema Therapy, and CBT.',
-        'A personal journey across continents — with deep roots in Brazil and Europe — brings a unique depth to listening to people living outside their home country. This translates into an instinctive understanding of the challenges of adapting, working professionally, and seeking comfort in your own language while living far from home.',
-        'Every process is treated as a unique, tailored journey. Your life and career history intersect in a therapeutic plan outlined with extreme clarity, clinical safety, and a profound respect for your individual pace.',
-      ],
+  "I am Ricardo Correa, a clinical psychologist, CRP 05/40839. I qualified in Brazil in 2008 and have 18 years of clinical experience. I have also been licensed as a psychologist in Sweden since 2013.",
+  "My training includes EMDR, level 1 in Sweden in 2015 and level 2 in Spain in 2017, ACT and FACT from 2017 to 2019, Schema Therapy from 2021 to 2023, with training recognised by ISST, and CBT at the Beck Institute.",
+  "I work exclusively online, using EMDR, Schema Therapy, CBT and ACT. Care is intended for Brazilians in Brazil and Europe and considers trauma, anxiety, stress, relationships, recurring patterns and life history. Interventions are chosen according to individual assessment and goals."
+],
       meaningTitle: 'The Meaning: Vidare',
       meaningText:
         'In Swedish, the impulse to move forward. Through its Latin root, an invitation to see with the eyes of the soul. A convergence of personal progress and the depth of therapeutic insight.',
       imageAlt: 'Ricardo Correa',
       quote:
-        '"The goal of therapy is not to change who you are, but to rescue the clarity that the noise of daily life has erased. It is about building a safe space so that your best version does not cost you your mental health."',
+        "Therapy takes your history, needs and current pace into account.",
     },
     cta: {
       imageAlt: 'Connection and emotional care',
       title: 'The Decision to Begin',
-      lead: 'The ideal moment is defined solely by you. Caring for your mental health does not follow external deadlines or expectations.',
+      lead: "You can seek an initial conversation even if you do not yet know exactly how to explain what you feel.",
       body:
-        'The clinical process begins the exact moment your need to recover clarity becomes greater than the noise around you. When you decide the time is right, the space will be prepared.',
+        "The first meeting allows us to explore your concerns, explain how care works and assess whether this space suits your needs.",
       button: 'Schedule First Conversation',
     },
     floatingCta: {
@@ -136,13 +132,13 @@ export const en = {
       resourcesDescription:
         'Access curated content, articles, and clinical reflections. A collection developed to accompany your therapeutic process or serve as an independent first step toward your emotional health.',
       resourcesButton: 'Explore resources',
-      infoButton: 'More information',
+      infoButton: "Information via WhatsApp",
       instagramTitle: 'Instagram',
       instagramSubtitle: '@ricardocorrea.psi • follow the latest content',
       brandName: 'Vidare Psicologia Integral',
       availability: 'Online sessions only',
       brandDescription:
-        'A fully online practice based in Brazil and Europe, serving people across countries and time zones.',
+        "Online psychotherapy for Brazilians in Brazil and Europe. Care in Portuguese, English and Swedish, with attention to each person’s life history and circumstances.",
       quickLinksTitle: 'Quick links',
       quickLinksAria: 'Quick links',
       contactsTitle: 'Contact',
@@ -163,7 +159,7 @@ export const en = {
       crisisTitle: 'Important notice',
       crisisImageAlt: 'Important notice',
       crisisText:
-        'This website does not provide emergency support. In situations of crisis or immediate risk to life, contact the emergency service in your region (for example, 190 in Brazil, 112 in European Union countries, and 911 in the United States and Canada) or seek local health services. In Brazil, you can also call 188 (CVV), available 24 hours a day.',
+        "Online therapy may not be suitable for every situation. This website does not provide emergency care. In a life-threatening situation or crisis in Brazil, call 192 (SAMU) or 190. For emotional support, CVV 188. In other countries, contact the local emergency number.",
       legal:
         'Vidare Psicologia Integral. Technical director: Ricardo Correa | CRP 05/40839. All rights reserved.',
     },
@@ -175,37 +171,33 @@ export const en = {
       settings: 'Cookie preferences',
     },
     blog: {
-      eyebrow: 'Clinical Archive',
-      title: 'Reflections on adult life, relationships, and recovering clarity',
-      subtitle:
-        'A curation of articles born from daily clinical practice. Texts designed to help you map your silent patterns, disarm exhaustion, and regain control over your emotional health.',
-      readSoon: 'Available soon',
-      posts: [
-        {
-          date: 'Jan 20, 2024',
-          title: 'How online therapy can be deeply meaningful, even from a distance',
-          excerpt:
-            'The virtual setting allows you to speak from your own context and, with good practice, can sustain work that is deep and careful outside the in-person office. This article gathers guidance on preparing your space, protecting privacy, and handling digital distractions.',
-        },
-        {
-          date: 'Dec 5, 2023',
-          title: 'When the body remembers before the mind: understanding complex trauma',
-          excerpt:
-            'Intense bodily sensations, emotional reactivity, and difficulty trusting can point to fragmented traumatic memories. In this text I explore how EMDR helps integrate these experiences and restore an inner sense of safety.',
-        },
-        {
-          date: 'Oct 18, 2023',
-          title: 'Relationships that drain: recognising schema patterns',
-          excerpt:
-            'Cycles of self-sacrifice, isolation, or constant approval-seeking often have roots in schemas formed in childhood. I share guiding questions to help recognise those scripts and how we begin to address them in therapy.',
-        },
-      ],
+  "eyebrow": "Resources",
+  "title": "Writing about emotional health and psychotherapy",
+  "subtitle": "Content exploring themes that may arise in psychotherapy. The articles below are in preparation.",
+  "readSoon": "In preparation",
+  "posts": [
+    {
+      "date": "In preparation",
+      "title": "Preparing your space for online therapy",
+      "excerpt": "The space where you join can affect privacy and attention during a session. This article considers questions about the environment, connection and conditions for participation."
     },
+    {
+      "date": "In preparation",
+      "title": "Difficult experiences and reactions in the present",
+      "excerpt": "Earlier experiences may be connected with present distress, but that connection needs individual exploration. The article will discuss assessing context without assuming a diagnosis."
+    },
+    {
+      "date": "In preparation",
+      "title": "Recognising recurring relationship patterns",
+      "excerpt": "Certain ways of relating can reappear in different situations. The aim is to offer questions for observing those experiences and considering when seeking care may be relevant."
+    }
+  ]
+},
     intake: {
       badge: 'Intake Form',
       clinicianRole: 'Clinical Psychologist · CRP 05/40839',
       successTitle: 'Form submitted successfully.',
-      successBody: 'I will contact you as soon as possible with the next steps. The data provided here will not generate spam.',
+      successBody: "I will contact you as soon as possible with the next steps.",
       submitIdle: 'Submit',
       submitBusy: 'Sending...',
       submitError: 'There was an error sending your form. Please try again.',
@@ -271,29 +263,37 @@ export const en = {
     },
     faq: {
       title: 'Frequently asked questions about psychotherapy',
-      subtitle: 'Absolute transparency regarding the structure of our care, empowering you to make decisions about your emotional health with total clarity.',
+      subtitle: "Information to help you understand how psychotherapy and ongoing care work.",
       items: [
-        {
-          question: 'Does Ricardo Correa provide therapy for patients living in Brazil?',
-          answer: 'Yes, I provide online psychotherapy for adults throughout Brazil. Digital care allows patients from anywhere to access excellent treatments (such as CBT and EMDR) with the same quality as a premium clinic, without leaving home.',
-        },
-        {
-          question: 'Do you only treat trauma, or also anxiety, depression, and daily life issues?',
-          answer: 'We treat a wide range of clinical demands. In addition to treating trauma with EMDR, we use Cognitive Behavioral Therapy (CBT) to treat anxiety, depression, stress, personal growth, and relationship difficulties. The goal is to provide practical tools to deal with the challenges of modern life.',
-        },
-        {
-          question: 'How does online psychotherapy for expats in Sweden and Europe work?',
-          answer: 'Clinical support for expats is conducted 100% online through secure video conferencing platforms. The focus is on treating trauma, cultural adaptation difficulties, and anxiety, allowing you to be treated by a specialized psychologist whether you live in Stockholm, Gothenburg, or anywhere else in Europe.',
-        },
-        {
-          question: 'What is online EMDR therapy and how does it treat trauma?',
-          answer: 'Online EMDR (Eye Movement Desensitization and Reprocessing) therapy is an internationally certified approach focused on processing acute and complex trauma. The EMDR protocol desensitizes painful memories that keep the brain in survival mode, using bilateral stimulation guided by the therapist through the screen.',
-        },
-        {
-          question: 'Are my data and online therapy sessions confidential?',
-          answer: 'Yes, confidentiality and clinical secrecy are absolute. We only use platforms with end-to-end encryption that comply with international health data protection standards (HIPAA, GDPR, and LGPD), ensuring the same security as a physical premium clinic.',
-        }
-      ],
+  {
+    "question": "What happens in the first session?",
+    "answer": "The first session is a conversation about what brings you to therapy and what you hope to find in this space. We discuss your history, how sessions work and whether online care suits your current needs."
+  },
+  {
+    "question": "Which approaches do you use?",
+    "answer": "I use EMDR, Schema Therapy, Cognitive Behavioural Therapy (CBT) and Acceptance and Commitment Therapy (ACT). The choice depends on assessment, your goals and your experience of the difficulties, and may include resources from different approaches over time."
+  },
+  {
+    "question": "Can EMDR be done online?",
+    "answer": "EMDR can be delivered online when assessment indicates that this format is appropriate. It has scientific support for trauma and post-traumatic stress disorder (PTSD), and may be considered for other concerns after individual assessment."
+  },
+  {
+    "question": "Can I have therapy while living outside Brazil?",
+    "answer": "Online care is intended for Brazilians living in Brazil and Europe. In our initial conversation, we check your location, scheduling and the conditions for ongoing care, including support available where you live."
+  },
+  {
+    "question": "How long are sessions and how long does therapy take?",
+    "answer": "Sessions last 50 minutes, or 90 minutes for EMDR. The length of therapy varies with your concerns, life history and goals, which we review during the process, without a guaranteed timeframe or outcome."
+  },
+  {
+    "question": "How are privacy and confidentiality handled?",
+    "answer": "I respect professional confidentiality under the Code of Ethics, including its limits and obligations. Online sessions use an encrypted platform that meets HIPAA, GDPR and LGPD requirements. We also discuss how to protect privacy in the space where you join the session."
+  },
+  {
+    "question": "Do you accept health insurance and which languages are available?",
+    "answer": "This is private care, without health insurance plans, available in Portuguese, English and Swedish. Initial contact can be made through WhatsApp, email or the website form."
+  }
+],
     },
 };
 

@@ -28,11 +28,6 @@ const localeSeoTargets = {
     hreflang: 'en',
     ogLocale: 'en_US',
   },
-  es: {
-    htmlLang: 'es',
-    hreflang: 'es',
-    ogLocale: 'es_ES',
-  },
   sv: {
     htmlLang: 'sv',
     hreflang: 'sv',
@@ -50,7 +45,7 @@ const seoByLocale = {
           'Ricardo Correa, psicólogo clínico (CRP 05/40839). Psicoterapia online para adultos no Brasil e na Europa: EMDR, TCC e Terapia do Esquema.',
         image: `${SITE_URL}/assets/og-home-pt.png`,
         twitterImage: `${SITE_URL}/assets/og-home-pt.png`,
-        imageAlt: 'Ricardo Correa — Vidare Psicologia Integral',
+        imageAlt: 'Ricardo Correa ,  Vidare Psicologia Integral',
       },
       '/blog': {
         title: 'Blog de psicologia | Ricardo Correa',
@@ -119,12 +114,13 @@ const seoByLocale = {
     knowsAbout: [
       'EMDR',
       'Psicoterapia informada por trauma',
-      'Trauma complexo',
+      'Trauma',
       'Psicoterapia online',
       'Terapia do Esquema',
       'Terapia Cognitivo-Comportamental',
+      'Terapia de Aceitação e Compromisso',
     ],
-    areaServed: ['Brasil', 'Suécia', 'Europa', 'Estados Unidos', 'Atendimento Online'],
+    areaServed: ['Brasil', 'Suécia', 'Europa', 'Atendimento Online'],
   },
   en: {
     siteName: 'Vidare Psicologia Integral',
@@ -135,7 +131,7 @@ const seoByLocale = {
           'Ricardo Correa, clinical psychologist (CRP 05/40839). Online psychotherapy for adults in Brazil and Europe, with EMDR, CBT and Schema Therapy.',
         image: `${SITE_URL}/assets/og-home-en.png`,
         twitterImage: `${SITE_URL}/assets/og-home-en.png`,
-        imageAlt: 'Ricardo Correa — Vidare Psicologia Integral',
+        imageAlt: 'Ricardo Correa ,  Vidare Psicologia Integral',
       },
       '/blog': {
         title: 'Psychology blog | Ricardo Correa',
@@ -204,97 +200,13 @@ const seoByLocale = {
     knowsAbout: [
       'EMDR',
       'Trauma-informed psychotherapy',
-      'Complex trauma',
+      'Trauma',
       'Online psychotherapy',
       'Schema Therapy',
       'Cognitive Behavioral Therapy',
+      'Acceptance and Commitment Therapy',
     ],
-    areaServed: ['Brazil', 'Sweden', 'Europe', 'United States', 'Online care'],
-  },
-  es: {
-    siteName: 'Vidare Psicologia Integral',
-    routes: {
-      '/': {
-        title: 'Ricardo Correa | Psicólogo online en español | Vidare',
-        description:
-          'Ricardo Correa, psicólogo clínico (CRP 05/40839). Psicoterapia online para adultos en Brasil y Europa: EMDR, TCC y Terapia de Esquemas.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'Ricardo Correa — Vidare Psicología Integral',
-      },
-      '/blog': {
-        title: 'Blog de psicología | Ricardo Correa',
-        description: 'Reflexiones de Ricardo Correa sobre psicología, ansiedad, relaciones, TCC, EMDR y psicoterapia online.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'Vidare Psicologia Integral',
-      },
-      '/cadastro': {
-        title: 'Formulario de admisión | Ricardo Correa',
-        description:
-          'Psicoterapia online para adultos con confidencialidad, claridad clínica y cuidado humano. Ponte en contacto para comenzar.',
-        image: `${SITE_URL}/assets/og-cadastro-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-cadastro-es.png`,
-        imageAlt: 'Formulario de admisión Vidare',
-      },
-      '/services/online-psychotherapy-adults': {
-        title: 'Psicoterapia para adultos en español | Vidare',
-        description:
-          'Psicoterapia online para adultos con confidencialidad, continuidad y profundidad clínica.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'Psicoterapia online para adultos',
-      },
-      '/services/trauma': {
-        title: 'Psicoterapia informada en trauma | Ricardo Correa',
-        description:
-          'Terapia para trauma enfocada en regulación emocional, procesamiento de experiencias dolorosas y recuperación de seguridad interna.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'Terapia para trauma',
-      },
-      '/services/anxiety': {
-        title: 'Psicoterapia para Ansiedad | Vidare',
-        description:
-          'Psicoterapia para ansiedad para reducir hiperactivación, comprender detonantes y recuperar equilibrio emocional.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'Psicoterapia para ansiedad',
-      },
-      '/services/burnout': {
-        title: 'Psicoterapia online para el burnout | Vidare',
-        description:
-          'Terapia online para burnout y agotamiento crónico. Recupera energía, límites saludables y estabilidad emocional.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'Terapia online para burnout',
-      },
-      '/services/emdr': {
-        title: 'EMDR online para el trauma relacional | Vidare',
-        description:
-          'EMDR para trauma relacional y experiencias dolorosas con protocolo estructurado y base clínica.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'EMDR para trauma relacional',
-      },
-      '/services/schema-therapy': {
-        title: 'Terapia de Esquemas para Patrones Repetitivos | Vidare',
-        description:
-          'Terapia de Esquemas para transformar patrones emocionales y vinculares que se repiten.',
-        image: `${SITE_URL}/assets/og-home-es.png`,
-        twitterImage: `${SITE_URL}/assets/og-home-es.png`,
-        imageAlt: 'Terapia de Esquemas',
-      },
-    },
-    knowsAbout: [
-      'EMDR',
-      'Psicoterapia informada por trauma',
-      'Trauma complejo',
-      'Psicoterapia online',
-      'Terapia de esquemas',
-      'Terapia cognitivo-conductual',
-    ],
-    areaServed: ['Brasil', 'Suecia', 'Europa', 'Estados Unidos', 'Atención online'],
+    areaServed: ['Brazil', 'Sweden', 'Europe', 'Online care'],
   },
   sv: {
     siteName: 'Vidare Psicologia Integral',
@@ -305,7 +217,7 @@ const seoByLocale = {
           'Ricardo Correa, klinisk psykolog (CRP 05/40839). Onlineterapi för vuxna i Brasilien och Europa med EMDR, KBT och schematerapi.',
         image: `${SITE_URL}/assets/og-home-sv.png`,
         twitterImage: `${SITE_URL}/assets/og-home-sv.png`,
-        imageAlt: 'Ricardo Correa — Vidare Psicologia Integral',
+        imageAlt: 'Ricardo Correa ,  Vidare Psicologia Integral',
       },
       '/blog': {
         title: 'Psykologiblogg | Ricardo Correa',
@@ -374,12 +286,13 @@ const seoByLocale = {
     knowsAbout: [
       'EMDR',
       'Traumainformerad psykoterapi',
-      'Komplext trauma',
+      'Trauma',
       'Onlineterapi',
       'Schematerapi',
       'Kognitiv beteendeterapi',
+      'Acceptance and Commitment Therapy',
     ],
-    areaServed: ['Brasilien', 'Sverige', 'Europa', 'USA', 'Onlinebehandling'],
+    areaServed: ['Brasilien', 'Sverige', 'Europa', 'Onlinebehandling'],
   },
 };
 
@@ -400,7 +313,7 @@ function buildStructuredData(locale, path, page) {
   const person = {
     '@type': 'Person', '@id': PRACTITIONER_ID,
     name: 'Ricardo Correa', url: home, image: PRACTITIONER_IMAGE,
-    jobTitle: { pt: 'Psicólogo clínico', en: 'Clinical psychologist', es: 'Psicólogo clínico', sv: 'Klinisk psykolog' }[locale],
+    jobTitle: { pt: 'Psicólogo clínico', en: 'Clinical psychologist', sv: 'Klinisk psykolog' }[locale],
     worksFor: { '@id': ORGANIZATION_ID },
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
@@ -461,7 +374,7 @@ function buildStructuredData(locale, path, page) {
   if (path === '/') {
     const faqs = [...localizedContent[locale].faq.items, {
       question: hub.title,
-      answer: `${hub.description} ${hub.items.map((item) => `${item.label} — ${item.description}`).join(' ')}`,
+      answer: `${hub.description} ${hub.items.map((item) => `${item.label} ,  ${item.description}`).join(' ')}`,
     }];
     graph.push({
       '@type': 'FAQPage', '@id': `${home}#faq`,
@@ -471,19 +384,34 @@ function buildStructuredData(locale, path, page) {
       })),
     });
   }
+  if (path.startsWith('/services/')) {
+    const article = servicePages[locale].services[path.slice('/services/'.length)];
+    graph.push({
+      '@type': 'FAQPage', '@id': page.canonical + '#faq',
+      mainEntity: article.faqs.map(([question, answer]) => ({
+        '@type': 'Question', name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      })),
+    });
+  }
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 
 const missingPage = {
   pt: ['Página não encontrada | Vidare', 'O endereço solicitado não existe. Acesse as páginas da Vidare.'],
   en: ['Page not found | Vidare', 'The requested address does not exist. Visit the Vidare website.'],
-  es: ['Página no encontrada | Vidare', 'La dirección solicitada no existe. Visita las páginas de Vidare.'],
   sv: ['Sidan hittades inte | Vidare', 'Adressen finns inte. Besök Vidares webbplats.'],
 };
 
 export const getRouteSeo = (locale = DEFAULT_LOCALE, routePath = '/') => {
   const safeLocale = seoByLocale[locale] ? locale : DEFAULT_LOCALE;
-  const route = seoByLocale[safeLocale].routes[routePath];
+  const article = routePath.startsWith('/services/') ? servicePages[safeLocale].services[routePath.slice('/services/'.length)] : null;
+  const route = article ? {
+    title: article.seoTitle || article.label + ' | Vidare',
+    description: article.description,
+    image: SITE_URL + '/assets/og-home-' + safeLocale + '.png',
+    imageAlt: article.label,
+  } : seoByLocale[safeLocale].routes[routePath];
   if (!PAGE_PATHS.includes(routePath) || !route) return {
     title: missingPage[safeLocale][0], description: missingPage[safeLocale][1],
     robots: 'noindex, follow', canonical: null, alternates: [], structuredData: null,

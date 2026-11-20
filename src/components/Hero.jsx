@@ -89,8 +89,9 @@ const Hero = ({
         <div className="flex min-h-screen flex-col justify-end px-6 pb-4 pt-28 sm:px-8 sm:pb-5 md:px-12 md:pb-6 lg:px-16">
           <div className="flex justify-center">
             <div className="w-full">
+              <p className="mb-4 text-center text-xs uppercase tracking-[0.18em] text-light/90">{BRAND_NAME}</p>
               <h1 className="w-full text-center font-title text-[8.4vw] leading-[0.9] tracking-[-0.05em] text-light sm:text-[7.2vw] lg:text-[6.3vw]">
-                {BRAND_NAME}
+                {heroContent.mainTitle}
               </h1>
             </div>
           </div>

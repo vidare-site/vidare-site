@@ -1,4 +1,4 @@
-export const SUPPORTED_LOCALES = ['pt', 'en', 'es', 'sv'];
+export const SUPPORTED_LOCALES = ['pt', 'en', 'sv'];
 export const DEFAULT_LOCALE = 'pt';
 export const AUTO_FALLBACK_LOCALE = 'en';
 export const LOCALE_PREFERENCE_KEY = 'vidarePreferredLocale';
@@ -19,14 +19,6 @@ export const localeMeta = {
     shortLabel: 'EN',
     htmlLang: 'en',
     ogLocale: 'en_US',
-  },
-  es: {
-    code: 'es',
-    label: 'Spanish',
-    nativeLabel: 'Español',
-    shortLabel: 'ES',
-    htmlLang: 'es',
-    ogLocale: 'es_ES',
   },
   sv: {
     code: 'sv',
@@ -71,30 +63,6 @@ export const buildLocalePath = (locale, path = '/') => {
 
 export const switchLocalePath = (pathname, targetLocale) =>
   buildLocalePath(targetLocale, normalizeRoutePath(pathname));
-
-const SPANISH_SPEAKING_REGIONS = new Set([
-  'AR',
-  'BO',
-  'CL',
-  'CO',
-  'CR',
-  'CU',
-  'DO',
-  'EC',
-  'ES',
-  'GQ',
-  'GT',
-  'HN',
-  'MX',
-  'NI',
-  'PA',
-  'PE',
-  'PR',
-  'PY',
-  'SV',
-  'UY',
-  'VE',
-]);
 
 const ENGLISH_SPEAKING_REGIONS = new Set([
   'AU',
@@ -168,13 +136,11 @@ const resolveFromLocaleHints = (localeTags = []) => {
   for (const { language } of parsedTags) {
     if (language === 'sv') return 'sv';
     if (language === 'pt') return 'pt';
-    if (language === 'es') return 'es';
   }
 
   for (const { region } of parsedTags) {
     if (region === 'SE') return 'sv';
     if (region === 'BR' || region === 'PT') return 'pt';
-    if (region && SPANISH_SPEAKING_REGIONS.has(region)) return 'es';
   }
 
   for (const { language, region } of parsedTags) {

@@ -21,9 +21,9 @@ export const pt = {
       mainMenuAria: 'Menu principal',
     },
     hero: {
-      mainTitle: 'Vidare Psicologia Integral',
+      mainTitle: "Psicoterapia online em português para adultos",
       tagline:
-        'Psicoterapia especializada para adultos. Terapia profunda e sigilosa para desarmar defesas, mapear emoções e construir proximidade real com a sua vida.',
+        "Para brasileiros no Brasil e na Europa. Um espaço para conversar sobre trauma, ansiedade, estresse, vínculos e padrões que se repetem.",
       ctaLabel: 'Saiba mais',
       sideLabels: {
         left: 'Atendimento online',
@@ -32,100 +32,96 @@ export const pt = {
       ctaHref: WHATSAPP_HREF,
     },
     expertise: {
-      title: 'Pilares Clínicos de Excelência',
-      subtitle: 'O conhecimento científico aplicado à resolução de padrões emocionais persistentes',
-      approaches: [
-        {
-          title: 'EMDR (Processamento Profundo)',
-          description:
-            'Quando o corpo não consegue esquecer o que causou dor. Uma abordagem de ponta para processar o impacto emocional de experiências adversas crônicas ou agudas, permitindo que a mente reintegre memórias de forma saudável e deixe de viver em modo de sobrevivência.',
-          certification: '(Certificação pela EMDRIA e EMDR Europe)',
-        },
-        {
-          title: 'Terapia do Esquema (Padrões de Longa Data)',
-          description:
-            'Para entender a origem do seu "piloto automático". Uma ferramenta profunda para desconstruir raízes de autocrítica excessiva e dificuldade de entrega. O foco é curar necessidades escondidas para que ecos do passado deixem de ditar as suas escolhas atuais.',
-          certification: '(Certificação Internacional pela ISST)',
-        },
-        {
-          title: 'Terapia Cognitivo-Comportamental (Clareza Ativa)',
-          description:
-            'O mapa para organizar o caos interno. Um trabalho estruturado sobre a forma como a sua mente processa desafios e pressão, fornecendo ferramentas diárias indispensáveis para interromper os picos de ansiedade e devolver a autonomia para as suas mãos.',
-          certification: '(Formação pelo Beck Institute - EUA)',
-        },
-      ],
+  "title": "Abordagens no acompanhamento psicológico",
+  "subtitle": "O planejamento considera sua história, suas necessidades e os objetivos construídos em conjunto.",
+  "approaches": [
+    {
+      "title": "EMDR",
+      "description": "Uma abordagem com respaldo científico para trauma e TEPT. Pode ser considerada para outras demandas após avaliação, respeitando as condições e o ritmo de cada pessoa.",
+      "certification": "Formação em EMDR (Suécia e Espanha)"
     },
+    {
+      "title": "Terapia do Esquema",
+      "description": "Um trabalho sobre padrões emocionais e relacionais que se repetem. Pode ajudar a compreender como experiências de vida e necessidades emocionais se relacionam com as dificuldades do presente.",
+      "certification": "Formação em Terapia do Esquema, reconhecida pela ISST"
+    },
+    {
+      "title": "Terapia Cognitivo-Comportamental (TCC)",
+      "description": "Explora as relações entre pensamentos, emoções e comportamentos. O trabalho pode incluir estratégias para lidar com ansiedade, estresse e situações do cotidiano.",
+      "certification": "Formação em TCC pelo Beck Institute"
+    },
+    {
+      "title": "Terapia de Aceitação e Compromisso (ACT)",
+      "description": "Pode ajudar a reconhecer experiências internas difíceis e a construir ações alinhadas ao que importa para você, considerando as possibilidades e os limites do seu contexto.",
+      "certification": "Formações em ACT e FACT, de 2017 a 2019"
+    }
+  ]
+},
     process: {
       slides: [
         {
-          kicker: 'O Setting Clínico',
-          title: 'Um Espaço Terapêutico Sem Fronteiras Geográficas',
+          kicker: "Como acontece o atendimento",
+          title: "Atendimento online com cuidado e contexto",
           image: '/assets/33.webp',
           bgClass: 'bg-light',
           items: [
-            {
-              title: 'Continuidade e Pertencimento',
-              description:
-                'A sua vida não para e o seu acompanhamento clínico também não precisa parar. A prática 100% online garante que o seu espaço seguro viaje com você entre fusos horários e países, mantendo o nível máximo de profundidade onde quer que você esteja.',
-            },
-            {
-              title: 'Sigilo e Discrição Absoluta',
-              description:
-                'A privacidade de um consultório presencial premium, levada para o ambiente virtual. Utilizando plataformas de grau médico com criptografia de ponta a ponta (HIPAA, GDPR, LGPD), garantimos que cada sessão seja um espaço totalmente blindado.',
-            },
-            {
-              title: 'Flexibilidade para a Alta Performance',
-              description:
-                'Basta um ambiente silencioso para restabelecer a sua clareza mental. Esta estrutura permite sustentar o compromisso com a sua saúde emocional mesmo diante das agendas mais exigentes e imprevisíveis.',
-            },
-          ],
+  {
+    "title": "Continuidade e contexto de vida",
+    "description": "O atendimento online pode favorecer a continuidade do acompanhamento entre diferentes rotinas e fusos horários. Avaliamos juntos as condições de privacidade e apoio no lugar em que você vive."
+  },
+  {
+    "title": "Sigilo profissional e privacidade",
+    "description": "Respeito o sigilo profissional previsto no Código de Ética. Sessões online em plataforma criptografada que atende às exigências HIPAA, GDPR e LGPD."
+  },
+  {
+    "title": "Um espaço na sua rotina",
+    "description": "As sessões duram 50 minutos, ou 90 minutos no EMDR. Um ambiente reservado e uma conexão estável ajudam a organizar as condições para o encontro."
+  }
+],
         },
         {
           kicker: 'O Foco Clínico',
-          title: 'Lugar de repouso para o que pesa demais no silêncio.',
+          title: "Temas que podem fazer parte da terapia",
           image: '/assets/30.webp',
           bgClass: 'bg-section-cream',
           items: [
-            {
-              title: 'O Paradoxo da Solidão Invisível',
-              description:
-                'Quando estar cercado de pessoas não alivia o vazio de quem não consegue baixar a guarda. O processo busca desarmar o medo de confiar, construindo a vulnerabilidade necessária para conexões reais e maduras.',
-            },
-            {
-              title: 'A Desativação das Marcas do Passado',
-              description:
-                'Mapear experiências que continuam ditando as suas reações. O foco é processar a carga dolorosa que ficou suspensa e devolver o corpo a um verdadeiro estado de regulação e segurança.',
-            },
-            {
-              title: 'A Exaustão da Autocobrança',
-              description:
-                'O cansaço silencioso gerado por uma voz interna que exige perfeição e não permite pausas. Vamos desarmar a culpa como motor exclusivo de ação, abrindo espaço para restabelecer os seus limites humanos.',
-            },
-          ],
+  {
+    "title": "Vínculos e formas de se proteger",
+    "description": "Dificuldades de confiar, expressar necessidades ou estabelecer limites podem ser compreendidas a partir da sua história. A terapia oferece espaço para observar essas experiências e explorar outras possibilidades de relação."
+  },
+  {
+    "title": "Experiências que ainda incomodam",
+    "description": "Às vezes, lembranças e experiências anteriores continuam associadas a desconforto no presente. Podemos investigar essas relações sem pressupor um diagnóstico e avaliar como abordá-las no acompanhamento."
+  },
+  {
+    "title": "Autocobrança e sobrecarga",
+    "description": "Muitas vezes, a dificuldade de descansar convive com culpa, exigência e receio de decepcionar. O trabalho pode envolver reconhecer esses padrões e experimentar limites compatíveis com suas necessidades."
+  }
+],
         },
       ],
     },
     about: {
       eyebrow: 'Ricardo Correa | CRP 05/40839',
-      title: 'Experiência clínica focada em resultados desde 2008.',
+      title: "Psicólogo clínico desde 2008",
       paragraphs: [
-        'Ricardo Correa lidera a prática clínica da Vidare. Com uma trajetória contínua desde 2008, o seu trabalho online é desenhado para pacientes globais, sustentado pelo rigor científico de abordagens de ponta como EMDR, Terapia do Esquema e TCC.',
-        'A própria jornada através de diferentes continentes — com raízes fortes no Brasil e na Europa — confere uma profundidade única à escuta de pessoas que vivem fora do seu país de origem. Isso se traduz numa compreensão instintiva dos desafios de adaptar-se, atuar profissionalmente e buscar colo no seu próprio idioma durante uma vida longe de casa.',
-        'Todo processo é tratado como uma jornada única, sob medida. A sua história de vida e de carreira se cruzam num plano terapêutico traçado com extrema clareza, segurança clínica e um profundo respeito pelo seu ritmo individual.',
-      ],
+  "Sou Ricardo Correa, psicólogo clínico, CRP 05/40839. Formei-me no Brasil em 2008 e tenho 18 anos de experiência clínica. Também sou licenciado como psicólogo na Suécia desde 2013.",
+  "Minha formação inclui EMDR, nível 1 na Suécia em 2015 e nível 2 na Espanha em 2017, ACT e FACT entre 2017 e 2019, Terapia do Esquema entre 2021 e 2023, com formação reconhecida pela ISST, e TCC pelo Beck Institute.",
+  "Atendo sempre online, com EMDR, Terapia do Esquema, TCC e ACT. O acompanhamento é voltado a brasileiros no Brasil e na Europa e considera trauma, ansiedade, estresse, vínculos, padrões que se repetem e história de vida. A escolha das intervenções depende da avaliação e dos objetivos de cada pessoa."
+],
       meaningTitle: 'O Significado: Vidare',
       meaningText:
         'Do sueco, o impulso de seguir adiante. Da raiz latina, o convite a ver com os olhos da alma. A convergência entre progresso pessoal e profundidade do insight terapêutico.',
       imageAlt: 'Ricardo Correa',
       quote:
-        '"O objetivo da terapia não é mudar quem você é, mas resgatar a clareza que o barulho da rotina apagou. É construir um espaço seguro para que a sua melhor versão não custe a sua saúde mental."',
+        "O acompanhamento considera sua história, suas necessidades e o ritmo possível para você neste momento.",
     },
     cta: {
       imageAlt: 'Conexão e acolhimento',
       title: 'A Decisão de Começar',
-      lead: 'O momento ideal é definido unicamente por você. O cuidado com a sua saúde mental não obedece a prazos ou expectativas externas.',
+      lead: "Você pode buscar uma primeira conversa mesmo sem saber exatamente como explicar o que sente.",
       body:
-        'O processo clínico começa no exato instante em que a sua necessidade de recuperar a clareza se torna maior do que o ruído ao seu redor. Quando decidir que chegou a hora, o espaço estará preparado.',
+        "O encontro inicial permite conhecer sua demanda, esclarecer o funcionamento do atendimento e avaliar se esse espaço faz sentido para você.",
       button: 'Agendar Primeira Conversa',
     },
     floatingCta: {
@@ -136,13 +132,13 @@ export const pt = {
       resourcesDescription:
         'Acesse conteúdos curados, artigos e reflexões clínicas. Um acervo desenvolvido para acompanhar o seu processo terapêutico ou servir como um primeiro passo independente em direção à sua saúde emocional.',
       resourcesButton: 'Acessar Conteúdos',
-      infoButton: 'Mais informações',
+      infoButton: "Informações pelo WhatsApp",
       instagramTitle: 'Instagram',
       instagramSubtitle: '@ricardocorrea.psi • acompanhe os conteúdos mais recentes',
       brandName: 'Vidare Psicologia Integral',
       availability: 'Atendimento apenas online',
       brandDescription:
-        'Atendimento 100% online, com base no Brasil e na Europa, para pessoas que vivem em diferentes países e fusos horários.',
+        "Psicoterapia online para brasileiros no Brasil e na Europa. Atendimento em português, inglês e sueco, com atenção à história de vida e ao contexto de cada pessoa.",
       quickLinksTitle: 'Links Rápidos',
       quickLinksAria: 'Links rápidos',
       contactsTitle: 'Contatos',
@@ -163,7 +159,7 @@ export const pt = {
       crisisTitle: 'Aviso importante',
       crisisImageAlt: 'Aviso de atenção',
       crisisText:
-        'Este site não oferece atendimento de urgência. Em situações de crise ou risco imediato de vida, entre em contato com o serviço de emergência da sua região (por exemplo, 190 no Brasil, 112 em países da União Europeia, 911 nos Estados Unidos e Canadá) ou procure o serviço local de saúde. No Brasil, você também pode ligar para o 188 (CVV), disponível 24 horas por dia.',
+        "A terapia online pode não ser adequada para todos os casos. Este site não oferece atendimento de urgência. Em risco de vida ou crise, no Brasil, ligue 192 (SAMU) ou 190. Para apoio emocional, CVV 188. Em outros países, procure o número de emergência local.",
       legal:
         'Vidare Psicologia Integral. Responsável técnico: Ricardo Correa | CRP 05/40839. Todos os direitos reservados.',
     },
@@ -175,37 +171,33 @@ export const pt = {
       settings: 'Preferências de cookies',
     },
     blog: {
-      eyebrow: 'Acervo Clínico',
-      title: 'Reflexões sobre a vida adulta, relações e o resgate da clareza',
-      subtitle:
-        'Uma curadoria de artigos nascidos da prática clínica diária. Textos pensados para ajudar você a mapear os seus padrões silenciosos, desarmar a exaustão e retomar o controle sobre a sua saúde emocional.',
-      readSoon: 'Disponível em breve',
-      posts: [
-        {
-          date: '20 jan 2024',
-          title: 'Como a terapia online pode ser profunda (mesmo à distância)',
-          excerpt:
-            'O setting virtual permite que você fale a partir do seu próprio contexto e, com boas práticas, pode sustentar um trabalho profundo e cuidadoso fora do consultório presencial. Reunimos orientações para preparar o espaço, preservar privacidade e lidar com distrações digitais.',
-        },
-        {
-          date: '05 dez 2023',
-          title: 'Quando o corpo lembra antes da mente: entendendo traumas complexos',
-          excerpt:
-            'Sensações corporais intensas, reatividade emocional e dificuldade de confiar podem ser pistas de memórias traumáticas fragmentadas. Neste texto apresento como EMDR ajuda a integrar experiências e restaurar senso de segurança interna.',
-        },
-        {
-          date: '18 out 2023',
-          title: 'Relações que drenam energia: identificando padrões de esquema',
-          excerpt:
-            'Ciclos de autossacrifício, isolamento ou busca constante por aprovação costumam ter raízes em esquemas que se formaram na infância. Compartilho perguntas-guia para reconhecer esses roteiros e como iniciamos intervenções na terapia.',
-        },
-      ],
+  "eyebrow": "Conteúdos",
+  "title": "Textos sobre saúde emocional e psicoterapia",
+  "subtitle": "Conteúdos para conhecer temas que podem aparecer no acompanhamento psicológico. As publicações abaixo estão em preparação.",
+  "readSoon": "Em preparação",
+  "posts": [
+    {
+      "date": "Em preparação",
+      "title": "Como organizar o espaço para a terapia online",
+      "excerpt": "O ambiente de onde você participa pode influenciar a privacidade e a atenção durante o encontro. Este conteúdo reúne questões para pensar sobre o espaço, a conexão e as condições de participação."
     },
+    {
+      "date": "Em preparação",
+      "title": "Experiências difíceis e reações no presente",
+      "excerpt": "Uma experiência anterior pode estar relacionada a desconfortos atuais, mas essa ligação precisa ser compreendida em cada caso. O texto abordará a importância de avaliar o contexto sem antecipar um diagnóstico."
+    },
+    {
+      "date": "Em preparação",
+      "title": "Como reconhecer padrões que se repetem nos vínculos",
+      "excerpt": "Certas formas de se relacionar podem voltar a aparecer em situações diferentes. A proposta é apresentar perguntas para observar essas experiências e compreender quando pode fazer sentido buscar acompanhamento."
+    }
+  ]
+},
     intake: {
       badge: 'Formulário de Entrada',
       clinicianRole: 'Psicólogo Clínico · CRP 05/40839',
       successTitle: 'Formulário enviado com sucesso.',
-      successBody: 'Entrarei em contato o mais breve possível com os próximos passos. Os dados fornecidos aqui não geram spam.',
+      successBody: "Entrarei em contato o mais breve possível com os próximos passos.",
       submitIdle: 'Enviar',
       submitBusy: 'Enviando...',
       submitError: 'Erro ao enviar o cadastro. Tente novamente.',
@@ -271,29 +263,37 @@ export const pt = {
     },
     faq: {
       title: 'Perguntas frequentes sobre psicoterapia',
-      subtitle: 'Transparência absoluta sobre a estrutura do acompanhamento, para que você tome decisões sobre a sua saúde emocional com total clareza.',
+      subtitle: "Informações sobre o acompanhamento para ajudar você a conhecer o funcionamento da psicoterapia.",
       items: [
-        {
-          question: 'Ricardo Correa atende pacientes que moram no Brasil?',
-          answer: 'Sim, ofereço psicoterapia online para adultos em todo o Brasil. O atendimento digital permite que pacientes de São Paulo, Rio de Janeiro, Minas Gerais e outras regiões tenham acesso a tratamentos de excelência (como TCC e EMDR) com a mesma qualidade de um consultório premium, sem precisar sair de casa.',
-        },
-        {
-          question: 'A clínica trata apenas traumas ou também ansiedade, depressão e questões do dia a dia?',
-          answer: 'Atendemos uma ampla gama de demandas clínicas. Além do tratamento de traumas com EMDR, utilizamos a Terapia Cognitivo-Comportamental (TCC) para tratar ansiedade, depressão, estresse, autoconhecimento e dificuldades nos relacionamentos. O objetivo é fornecer ferramentas práticas para lidar com os desafios da vida moderna.',
-        },
-        {
-          question: 'Como funciona a psicoterapia online para brasileiros no exterior (expatriados)?',
-          answer: 'O acompanhamento clínico para brasileiros na Europa é feito 100% online através de plataformas seguras de videoconferência. O foco é tratar o trauma, dificuldades de adaptação cultural e ansiedade, permitindo que você seja atendido na sua língua materna (português) por um psicólogo especializado, independentemente se você mora em Estocolmo, Londres, Berlim ou outra cidade europeia.',
-        },
-        {
-          question: 'O que é a terapia EMDR online e como ela trata o trauma?',
-          answer: 'A terapia EMDR (Eye Movement Desensitization and Reprocessing) online é uma abordagem com certificação internacional focada no processamento de traumas agudos e crônicos. O protocolo EMDR desensibiliza memórias dolorosas que mantêm o cérebro em modo de sobrevivência, utilizando estimulação bilateral guiada pelo terapeuta através da tela, com eficácia comprovada cientificamente.',
-        },
-        {
-          question: 'Os meus dados e as sessões de psicoterapia online são confidenciais?',
-          answer: 'Sim, a confidencialidade e o sigilo clínico são absolutos. Utilizamos apenas plataformas com criptografia de ponta a ponta que respeitam as normas internacionais de proteção de dados de saúde (HIPAA, GDPR e LGPD), garantindo a mesma segurança de um consultório presencial.',
-        }
-      ],
+  {
+    "question": "Como é a primeira sessão?",
+    "answer": "A primeira sessão é uma conversa para compreender o que levou você a buscar acompanhamento e o que espera desse espaço. Conversamos sobre sua história, o funcionamento das sessões e se o atendimento online é adequado ao seu momento."
+  },
+  {
+    "question": "Quais abordagens você utiliza?",
+    "answer": "Utilizo EMDR, Terapia do Esquema, Terapia Cognitivo-Comportamental (TCC) e Terapia de Aceitação e Compromisso (ACT). A escolha depende da avaliação, dos seus objetivos e de como você vive as dificuldades, podendo integrar diferentes recursos ao longo do processo."
+  },
+  {
+    "question": "EMDR funciona online?",
+    "answer": "O EMDR pode ser realizado online quando a avaliação indica que esse formato é adequado. É uma abordagem com respaldo científico para trauma e transtorno de estresse pós-traumático (TEPT), que também pode ser considerada para outras demandas após avaliação individual."
+  },
+  {
+    "question": "Posso fazer terapia morando fora do Brasil?",
+    "answer": "O atendimento é online e voltado a brasileiros no Brasil e na Europa. Na conversa inicial, verificamos sua localização, os horários e as condições para o acompanhamento, incluindo os recursos de apoio disponíveis onde você vive."
+  },
+  {
+    "question": "Quanto duram as sessões e o processo?",
+    "answer": "As sessões duram 50 minutos, ou 90 minutos no EMDR. A duração do processo varia conforme a demanda, a história de vida e os objetivos, que são revistos ao longo do acompanhamento, sem um prazo ou resultado garantido."
+  },
+  {
+    "question": "Como são cuidadas a privacidade e a confidencialidade?",
+    "answer": "Respeito o sigilo profissional previsto no Código de Ética, incluindo seus limites e deveres. Sessões online em plataforma criptografada que atende às exigências HIPAA, GDPR e LGPD. Também conversamos sobre como preservar a privacidade no ambiente de onde você participa."
+  },
+  {
+    "question": "Você atende por plano de saúde e em quais idiomas?",
+    "answer": "O atendimento é particular, sem planos de saúde, e está disponível em português, inglês e sueco. O contato inicial pode ser feito pelo WhatsApp, pelo e-mail ou pelo formulário do site."
+  }
+],
     },
 };
 

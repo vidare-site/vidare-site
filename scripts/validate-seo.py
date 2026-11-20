@@ -6,8 +6,8 @@ import json, re, xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
-LOCALES = {'pt': 'pt-BR', 'en': 'en', 'es': 'es', 'sv': 'sv'}
-PATHS = ['', '/blog', '/cadastro', '/services/online-psychotherapy-adults', '/services/trauma', '/services/anxiety', '/services/burnout', '/services/emdr', '/services/schema-therapy']
+LOCALES = {'pt': 'pt-BR', 'en': 'en', 'sv': 'sv'}
+PATHS = ['', '/blog', '/cadastro', '/services/online-psychotherapy-adults', '/services/trauma', '/services/anxiety', '/services/burnout', '/services/emdr', '/services/schema-therapy', '/services/emdr-schema-therapy']
 PAGES = {f'/{locale}{path}' for locale in LOCALES for path in PATHS}
 errors, results = [], []
 
@@ -42,6 +42,11 @@ for url in sorted(PAGES):
     def check(condition, message):
         if not condition: errors.append(f'{url}: {message}')
     locale = url.split('/')[1]
+    visible = ' '.join(page.text)
+    forbidden = r'premium|alta performance|high performance|hög prestation|\bcurar\b|blindad[oa]|sigilo absoluto|discrição absoluta|sigilo clínico (?:é|são) absolut|confidentiality.*absolute|absolut.*sekretess|clinical excellence|excellens|focada em resultados|results-driven|resultatinriktad|eficácia comprovada cientificamente|tratamentos de excelência|EMDRIA|EMDR Europe'
+    check(not re.search(forbidden, visible, re.I), 'prohibited promise, promotional claim or unsupported certification')
+    check(not re.search('[—–]', visible), 'dash in displayed copy')
+    if locale == 'pt': check(not re.search(r'\b(?:padroes|voce|experiencias|sessoes|avaliacao|relacoes|terapeutica|clinica)\b', visible, re.I), 'unaccented Portuguese copy')
     check(page.find('html')[0].get('lang') == LOCALES[locale], 'wrong document language')
     check(len(page.find('h1')) == 1, 'must have exactly one H1')
     check(len(page.find('main')) == 1, 'must have exactly one main')
@@ -101,7 +106,7 @@ sitemap = ET.parse(DIST / 'sitemap.xml')
 namespace = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
 urls = [node.text for node in sitemap.findall('.//s:loc', namespace)]
 expected = {'https://vidare.eu' + url for url in PAGES if not url.endswith('/cadastro')}
-if set(urls) != expected: errors.append('sitemap does not match the 32 indexable pages')
+if set(urls) != expected: errors.append('sitemap does not match the indexable pages')
 if len(urls) != len(set(urls)): errors.append('duplicate URLs in sitemap')
 if (DIST / 'server').exists(): errors.append('server build leaked to public output')
 error_page = Page((DIST / '404.html').read_text())
@@ -111,5 +116,5 @@ root = Page((DIST / 'index.html').read_text())
 if len(root.find('h1')) != 1: errors.append('root document lacks H1')
 if errors:
     print('\n'.join(errors)); raise SystemExit(1)
-print(f'PASS: {len(results)} complete HTML pages, one H1/main each, metadata lengths, hreflang reciprocity, existing images, JSON-LD facts, internal links, visible FAQ answers, 32 sitemap URLs and static 404.')
+print(f'PASS: {len(results)} complete HTML pages, one H1/main each, metadata lengths, hreflang reciprocity, existing images, JSON-LD facts, internal links, visible FAQ answers, {len(urls)} sitemap URLs and static 404.')
 (ROOT / 'seo-validation.json').write_text(json.dumps({'pages':results,'sitemap_urls':len(urls),'errors':errors},ensure_ascii=False,indent=2)+'\n')

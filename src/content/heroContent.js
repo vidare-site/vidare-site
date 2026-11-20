@@ -1,7 +1,7 @@
 export const heroContent = {
-  mainTitle: 'Vidare Psicologia Integral',
+  mainTitle: 'Psicoterapia online em português para adultos',
   tagline:
-    'Psicoterapia online para quem busca alta performance emocional. Um espaço onde distância e presença encontram-se.',
+    'Para brasileiros no Brasil e na Europa. Um espaço para conversar sobre trauma, ansiedade, estresse, vínculos e padrões que se repetem.',
   ctaLabel: 'Saiba mais',
   sideLabels: {
     left: 'Atendimento online',

@@ -5,7 +5,6 @@ import { useI18n } from '../i18n/LanguageProvider';
 const labels = {
   pt: ['Carregar Instagram', 'Ao carregar o feed, você permite a conexão com Instagram e Elfsight, que podem receber dados técnicos e usar cookies.'],
   en: ['Load Instagram', 'Loading the feed connects to Instagram and Elfsight, which may receive technical data and use cookies.'],
-  es: ['Cargar Instagram', 'Al cargar el feed, permites la conexión con Instagram y Elfsight, que pueden recibir datos técnicos y usar cookies.'],
   sv: ['Ladda Instagram', 'När flödet laddas ansluts du till Instagram och Elfsight, som kan ta emot tekniska uppgifter och använda cookies.'],
 };
 export default function InstagramFeedEmbed() {

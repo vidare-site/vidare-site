@@ -1,0 +1,204 @@
+{
+  "online-psychotherapy-adults": {
+    "label": "Online psychotherapy for adults",
+    "title": "Online psychotherapy for adults in Brazil and Europe",
+    "description": "Online psychotherapy for Brazilians in Brazil and Europe, with EMDR, Schema Therapy, CBT and ACT. Learn about care with Ricardo Correa.",
+    "intro": [
+      "Sometimes daily life keeps going while you feel overloaded, distant from others or without room to understand what you are experiencing. Psychotherapy can offer time to explore these difficulties, without requiring you to arrive with a clear explanation or a diagnosis before the first conversation takes place.",
+      "Care is intended for Brazilian adults in Brazil and Europe and always takes place online. We can discuss anxiety, stress, relationships, distressing experiences and recurring patterns, considering both what feels difficult now and how these experiences connect with your life history, rather than treating every concern in isolation."
+    ],
+    "sections": [
+      {"title": "How we develop the work together", "paragraphs": [
+        "In the first session, I seek to understand what brings you to therapy, your circumstances and what you hope for. We also discuss how the work is organised and the conditions for online care, including privacy, connection and support available in the place where you are living.",
+        "I work with EMDR, Schema Therapy, CBT and ACT, choosing resources according to assessment and the goals we develop together. The process often includes looking at everyday situations, understanding ways of protecting yourself and trying different responses, rather than following the same sequence for everyone who seeks care."
+      ]},
+      {"title": "The format and limits of this care", "paragraphs": [
+        "Sessions last 50 minutes, or 90 minutes for EMDR, and are available in Portuguese, English or Swedish. I respect professional confidentiality under the Code of Ethics, including its limits and obligations, and we discuss how to protect your privacy during our meetings and in the space where you join.",
+        "This is private care, without health insurance plans, and the length of therapy depends on your needs and ongoing review. Online therapy may not be suitable for every situation, so this choice is assessed and can be reconsidered if your circumstances or the support you need change during the process."
+      ]}
+    ],
+    "faqs": [
+      ["What happens in the first online therapy session?", "It is a conversation about what brings you to therapy and what you hope for. You can share what feels possible at that time while we clarify the format, initial goals and conditions for online care."],
+      ["Can I have therapy in Portuguese while living in Europe?", "Yes, care is intended for Brazilians in Brazil and Europe. In our initial conversation, we check your location, scheduling and the support available where you live."],
+      ["What is the difference between CBT, ACT, Schema Therapy and EMDR?", "They organise clinical work in different ways. CBT explores thoughts and behaviours, ACT considers your relationship with inner experiences and values, Schema Therapy investigates recurring patterns, and EMDR may be considered for distressing memories after assessment."],
+      ["Do I need to know how to explain my feelings before starting?", "You do not need to have everything organised before the first session. Understanding and putting words to your experience is often part of the early conversations."],
+      ["How long does therapy take?", "The length varies and is not defined by a promise of a number of sessions or an outcome. We review your needs and goals throughout the work."],
+      ["Do you accept health insurance?", "This is private care, without health insurance plans. Sessions last 50 minutes, or 90 minutes for EMDR, and questions about the format can be discussed during initial contact."],
+      ["When might online therapy not be appropriate?", "The format may be insufficient during a crisis, immediate risk or a need for closer in-person support. A lack of privacy or suitable conditions to participate also needs consideration, and assessment may indicate another form of care."]
+    ],
+    "related": ["anxiety", "trauma", "emdr-schema-therapy"]
+  },
+  "trauma": {
+    "label": "Psychotherapy for trauma",
+    "title": "Psychotherapy for distressing experiences and trauma",
+    "description": "A space to explore distressing experiences and their effects in the present. Online psychotherapy with individual assessment and respect for your pace.",
+    "intro": [
+      "Some experiences remain difficult long after they have happened. You may notice painful memories, tension, withdrawal or reactions you do not fully understand, but these experiences alone do not establish that you have trauma, define who you are or determine what your therapy will need to look like.",
+      "Psychotherapy offers space to explore what is happening now and how it relates to your history. You do not need to find an explanation immediately or describe details you do not yet feel ready to approach, because understanding develops gradually within the work and in conversation with you."
+    ],
+    "sections": [
+      {"title": "Work that considers your current circumstances", "paragraphs": [
+        "We begin by discussing what feels difficult, how it affects your routine and what support you have today. Planning considers relationships, rest and the ways you manage difficult emotions, without assuming that every difficulty has the same origin or that the same approach will suit every person.",
+        "Depending on assessment, we may work on resources for everyday life and, when appropriate, address distressing experiences more directly. EMDR, Schema Therapy, CBT and ACT are possibilities within an individual plan, and you take part in decisions about what we will focus on and how we approach it."
+      ]},
+      {"title": "The place of EMDR and online care", "paragraphs": [
+        "EMDR has scientific support for trauma and post-traumatic stress disorder, known as PTSD. It may be considered for other concerns after assessment, but its indication does not follow simply from having a difficult memory and does not mean that everyone who seeks therapy needs to use this approach.",
+        "I work with Brazilians in Brazil and Europe exclusively online, with 50-minute sessions, or 90 minutes for EMDR. During an intense crisis, immediate risk or a need for in-person support, other resources may need priority, and planning must consider services available in the place where you are living."
+      ]}
+    ],
+    "faqs": [
+      ["How can I know whether my feelings relate to trauma?", "That connection needs assessment and cannot be established through a symptom checklist alone. We can discuss when distress appears, what you have experienced and how those experiences affect your life today."],
+      ["Will I have to describe everything that happened?", "You do not need to describe every detail immediately. We discuss what feels possible at that time and develop the work with attention to your circumstances and pace."],
+      ["Is EMDR the only way to work with trauma?", "No, care can involve different approaches. The choice of EMDR, CBT, Schema Therapy, ACT or an integration of resources depends on individual assessment and needs."],
+      ["Can we work with childhood experiences in therapy?", "Yes, childhood experiences can be part of the work when they help us understand present difficulties. This does not require assuming in advance that they explain everything you feel today."],
+      ["How long does working through a painful experience take?", "A timeframe cannot be promised before assessment and ongoing care. Your history, current context and goals influence planning, which may change during the process."],
+      ["Can I start while I am going through a crisis?", "We can assess your need for care, but online therapy may be insufficient during a crisis. When there is immediate risk or a need for in-person support, local emergency care takes priority."],
+      ["Can I have this therapy while living outside Brazil?", "Care is intended for Brazilians in Brazil and Europe. Before starting, we assess the conditions for online work and support available in your location."]
+    ],
+    "related": ["emdr", "schema-therapy", "emdr-schema-therapy"]
+  },
+  "anxiety": {
+    "label": "Psychotherapy for anxiety",
+    "title": "Online psychotherapy for anxiety",
+    "description": "Psychotherapy to explore worry, self-criticism and anxiety in daily life. Online care for Brazilians living in Brazil and Europe.",
+    "intro": [
+      "Worry can take up considerable space even when daily life seems under control. You may spend time anticipating problems, replaying conversations or trying to avoid mistakes, yet still find it difficult to rest or recognise what you need at that moment, without knowing how to step out of the repetition.",
+      "These experiences deserve attention without receiving a diagnosis from a text on the internet. Psychotherapy may help you understand when anxiety appears, what makes it more intense and which attempts to manage it offer brief relief or create other difficulties over time, in the context of your own life."
+    ],
+    "sections": [
+      {"title": "Understanding what happens in your life", "paragraphs": [
+        "We discuss specific situations, thoughts, emotions and behaviours, including demands at work and in relationships. We also consider your history and circumstances, because moving countries, a difficult relationship or a period of overload can mean different things for each person who seeks support, rather than having a single explanation.",
+        "CBT can offer ways to investigate worries and try different responses in everyday life. ACT resources may help change your relationship with difficult thoughts, while Schema Therapy may contribute when self-criticism or fear of rejection appear as patterns that have been present for a long time in different situations."
+      ]},
+      {"title": "An individual plan with goals we review", "paragraphs": [
+        "The work does not demand that you eliminate all anxiety or control everything you feel. We can develop goals that fit your current circumstances, such as recognising needs, approaching meaningful situations or exploring boundaries, while following what makes sense for you and reviewing the direction when this is needed.",
+        "I work with Brazilian adults in Brazil and Europe exclusively online, in sessions lasting 50 minutes. Assessment also considers whether other care is needed, and online work may not suit every situation, particularly during a crisis or when closer in-person support is necessary alongside or before ongoing psychotherapy."
+      ]}
+    ],
+    "faqs": [
+      ["How do I know whether my anxiety needs therapy?", "You can seek care when worry causes distress or makes life difficult, even without a diagnosis. An initial conversation helps us understand that impact and assess what support may be appropriate."],
+      ["Will therapy make anxiety disappear?", "It is not possible to promise that anxiety will disappear. Therapy may help you understand your experience and develop different ways of responding, considering your circumstances, needs and limits."],
+      ["Do you use CBT for anxiety?", "Yes, CBT is one of the approaches I use. It may help investigate thoughts and behaviours connected with difficulties, and other resources can be integrated when assessment indicates a reason to do so."],
+      ["What if anxiety appears in my relationships?", "This can be explored in therapy, considering present situations and your relationship history. Schema Therapy may be an option when particular fears and ways of protecting yourself recur over time."],
+      ["Do I need EMDR for anxiety?", "Anxiety alone does not determine whether EMDR is indicated. EMDR has scientific support for trauma and PTSD and may be considered for other concerns after individual assessment."],
+      ["How long does anxiety therapy take?", "The length varies with your concerns and goals, without a guaranteed timeframe. We review the plan during sessions, which last 50 minutes, or 90 minutes if EMDR work is indicated."],
+      ["Is online therapy suitable during a crisis?", "The format may be insufficient when there is immediate risk or a need for in-person support. Local emergency care is important in that situation, and ongoing therapy can subsequently be assessed according to your needs."]
+    ],
+    "related": ["schema-therapy", "burnout", "online-psychotherapy-adults"]
+  },
+  "burnout": {
+    "label": "Psychotherapy for burnout and stress",
+    "title": "Online psychotherapy for burnout and overload",
+    "description": "A space to explore work-related exhaustion, self-criticism and boundaries. Online psychotherapy with attention to the circumstances of your life.",
+    "intro": [
+      "When work occupies most of your life, rest may stop feeling sufficient. You might notice persistent exhaustion, distance from tasks or difficulty recognising yourself in your routine, and these experiences deserve attention without being understood as a personal failure or automatically treated as a diagnosis based on a short description.",
+      "Burnout refers to exhaustion associated with the work context, while stress can also appear in other parts of life. Understanding what is happening involves looking at the circumstances in which you live, how long difficulties have been present and how they affect everyday life, rather than relying on a label alone."
+    ],
+    "sections": [
+      {"title": "Exploring overload without placing everything on you", "paragraphs": [
+        "Therapy can include discussing demands, autonomy, work relationships and realistic opportunities for rest and support. Self-criticism may contribute to this picture, but that does not mean the problem is only individual or that changing your thoughts alone will resolve difficult working conditions or the demands of your environment.",
+        "The work may involve recognising signs of overload and investigating what makes boundaries difficult to establish. It can also create space to understand feelings related to performance and guilt, considering your needs and the choices available in your circumstances instead of adding another demand to recover quickly or perform differently."]},
+      {"title": "Developing possibilities for care and recovery", "paragraphs": [
+        "I use CBT, ACT and Schema Therapy according to assessment, and may integrate other resources when indicated. We develop goals together that can involve your relationship with work, opportunities for recovery and supportive relationships, without promising a return to a previous pace or a set timeframe for improvement.",
+        "Care is exclusively online for Brazilian adults in Brazil and Europe, in sessions lasting 50 minutes. Intense fatigue and important changes in health may require other care alongside psychotherapy, and assessment may indicate medical evaluation or in-person support when this is necessary for your circumstances and your current needs."
+      ]}
+    ],
+    "faqs": [
+      ["How can I tell whether it is burnout or a period of tiredness?", "That distinction requires assessing how difficulties relate to work and your wider life context. A text cannot establish what is happening, but persistent fatigue and distress can be reasons to seek care."],
+      ["Does burnout mean I lack ability or willpower?", "Work-related exhaustion should not be reduced to a lack of personal ability. Working conditions and relationships need consideration alongside your history and present needs."],
+      ["Will therapy help me become as productive as before?", "The goal is not to promise the recovery of a previous level of productivity. Therapy may help assess your relationship with work and develop care that takes your circumstances and limits into account."],
+      ["Can I have therapy while continuing in my job?", "Yes, therapy can take place while you are working. Planning considers your routine and opportunities for change, while any need for leave or other care requires appropriate assessment."],
+      ["Do I also need a medical assessment?", "That may be necessary, especially with intense fatigue or important changes in sleep, concentration or health. Psychotherapy does not replace a medical assessment when one is indicated."],
+      ["How long does recovery from exhaustion take?", "A recovery timeframe cannot be promised. Progress depends on different factors, including living and working conditions, and we review goals throughout the work."],
+      ["Do you work with Brazilians employed in Europe?", "Yes, online care is intended for Brazilians in Brazil and Europe. Sessions last 50 minutes, and the initial conversation includes assessing your concerns and the conditions for ongoing therapy."]
+    ],
+    "related": ["anxiety", "schema-therapy", "online-psychotherapy-adults"]
+  },
+  "emdr": {
+    "label": "EMDR",
+    "title": "Online EMDR for trauma and distressing memories",
+    "description": "Learn about online EMDR, its use for trauma and PTSD and the role of assessment. Care with Ricardo Correa, trained in Sweden and Spain.",
+    "intro": [
+      "A memory can remain difficult to approach even when you understand that the event belongs to the past. Sometimes present situations bring feelings and reactions that seem greater than you can explain, and therapy can offer space to explore these experiences without assuming a diagnosis before we have understood your circumstances.",
+      "EMDR has scientific support for trauma and post-traumatic stress disorder, known as PTSD. It may be considered for other concerns after individual assessment, but the decision depends on understanding your needs, your current circumstances and the plan for care, without a guarantee that a particular response or outcome will follow."
+    ],
+    "sections": [
+      {"title": "How the work is prepared", "paragraphs": [
+        "We start by understanding what you are experiencing, your history and the support you have today. We discuss how the approach is organised and the conditions for working with distressing experiences, including ways to recognise discomfort and communicate when you need to pause or reconsider what feels possible at that time.",
+        "Work with memories is considered within that plan, without requiring you to approach difficult material in the first session. Preparation and ongoing work can take different amounts of time for each person, and the indication for EMDR may be reviewed if other needs emerge that call for a different focus of care."
+      ]},
+      {"title": "Online EMDR and clinical training", "paragraphs": [
+        "My EMDR training includes level 1 in Sweden in 2015 and level 2 in Spain in 2017. I work exclusively online, with 90-minute EMDR sessions on an encrypted platform that meets HIPAA, GDPR and LGPD requirements, respecting professional confidentiality under the Code of Ethics throughout the clinical contact.",
+        "The format may be an option for Brazilians in Brazil and Europe when suitable conditions are present. During a crisis, immediate risk, limited privacy or a need for closer in-person support, other resources may need priority before we reassess whether and when this work is appropriate for your current situation."
+      ]}
+    ],
+    "faqs": [
+      ["Can EMDR be done online?", "EMDR can be delivered online when assessment indicates that the format is appropriate. The choice considers your concerns, privacy and available support, without guaranteeing results because it is online or because this approach is used."],
+      ["What is EMDR used for?", "EMDR has scientific support for trauma and PTSD. Its use for other concerns may be considered after assessment, without assuming that it is indicated for every emotional difficulty."],
+      ["Can I have EMDR while living outside Brazil?", "Care is intended for Brazilians in Brazil and Europe. Before starting, we check your location, the conditions for online sessions and support that can be accessed where you live."],
+      ["Do I have to begin with my most painful memory?", "You do not need to begin with a particularly difficult memory. The initial work includes assessment, explanation and preparation, with room to discuss limits and what feels possible to approach at that time."],
+      ["Does EMDR erase memories or change what happened?", "The work does not aim to erase your history or change events. We follow how you experience memories and associated distress, without asserting a single mechanism of action or promising a specific response."],
+      ["How long is an EMDR session and how many will I need?", "EMDR sessions last 90 minutes. Their number depends on assessment and ongoing review, and cannot be presented as a guaranteed timeframe or outcome."],
+      ["When might it be better not to start EMDR?", "Work with memories may need to wait during a crisis, immediate risk or insufficient conditions for online care. Assessment may indicate developing other resources or prioritising in-person or emergency care according to your needs."]
+    ],
+    "related": ["trauma", "schema-therapy", "emdr-schema-therapy"]
+  },
+  "schema-therapy": {
+    "label": "Schema Therapy",
+    "title": "Schema Therapy for recurring patterns",
+    "description": "Explore recurring emotional and relationship patterns. Online Schema Therapy with attention to your life history and present needs.",
+    "intro": [
+      "You may notice that relationships, jobs or countries change while similar difficulties return. Fear of disappointing others, demanding expectations of yourself or a sense that your needs come last may reappear, even when you consciously try to respond in another way or make different choices about your daily life.",
+      "Schema Therapy may help you understand these patterns in the context of your history and what is happening today. The work considers earlier experiences, emotional needs and ways of protecting yourself, without using these ideas as labels or as a single explanation for every part of your life."
+    ],
+    "sections": [
+      {"title": "Understanding repetition without reducing yourself to it", "paragraphs": [
+        "In sessions, we can observe how particular situations bring up expectations, feelings and responses that have become familiar. Sometimes a way of protecting yourself that made sense earlier starts to create difficulties, and understanding it can make room for choices that fit your present needs and circumstances more closely.",
+        "Therapy may include talking about relationships, recognising feelings and needs and trying different ways of responding in daily life. The aim is not to discover a hidden defect in you, but to explore together how patterns appear and what possibilities can be developed over time as the work unfolds."
+      ]},
+      {"title": "How this approach fits within therapy", "paragraphs": [
+        "My Schema Therapy training took place from 2021 to 2023 and is recognised by ISST. The approach may be integrated with CBT, ACT and EMDR when assessment indicates a reason, taking account of current difficulties and any distressing memories that may require specific attention within the plan for care.",
+        "Care is exclusively online for Brazilian adults in Brazil and Europe, in 50-minute sessions, or 90 minutes for EMDR. The length of therapy varies and goals are reviewed during the work, without a promise of permanent change, a cure or a timeframe for recurring patterns to stop appearing in your life."
+      ]}
+    ],
+    "faqs": [
+      ["What is Schema Therapy for?", "It may help you understand and work with recurring emotional and relationship patterns. The focus considers your history, needs and present situations without reducing you to a set of schemas."],
+      ["I have patterns that go back to childhood, what can therapy do?", "Therapy can investigate how these patterns developed and how they appear in the present. With that understanding, we can work on other ways of recognising needs and responding to situations at a pace that is possible for you."],
+      ["Do I need to remember my whole childhood?", "You do not need complete memories or a ready explanation of childhood. We can begin with current difficulties and experiences you recognise, without pressuring you to construct memories."],
+      ["How does Schema Therapy differ from CBT?", "Both approaches can explore thoughts, feelings and behaviours, but organise the work differently. Schema Therapy pays particular attention to long-standing patterns, emotional needs and relationship history, and resources can be integrated according to assessment."],
+      ["Can Schema Therapy and EMDR be used together?", "Yes, integration may be considered when recurring patterns and distressing experiences need attention. That depends on assessment and planning, without implying that the combination is necessary or superior in every case."],
+      ["How long does it take to change a pattern?", "A timeframe or permanent change cannot be promised. Therapy considers your history, circumstances and goals, and the plan is reviewed in light of what happens during the process."],
+      ["Can Schema Therapy take place online?", "Yes, therapy can take place online after assessing whether the format is suitable. Sessions last 50 minutes, and privacy, crisis situations and any need for in-person support must be considered."]
+    ],
+    "related": ["emdr-schema-therapy", "anxiety", "emdr"]
+  },
+  "emdr-schema-therapy": {
+    "label": "EMDR and Schema Therapy",
+    "title": "EMDR and Schema Therapy together: who it may suit and how it works",
+    "description": "Learn when EMDR and Schema Therapy may be integrated in work with distressing memories and recurring patterns, following individual assessment.",
+    "intro": [
+      "Sometimes a person seeks therapy because two difficulties seem connected: experiences that remain painful and ways of relating that keep recurring. A memory may bring distress while self-criticism, fear of rejection or difficulty setting boundaries appear in different situations, making it hard to understand what needs attention in the present.",
+      "In this context, EMDR and Schema Therapy may be considered within the same course of care after individual assessment. The choice is not based on adding techniques or promising a greater effect, but on understanding whether each approach has a relevant role in that person’s needs and goals for therapy."
+    ],
+    "sections": [
+      {"title": "What each approach may contribute", "paragraphs": [
+        "Schema Therapy may contribute to understanding emotional and relationship patterns, needs and ways of protecting yourself developed throughout life. This perspective helps us discuss how you relate to yourself and others today, without turning your history into a fixed label or assuming it determines every possibility for your future.",
+        "EMDR has scientific support for trauma and PTSD and may be considered for other concerns after assessment. When distressing memories are relevant to planning, its use can be discussed within care, without claiming that work on one memory will, by itself, resolve every difficulty you experience in your current life."
+      ]},
+      {"title": "How integration is planned and when it may need to wait", "paragraphs": [
+        "We begin by understanding your concerns, circumstances and available support, and discuss possible ways of working together. There may be periods of preparation, exploration of patterns and attention to particular memories, but the sequence is adapted individually, with space to review choices and communicate limits during sessions as needs change.",
+        "The combination may not be indicated, or may need to wait, if assessment points towards another focus, a crisis or a need for in-person support. I work exclusively online, in 50-minute sessions, or 90 minutes for EMDR, and decisions about integration are shared, without a guaranteed outcome or timeframe."
+      ]}
+    ],
+    "faqs": [
+      ["Who might benefit from considering EMDR and Schema Therapy together?", "It may make sense when recurring patterns and distressing memories are relevant to the concerns being explored. Indication depends on assessing your history, current circumstances and the role each approach may have in care."],
+      ["Do I need both approaches to improve?", "The combination is not a requirement for care. We may use one approach or integrate resources according to assessment, without assuming that two techniques bring a larger or faster result."],
+      ["Are both approaches used in the same session?", "That depends on the plan and the needs of that meeting. They may form part of different periods of therapy, without a fixed alternation between techniques."],
+      ["What happens in the first session?", "The first session focuses on understanding your concerns, history and present circumstances. We discuss online care and possible ways of working, without necessarily starting memory processing."],
+      ["When might this combination not be appropriate?", "It may not be indicated when another form of care is more relevant or the proposed work lacks suitable conditions. Intense crisis, immediate risk and any need for in-person support must be considered before starting or continuing the plan."],
+      ["How long are the sessions and the course of therapy?", "Sessions last 50 minutes, or 90 minutes for EMDR. The length of care and the way approaches are integrated vary individually, without a guaranteed number of sessions or outcome."],
+      ["Can I have this therapy online while living in Europe?", "Care is intended for Brazilians in Brazil and Europe and always takes place online. Indication depends on assessing privacy, participation and support available where you live."]
+    ],
+    "related": ["emdr", "schema-therapy", "trauma"]
+  }
+}

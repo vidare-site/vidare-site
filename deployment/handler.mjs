@@ -42,6 +42,7 @@ export function createHandler({ pages, origin = 'https://vidare.eu' }) {
       const url = new URL(request.url);
       const primary = new URL(origin);
       let normalized = url.pathname.replace(/\/index\.html$/, '').replace(/\/+$/, '') || '/';
+      if (/^\/es(?:\/|$)/.test(normalized)) normalized = '/pt' + normalized.slice(3);
       normalized = redirects.get(normalized) || normalized;
       const productionHost = [primary.hostname, `www.${primary.hostname}`].includes(url.hostname);
       if ((productionHost && (url.hostname !== primary.hostname || url.protocol !== 'https:')) ||

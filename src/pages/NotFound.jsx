@@ -4,7 +4,6 @@ import { DEFAULT_LOCALE, SUPPORTED_LOCALES, localeMeta } from '../i18n/config.js
 export const notFoundText = {
   pt: ['Página não encontrada | Vidare', 'Página não encontrada', 'O endereço pode ter mudado ou não existir.', 'Voltar ao início'],
   en: ['Page not found | Vidare', 'Page not found', 'This address may have moved or may not exist.', 'Back to home'],
-  es: ['Página no encontrada | Vidare', 'Página no encontrada', 'La dirección puede haber cambiado o no existir.', 'Volver al inicio'],
   sv: ['Sidan hittades inte | Vidare', 'Sidan hittades inte', 'Adressen kan ha ändrats eller kanske inte finns.', 'Till startsidan'],
 };
 
